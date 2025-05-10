@@ -249,4 +249,4 @@ jobs:
         if: failure()
         with:
           name: ${{ github.run_number }}-integration-test-artifact-${{ runner.os }}-${{ matrix.java }}
-          path: ./its/core-it-suite/target/test-classes/
+          path: ./core-its/core-it-suite/target/test-classes/
