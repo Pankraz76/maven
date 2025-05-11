@@ -109,7 +109,7 @@ public class MavenChainedWorkspaceReader implements MavenWorkspaceReader {
         requireNonNull(readers, "readers");
         // skip possible null entries
         this.readers = Collections.unmodifiableList(
-                new ArrayList<>(readers.stream().filter(Objects::nonNull).toList()));
+                new ArrayList<>(readers.stream().filter(Objects::nonNull).collect(Collectors.toList())));
         Key key = new Key(this.readers);
         this.repository = new WorkspaceRepository(key.getContentType(), key);
     }
@@ -130,7 +130,7 @@ public class MavenChainedWorkspaceReader implements MavenWorkspaceReader {
         private final String type;
 
         Key(Collection<WorkspaceReader> readers) {
-            keys = readers.stream().map(r -> r.getRepository().getKey()).toList();
+            keys = readers.stream().map(r -> r.getRepository().getKey()).collect(Collectors.toList());
             type = readers.stream().map(r -> r.getRepository().getContentType()).collect(Collectors.joining("+"));
         }
 

@@ -40,6 +40,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.maven.api.MojoExecution;
@@ -269,7 +270,7 @@ public class MojoExtension extends MavenDIExtension implements ParameterResolver
                     .orElseGet(() -> XmlNode.newInstance("config"));
             List<XmlNode> children = mojoParameters.stream()
                     .map(mp -> XmlNode.newInstance(mp.name(), mp.value()))
-                    .toList();
+                    .collect(Collectors.toList());
             XmlNode config = XmlNode.newInstance("configuration", null, null, children, null);
             pluginConfiguration = XmlService.merge(config, pluginConfiguration);
 

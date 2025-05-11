@@ -20,6 +20,7 @@ package org.apache.maven.project.harness;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.commons.jxpath.ri.QName;
 import org.apache.commons.jxpath.ri.model.NodeIterator;
@@ -48,7 +49,7 @@ class Xpp3DomAttributeIterator implements NodeIterator {
 
         this.attributes = this.node.attributes().entrySet().stream()
                 .filter(a -> a.getKey().equals(qname.getName()) || "*".equals(qname.getName()))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public NodePointer getNodePointer() {

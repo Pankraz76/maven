@@ -36,6 +36,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 import org.apache.maven.api.Constants;
 import org.apache.maven.eventspy.AbstractEventSpy;
@@ -108,7 +109,7 @@ public final class DefaultPluginValidationManager extends AbstractEventSpy imple
         return Arrays.stream(excludes.split(","))
                 .map(String::trim)
                 .filter(s -> !s.isEmpty())
-                .toList();
+                .collect(Collectors.toList());
     }
 
     private ValidationReportLevel validationReportLevel(RepositorySystemSession session) {

@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
 
 import org.apache.maven.RepositoryUtils;
 import org.apache.maven.api.Service;
@@ -230,7 +231,7 @@ public class BootstrapCoreExtensionManager {
             return result.getArtifactResults().stream()
                     .filter(ArtifactResult::isResolved)
                     .map(ArtifactResult::getArtifact)
-                    .toList();
+                    .collect(Collectors.toList());
         } catch (PluginResolutionException | InterpolatorException e) {
             throw new ExtensionResolutionException(extension, e);
         }

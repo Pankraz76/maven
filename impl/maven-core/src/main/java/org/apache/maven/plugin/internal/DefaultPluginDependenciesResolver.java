@@ -25,6 +25,7 @@ import javax.inject.Singleton;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.maven.RepositoryUtils;
@@ -239,7 +240,7 @@ public class DefaultPluginDependenciesResolver implements PluginDependenciesReso
                             e.getResult().getArtifactResults().stream()
                                     .filter(r -> !r.isResolved())
                                     .flatMap(r -> r.getExceptions().stream()))
-                    .toList();
+                    .collect(Collectors.toList());
             throw new PluginResolutionException(plugin, exceptions, e);
         } finally {
             RequestTraceHelper.exit(trace);

@@ -21,11 +21,11 @@ package org.apache.maven.lifecycle.internal.concurrent;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.maven.api.Lifecycle;
 import org.apache.maven.api.model.Plugin;
-import org.apache.maven.api.model.PluginExecution;
 import org.apache.maven.plugin.descriptor.PluginDescriptor;
 
 class PluginLifecycle implements Lifecycle {
@@ -47,7 +47,7 @@ class PluginLifecycle implements Lifecycle {
     @Override
     public Collection<Phase> phases() {
         return lifecycleOverlay.getPhases().stream()
-                .<Phase>map(phase -> new Phase() {
+                .map(phase -> new Phase() {
                     @Override
                     public String name() {
                         return phase.getId();
@@ -61,11 +61,11 @@ class PluginLifecycle implements Lifecycle {
                                 .version(pluginDescriptor.getVersion())
                                 .configuration(phase.getConfiguration())
                                 .executions(phase.getExecutions().stream()
-                                        .map(exec -> PluginExecution.newBuilder()
+                                        .map(exec -> org.apache.maven.api.model.PluginExecution.newBuilder()
                                                 .goals(exec.getGoals())
                                                 .configuration(exec.getConfiguration())
                                                 .build())
-                                        .toList())
+                                        .collect(Collectors.toList()))
                                 .build());
                     }
 
@@ -84,7 +84,7 @@ class PluginLifecycle implements Lifecycle {
                         return Stream.concat(Stream.of(this), phases().stream().flatMap(Phase::allPhases));
                     }
                 })
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override

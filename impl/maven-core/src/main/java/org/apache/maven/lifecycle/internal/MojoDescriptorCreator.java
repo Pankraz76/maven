@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.maven.api.xml.XmlNode;
 import org.apache.maven.execution.MavenSession;
@@ -101,7 +102,7 @@ public class MojoDescriptorCreator {
                                 : null,
                         null,
                         null))
-                .toList();
+                .collect(Collectors.toList());
         return XmlNode.newInstance("configuration", children);
     }
 
