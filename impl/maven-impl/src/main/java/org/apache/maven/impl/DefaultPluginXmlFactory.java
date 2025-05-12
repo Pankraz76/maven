@@ -27,19 +27,33 @@ import org.apache.maven.api.services.xml.XmlReaderException;
 import org.apache.maven.api.services.xml.XmlReaderRequest;
 import org.apache.maven.api.services.xml.XmlWriterException;
 import org.apache.maven.api.services.xml.XmlWriterRequest;
+import org.apache.maven.plugin.descriptor.io.PluginDescriptorStaxReader;
+import org.apache.maven.plugin.descriptor.io.PluginDescriptorStaxWriter;
+
+import javax.xml.stream.XMLStreamException;
+import java.io.*;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+import static org.apache.maven.impl.StaxLocation.getLocation;
+import static org.apache.maven.impl.StaxLocation.getMessage;
 
 @Named
 @Singleton
 public class DefaultPluginXmlFactory implements PluginXmlFactory {
 
+    public static final PluginDescriptorStaxWriter WRITER = new PluginDescriptorStaxWriter();
+    private static final PluginDescriptorStaxReader READER = new PluginDescriptorStaxReader();
     @Override
     public PluginDescriptor read(@Nonnull XmlReaderRequest request) throws XmlReaderException {
-        return new ReadRequest(request).read();
+        READER.setAddDefaultEntities(request.isAddDefaultEntities());
+        return createReadDescriptor(validate(request));
     }
 
     @Override
     public void write(XmlWriterRequest<PluginDescriptor> request) throws XmlWriterException {
-        new WriteRequest(request).write();
+        createWriteDescriptor(validate(request));
     }
 
     /**
@@ -65,4 +79,57 @@ public class DefaultPluginXmlFactory implements PluginXmlFactory {
     public static String toXml(@Nonnull PluginDescriptor content) throws XmlWriterException {
         return new DefaultPluginXmlFactory().toXmlString(content);
     }
+    private static PluginDescriptor createReadDescriptor(XmlReaderRequest request) {
+        try {
+            if (request.getInputStream() != null) {
+                return READER.read(request.getInputStream(), request.isStrict());
+            } else if (request.getReader() != null) {
+                return READER.read(request.getReader(), request.isStrict());
+            } else if (request.getPath() != null) {
+                try (InputStream is = Files.newInputStream(request.getPath())) {
+                    return READER.read(is, request.isStrict());
+                }
+            }
+            try (InputStream is = request.getURL().openStream()) {
+                return READER.read(is, request.isStrict());
+            }
+        } catch (IOException | XMLStreamException e) {
+            throw new XmlReaderException("Unable to read plugin: " + getMessage(e), getLocation(e), e);
+        }
+    }
+
+    private static XmlReaderRequest validate(XmlReaderRequest request) {
+        if (request.getInputStream() == null && request.getReader() == null && request.getPath() == null && request.getURL() == null) {
+            throw new IllegalArgumentException("writer, outputStream or path must be non null");
+        }
+        return  request;
+    }
+
+
+    private static void createWriteDescriptor(XmlWriterRequest<PluginDescriptor> request) throws XmlWriterException {
+        try {
+            if (request.getWriter() != null) {
+                WRITER.write(request.getWriter(), request.getContent());
+            } else if (request.getOutputStream() != null) {
+                WRITER.write(request.getOutputStream(), request.getContent());
+            } else if (request.getPath() != null) {
+                try (OutputStream os = Files.newOutputStream(request.getPath())) {
+                    WRITER.write(os, request.getContent());
+                }
+            } else {
+                throw new IllegalArgumentException("writer, outputStream or path must be non null");
+            }
+        } catch (XmlWriterException | XMLStreamException | IOException e) {
+            throw new XmlWriterException("Unable to write plugin: " + getMessage(e), getLocation(e), e);
+        }
+    }
+
+    private static XmlWriterRequest<PluginDescriptor> validate(XmlWriterRequest<PluginDescriptor> request) {
+        if (request.getWriter() == null && request.getOutputStream() == null && request.getPath() == null) {
+            throw new IllegalArgumentException("writer, outputStream or path must be non null");
+        }
+        return request;
+    }
+
+
 }
