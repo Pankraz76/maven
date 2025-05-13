@@ -18,6 +18,13 @@
  */
 package org.apache.maven.impl;
 
+import javax.xml.stream.XMLStreamException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+
 import org.apache.maven.api.annotations.Nonnull;
 import org.apache.maven.api.di.Named;
 import org.apache.maven.api.di.Singleton;
@@ -30,12 +37,6 @@ import org.apache.maven.api.services.xml.XmlWriterRequest;
 import org.apache.maven.plugin.descriptor.io.PluginDescriptorStaxReader;
 import org.apache.maven.plugin.descriptor.io.PluginDescriptorStaxWriter;
 
-import javax.xml.stream.XMLStreamException;
-import java.io.*;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
 import static org.apache.maven.impl.StaxLocation.getLocation;
 import static org.apache.maven.impl.StaxLocation.getMessage;
 
@@ -45,6 +46,7 @@ public class DefaultPluginXmlFactory implements PluginXmlFactory {
 
     public static final PluginDescriptorStaxWriter WRITER = new PluginDescriptorStaxWriter();
     private static final PluginDescriptorStaxReader READER = new PluginDescriptorStaxReader();
+
     @Override
     public PluginDescriptor read(@Nonnull XmlReaderRequest request) throws XmlReaderException {
         READER.setAddDefaultEntities(request.isAddDefaultEntities());
@@ -79,6 +81,7 @@ public class DefaultPluginXmlFactory implements PluginXmlFactory {
     public static String toXml(@Nonnull PluginDescriptor content) throws XmlWriterException {
         return new DefaultPluginXmlFactory().toXmlString(content);
     }
+
     private static PluginDescriptor createReadDescriptor(XmlReaderRequest request) {
         try {
             if (request.getInputStream() != null) {
@@ -99,12 +102,14 @@ public class DefaultPluginXmlFactory implements PluginXmlFactory {
     }
 
     private static XmlReaderRequest validate(XmlReaderRequest request) {
-        if (request.getInputStream() == null && request.getReader() == null && request.getPath() == null && request.getURL() == null) {
+        if (request.getInputStream() == null
+                && request.getReader() == null
+                && request.getPath() == null
+                && request.getURL() == null) {
             throw new IllegalArgumentException("writer, outputStream or path must be non null");
         }
-        return  request;
+        return request;
     }
-
 
     private static void createWriteDescriptor(XmlWriterRequest<PluginDescriptor> request) throws XmlWriterException {
         try {
@@ -130,6 +135,4 @@ public class DefaultPluginXmlFactory implements PluginXmlFactory {
         }
         return request;
     }
-
-
 }
