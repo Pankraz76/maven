@@ -46,6 +46,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOf
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 class DefaultPluginXmlFactoryReadWriteTest {
@@ -82,10 +83,10 @@ class DefaultPluginXmlFactoryReadWriteTest {
     @Test
     void parsePlugin() {
         assertThat(defaultPluginXmlFactory
-                        .read(XmlReaderRequest.builder()
-                                .reader(new StringReader(SAMPLE_PLUGIN_XML))
-                                .build())
-                        .getName())
+                .read(XmlReaderRequest.builder()
+                        .reader(new StringReader(SAMPLE_PLUGIN_XML))
+                        .build())
+                .getName())
                 .isEqualTo(NAME);
     }
 
@@ -94,8 +95,8 @@ class DefaultPluginXmlFactoryReadWriteTest {
         Path xmlFile = tempDir.resolve("plugin.xml");
         Files.write(xmlFile, SAMPLE_PLUGIN_XML.getBytes());
         assertThat(defaultPluginXmlFactory
-                        .read(XmlReaderRequest.builder().path(xmlFile).build())
-                        .getName())
+                .read(XmlReaderRequest.builder().path(xmlFile).build())
+                .getName())
                 .isEqualTo(NAME);
     }
 
@@ -222,13 +223,13 @@ class DefaultPluginXmlFactoryReadWriteTest {
     @Test
     void writeWithNoTargetThrowsIllegalArgumentException() {
         assertThat(assertThrows(
-                                IllegalArgumentException.class,
-                                () -> defaultPluginXmlFactory.write(XmlWriterRequest.<PluginDescriptor>builder()
-                                        .content(PluginDescriptor.newBuilder()
-                                                .name("No Output Plugin")
-                                                .build())
-                                        .build()))
-                        .getMessage())
+                IllegalArgumentException.class,
+                () -> defaultPluginXmlFactory.write(XmlWriterRequest.<PluginDescriptor>builder()
+                        .content(PluginDescriptor.newBuilder()
+                                .name("No Output Plugin")
+                                .build())
+                        .build()))
+                .getMessage())
                 .isEqualTo("writer, outputStream or path must be non null");
     }
 
@@ -268,7 +269,7 @@ class DefaultPluginXmlFactoryReadWriteTest {
     void testReadWithPath() throws Exception {
         Path tempPath = Files.createTempFile("plugin", ".xml");
         Files.writeString(tempPath, "<plugin/>");
-        XmlReaderRequest request = mock(XmlReaderRequest.class);
+        XmlReaderRequest request = spy(XmlReaderRequest.class);
         when(request.getPath()).thenReturn(tempPath);
         when(request.getInputStream()).thenReturn(null);
         when(request.getReader()).thenReturn(null);
@@ -283,7 +284,7 @@ class DefaultPluginXmlFactoryReadWriteTest {
     void testReadWithPathUrlDefault() throws Exception {
         Path tempPath = Files.createTempFile("plugin", ".xml");
         Files.writeString(tempPath, "<plugin/>");
-        XmlReaderRequest request = mock(XmlReaderRequest.class);
+        XmlReaderRequest request = spy(XmlReaderRequest.class);
         when(request.getPath()).thenReturn(null);
         when(request.getInputStream()).thenReturn(null);
         when(request.getReader()).thenReturn(null);
