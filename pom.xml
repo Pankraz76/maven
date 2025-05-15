@@ -813,17 +813,7 @@ under the License.</licenseText>
           <version>6.8.1</version>
           <configuration>
             <activeRecipes>
-              <recipe>org.openrewrite.java.format.AutoFormat</recipe>
-              <recipe>org.openrewrite.java.recipes.JavaRecipeBestPractices</recipe>
-              <recipe>org.openrewrite.java.recipes.RecipeNullabilityBestPractices</recipe>
-              <recipe>org.openrewrite.java.recipes.RecipeTestingBestPractices</recipe>
-              <recipe>org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion</recipe>
-              <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
-              <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
-              <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
-              <recipe>org.openrewrite.staticanalysis.RemoveUnusedLocalVariables</recipe>
-              <recipe>org.openrewrite.staticanalysis.RemoveUnusedPrivateFields</recipe>
-              <recipe>org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods</recipe>
+              <recipe>org.openrewrite.staticanalysis.ReplaceStreamToListWithCollect</recipe>
             </activeRecipes>
             <exclusions>
               <exclusion>src/mdo/java/WrapperList.java</exclusion>
