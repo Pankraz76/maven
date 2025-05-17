@@ -413,7 +413,7 @@ public interface XmlNode {
          * @return this builder instance
          */
         public Builder attributes(Map<String, String> attributes) {
-            this.attributes = attributes;
+            this.attributes = attributes != null ? ImmutableCollections.copy(attributes) : null;
             return this;
         }
 
@@ -426,7 +426,7 @@ public interface XmlNode {
          * @return this builder instance
          */
         public Builder children(List<XmlNode> children) {
-            this.children = children;
+            this.children = children != null ? ImmutableCollections.copy(children) : null;
             return this;
         }
 
