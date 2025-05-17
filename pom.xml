@@ -801,11 +801,8 @@ under the License.</licenseText>
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>4.9.3.0</version>
           <configuration>
-            <!-- https://spotbugs.readthedocs.io/en/stable/effort.html -->
-            <!--            <effort>max</effort>-->
-            <!--            <effort>less</effort>-->
-            <effort>min</effort>
-            <excludeFilterFile>.spotbugs/exclude.xml</excludeFilterFile>
+                        <effort>max</effort>
+            <!--            <excludeFilterFile>.spotbugs/exclude.xml</excludeFilterFile>-->
           </configuration>
           <executions>
             <execution>
