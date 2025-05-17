@@ -801,8 +801,8 @@ under the License.</licenseText>
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>4.9.3.0</version>
           <configuration>
-                        <effort>max</effort>
-                        <excludeFilterFile>.spotbugs/exclude.xml</excludeFilterFile>
+            <effort>max</effort>
+            <excludeFilterFile>.spotbugs/exclude.xml</excludeFilterFile>
           </configuration>
           <executions>
             <execution>
@@ -894,6 +894,7 @@ under the License.</licenseText>
                 <exclude>**/*.svg</exclude>
                 <exclude>.asf.yaml</exclude>
                 <exclude>.pmd/exclude.properties</exclude>
+                <exclude>.spotbugs/spotbugs-exclude.xml</exclude>
                 <exclude>.mvn/**</exclude>
                 <exclude>.jbang/**</exclude>
                 <!--
