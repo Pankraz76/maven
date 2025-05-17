@@ -802,8 +802,9 @@ under the License.</licenseText>
           <version>4.9.3.0</version>
           <configuration>
             <!-- https://spotbugs.readthedocs.io/en/stable/effort.html -->
-<!--            <effort>max</effort>-->
-            <effort>less</effort>
+            <!--            <effort>max</effort>-->
+            <!--            <effort>less</effort>-->
+            <effort>min</effort>
             <excludeFilterFile>.spotbugs/exclude.xml</excludeFilterFile>
           </configuration>
           <executions>
