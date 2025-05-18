@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
-            "\\[ERROR\\] (?:Medium|High|Low): ([\\w.$]+)(?:\\.[^\\s]+)?\\s+\\[([A-Z_]+)\\]"
+            "\\[ERROR\\] (?:Medium|High|Low): ([\\w.$]+)(?:#([\\w]+)\\([^)]+\\))? (?:\\[([A-Z_]+)\\]|may expose internal representation)"
     );
 
     private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
@@ -48,7 +48,9 @@ public class SpotbugsExclusionGenerator {
                 Matcher matcher = SPOTBUGS_PATTERN.matcher(line);
                 if (matcher.find()) {
                     String className = matcher.group(1);
-                    String bugPattern = matcher.group(2);
+                    // Group 3 is the bug pattern, but sometimes it's in group 2 for different formats
+                    String bugPattern = matcher.group(3) != null ? matcher.group(3) :
+                            (matcher.group(2) != null ? matcher.group(2) : "EI_EXPOSE_REP");
                     bugs.add(new BugInstance(className, bugPattern));
                     System.out.println("New bug found: " + className + " - " + bugPattern);
                 }

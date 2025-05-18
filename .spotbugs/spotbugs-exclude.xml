@@ -197,10 +197,6 @@
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
     <Class name="org.apache.maven.api.model.PluginExecution"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
@@ -282,6 +278,13 @@
   </Match>
   <Match>
     <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor$Builder.mojos"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder.lifecycles(Collection)"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
