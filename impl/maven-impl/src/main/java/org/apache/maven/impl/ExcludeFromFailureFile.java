@@ -1,21 +1,3 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package org.apache.maven.impl;
 
 import java.io.BufferedReader;
@@ -31,7 +13,8 @@ import java.util.regex.Pattern;
 
 public class ExcludeFromFailureFile {
     // Pattern to extract class, line number, and rule from PMD warnings
-    private static final Pattern PMD_PATTERN = Pattern.compile("PMD Failure: (\\S+):(\\d+) Rule:(\\S+) Priority:\\d+");
+    private static final Pattern PMD_PATTERN = Pattern.compile(
+            "PMD Failure: (\\S+):(\\d+) Rule:(\\S+) Priority:\\d+");
 
     public static void main(String[] args) {
         String pmdLogPath = "pmd.txt"; // path to PMD log file
@@ -39,13 +22,7 @@ public class ExcludeFromFailureFile {
 
         try {
             // Step 1: Parse existing properties file
-            Properties existingProps = new Properties();
-            try (FileReader reader = new FileReader(propertiesPath)) {
-                existingProps.load(reader);
-            } catch (IOException e) {
-                // File might not exist yet, which is okay
-                System.out.println("No existing properties file found, creating new one");
-            }
+            Properties existingProps = loadExistingProperties(propertiesPath);
 
             // Step 2: Parse PMD log file
             Map<String, String> pmdViolations = parsePmdLog(pmdLogPath);
@@ -53,24 +30,24 @@ public class ExcludeFromFailureFile {
             // Step 3: Merge with existing properties
             Properties mergedProps = mergeProperties(existingProps, pmdViolations);
 
-            // Step 4: Write merged properties back to file without comments/timestamps
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(propertiesPath))) {
-                // Write a simple header comment if needed
-                writer.write("# PMD exclusion rules");
-                writer.newLine();
-                writer.newLine();
-
-                for (String key : mergedProps.stringPropertyNames()) {
-                    writer.write(key + "=" + mergedProps.getProperty(key));
-                    writer.newLine();
-                }
-            }
+            // Step 4: Write merged properties back to file
+            writePropertiesFile(mergedProps, propertiesPath);
 
             System.out.println("Successfully merged PMD violations into properties file");
         } catch (IOException e) {
             System.err.println("Error processing files: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    private static Properties loadExistingProperties(String propertiesPath) throws IOException {
+        Properties existingProps = new Properties();
+        try (FileReader reader = new FileReader(propertiesPath)) {
+            existingProps.load(reader);
+        } catch (IOException e) {
+            System.out.println("No existing properties file found, creating new one");
+        }
+        return existingProps;
     }
 
     private static Map<String, String> parsePmdLog(String pmdLogPath) throws IOException {
@@ -82,6 +59,12 @@ public class ExcludeFromFailureFile {
                 Matcher matcher = PMD_PATTERN.matcher(line);
                 if (matcher.find()) {
                     String className = matcher.group(1);
+                    // Fix any path separators in class names
+                    className = className.replace('/', '.');
+                    // Remove .java suffix if present
+                    if (className.endsWith(".java")) {
+                        className = className.substring(0, className.length() - 5);
+                    }
                     String rule = matcher.group(3);
 
                     // Add to violations map, merging if class already exists
@@ -126,5 +109,25 @@ public class ExcludeFromFailureFile {
         }
 
         return merged;
+    }
+
+    private static void writePropertiesFile(Properties props, String path) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            writer.write("# PMD exclusion rules");
+            writer.newLine();
+            writer.newLine();
+
+            // Sort the keys for better readability
+            props.stringPropertyNames().stream()
+                    .sorted()
+                    .forEach(key -> {
+                        try {
+                            writer.write(key + "=" + props.getProperty(key));
+                            writer.newLine();
+                        } catch (IOException e) {
+                            throw new RuntimeException("Error writing properties file", e);
+                        }
+                    });
+        }
     }
 }

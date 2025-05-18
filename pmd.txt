@@ -1456,8 +1456,7 @@
 [INFO] 
 [INFO] --- spotless:2.44.3:apply (default) @ maven-impl ---
 [INFO] Index file does not exist. Fallback to an empty index
-[INFO] clean file: /Users/vincent.potucek/IdeaProjects/maven/impl/maven-impl/src/main/java/org/apache/maven/impl/ExcludeFromFailureFile.java
-[INFO] Spotless.Java is keeping 211 files clean - 1 were changed to be clean, 210 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Java is keeping 211 files clean - 0 were changed to be clean, 211 were already clean, 0 were skipped because caching determined they were already clean
 [INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
 [INFO] 
 [INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-impl ---
@@ -1558,40 +1557,1243 @@
 [INFO] 
 [INFO] 
 [INFO] --- pmd:3.26.0:check (pmd) @ maven-impl ---
-[WARNING] PMD Failure: org.apache.maven.impl.ExcludeFromFailureFile:72 Rule:AvoidPrintStackTrace Priority:3 Avoid printStackTrace(); use a logger call instead..
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-impl ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/impl/maven-impl/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-impl/4.0.0-rc-4-SNAPSHOT/maven-impl-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/impl/maven-impl/target/maven-impl-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-impl/4.0.0-rc-4-SNAPSHOT/maven-impl-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] --------------------< org.apache.maven:maven-jline >--------------------
+[INFO] Building Maven 4 JLine integration 4.0.0-rc-4-SNAPSHOT           [19/39]
+[INFO]   from impl/maven-jline/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-jline ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/impl/maven-jline/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-jline ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-jline ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-jline ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-jline ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-jline ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-jline ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-jline ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 4 files clean - 0 were changed to be clean, 4 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-jline ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-jline ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/impl/maven-jline/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-jline ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug deprecation release 17] to target/classes
+[INFO] Processing 4 classes
+[INFO] Processing 0 classes
+[INFO] Unable to read existing file. Proceeding with empty content.
+[INFO] Content has changed. Updating file.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-jline ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/impl/maven-jline/src/test/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-jline ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-jline ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-jline ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/impl/maven-jline/target/maven-jline-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-jline >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-jline ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-jline <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-jline ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-jline ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/impl/maven-jline/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-jline/4.0.0-rc-4-SNAPSHOT/maven-jline-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/impl/maven-jline/target/maven-jline-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-jline/4.0.0-rc-4-SNAPSHOT/maven-jline-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] -------------------< org.apache.maven:maven-logging >-------------------
+[INFO] Building Maven 4 Logging 4.0.0-rc-4-SNAPSHOT                     [20/39]
+[INFO]   from impl/maven-logging/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-logging ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/impl/maven-logging/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-logging ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-logging ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-logging ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-logging ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-logging ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-logging ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-logging ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 13 files clean - 0 were changed to be clean, 13 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-logging ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-logging ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-logging ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 9 source files with javac [debug deprecation release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-logging ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/impl/maven-logging/src/test/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-logging ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug deprecation release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-logging ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-logging ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/impl/maven-logging/target/maven-logging-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-logging >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-logging ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-logging <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-logging ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-logging ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/impl/maven-logging/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-logging/4.0.0-rc-4-SNAPSHOT/maven-logging-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/impl/maven-logging/target/maven-logging-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-logging/4.0.0-rc-4-SNAPSHOT/maven-logging-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] ---------------< org.apache.maven:maven-compat-modules >----------------
+[INFO] Building Maven Compatibility Modules 4.0.0-rc-4-SNAPSHOT         [21/39]
+[INFO]   from compat/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-compat-modules ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-compat-modules ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-compat-modules ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-compat-modules ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-compat-modules ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-compat-modules ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-compat-modules ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-compat-modules ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-compat-modules ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-compat-modules >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-compat-modules ---
+[INFO] Skipping org.apache.maven.plugins:maven-pmd-plugin:3.26.0:pmd report goal
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-compat-modules <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-compat-modules ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-compat-modules ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-compat-modules/4.0.0-rc-4-SNAPSHOT/maven-compat-modules-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] 
+[INFO] ------------------< org.apache.maven:maven-artifact >-------------------
+[INFO] Building Maven Artifact 4.0.0-rc-4-SNAPSHOT                      [22/39]
+[INFO]   from compat/maven-artifact/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-artifact ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-artifact ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-artifact ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-artifact ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-artifact ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-artifact ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-artifact ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-artifact ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 34 files clean - 0 were changed to be clean, 34 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-artifact ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-artifact ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-artifact ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 27 source files with javac [debug deprecation release 17] to target/classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/Artifact.java:[96,22] org.apache.maven.artifact.metadata.ArtifactMetadata in org.apache.maven.artifact.metadata has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/Artifact.java:[98,16] org.apache.maven.artifact.metadata.ArtifactMetadata in org.apache.maven.artifact.metadata has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/Artifact.java:[100,24] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/Artifact.java:[102,5] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/Artifact.java:[104,40] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/repository/legacy/metadata/ArtifactMetadata.java:[59,29] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/repository/legacy/metadata/ArtifactMetadata.java:[84,33] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/repository/legacy/metadata/ArtifactMetadata.java:[84,69] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[45,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[61,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[74,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[94,53] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[99,53] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[143,17] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[179,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[205,31] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[206,21] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[212,21] org.apache.maven.artifact.repository.ArtifactRepositoryPolicy in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/AbstractArtifactResolutionException.java:[217,21] org.apache.maven.artifact.repository.ArtifactRepositoryPolicy in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/ArtifactResolutionException.java:[37,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/ArtifactResolutionException.java:[58,80] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/ArtifactResolutionException.java:[67,53] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/OverConstrainedVersionException.java:[36,80] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[55,13] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[75,25] org.apache.maven.artifact.metadata.ArtifactMetadata in org.apache.maven.artifact.metadata has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[243,12] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[248,31] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[281,29] org.apache.maven.artifact.metadata.ArtifactMetadata in org.apache.maven.artifact.metadata has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[286,9] org.apache.maven.artifact.metadata.ArtifactMetadata in org.apache.maven.artifact.metadata has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[295,23] org.apache.maven.artifact.metadata.ArtifactMetadata in org.apache.maven.artifact.metadata has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[406,47] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/DefaultArtifact.java:[491,52] LATEST_VERSION in org.apache.maven.artifact.Artifact has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/repository/layout/ArtifactRepositoryLayout2.java:[27,52] org.apache.maven.artifact.repository.layout.ArtifactRepositoryLayout in org.apache.maven.artifact.repository.layout has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/repository/layout/ArtifactRepositoryLayout2.java:[29,5] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/repository/layout/ArtifactRepositoryLayout2.java:[30,36] org.apache.maven.artifact.repository.ArtifactRepositoryPolicy in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/repository/layout/ArtifactRepositoryLayout2.java:[30,72] org.apache.maven.artifact.repository.ArtifactRepositoryPolicy in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/ArtifactNotFoundException.java:[32,53] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/ArtifactNotFoundException.java:[50,53] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/ArtifactNotFoundException.java:[72,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/ArtifactNotFoundException.java:[99,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/main/java/org/apache/maven/artifact/resolver/MultipleArtifactsNotFoundException.java:[63,18] org.apache.maven.artifact.repository.ArtifactRepository in org.apache.maven.artifact.repository has been deprecated
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-artifact ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/src/test/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-artifact ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 7 source files with javac [debug deprecation release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-artifact ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-artifact ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/target/maven-artifact-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] --- failsafe:3.5.2:integration-test (default) @ maven-artifact ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-artifact >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-artifact ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-artifact <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-artifact ---
+[INFO] 
+[INFO] --- failsafe:3.5.2:verify (default) @ maven-artifact ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-artifact ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-artifact/4.0.0-rc-4-SNAPSHOT/maven-artifact-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-artifact/target/maven-artifact-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-artifact/4.0.0-rc-4-SNAPSHOT/maven-artifact-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] --------------------< org.apache.maven:maven-model >--------------------
+[INFO] Building Maven Model 4.0.0-rc-4-SNAPSHOT                         [23/39]
+[INFO]   from compat/maven-model/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-model ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-model ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-model ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-model ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-model ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-model ---
+[INFO] 
+[INFO] --- modello:2.4.0:velocity (model-v3) @ maven-model ---
+[INFO] outputDirectory: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/maven.mdo
+[INFO] Generating current version: 4.0.99
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-model ---
+[INFO] There is 1 error reported by Checkstyle 9.3 with config/maven_checks_nocodestyle.xml ruleset.
+[INFO] Ignored 1 error, 0 violation remaining.
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-model ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 54 files clean - 0 were changed to be clean, 54 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-model ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-model ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-model ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 57 source files with javac [debug deprecation release 17] to target/classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java:[67,67] getModules() in org.apache.maven.api.model.ModelBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java:[72,33] withModules(java.util.Collection<java.lang.String>) in org.apache.maven.api.model.ModelBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java:[78,43] getModules() in org.apache.maven.api.model.ModelBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java:[77,29] withModules(java.util.Collection<java.lang.String>) in org.apache.maven.api.model.ModelBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java:[84,29] getModules() in org.apache.maven.api.model.ModelBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/ModelBase.java:[83,29] withModules(java.util.Collection<java.lang.String>) in org.apache.maven.api.model.ModelBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[77,68] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[78,40] getResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[78,82] withResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[87,33] withResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[95,43] getResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[94,29] withResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[102,29] getResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[101,29] withResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[110,68] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[111,40] getTestResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[111,86] withTestResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[120,33] withTestResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[128,43] getTestResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[127,29] withTestResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[135,29] getTestResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[134,29] withTestResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[213,26] getResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[214,44] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[214,91] getResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[215,80] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[216,33] withResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[219,26] getTestResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[220,44] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[220,91] getTestResources() in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java: org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[221,80] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/BuildBase.java:[222,33] withTestResources(java.util.Collection<org.apache.maven.api.model.Resource>) in org.apache.maven.api.model.BuildBase has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Build.java:[66,29] getSourceDirectory() in org.apache.maven.api.model.Build has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Build.java:[71,33] withSourceDirectory(java.lang.String) in org.apache.maven.api.model.Build has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Build.java:[76,29] getScriptSourceDirectory() in org.apache.maven.api.model.Build has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Build.java:[81,33] withScriptSourceDirectory(java.lang.String) in org.apache.maven.api.model.Build has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Build.java:[86,29] getTestSourceDirectory() in org.apache.maven.api.model.Build has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Build.java:[91,33] withTestSourceDirectory(java.lang.String) in org.apache.maven.api.model.Build has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[28,40] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[31,47] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[35,47] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[44,38] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[45,43] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[91,42] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[101,42] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[116,50] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Resource.java:[120,81] org.apache.maven.api.model.Resource in org.apache.maven.api.model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Notifier.java:[114,29] getAddress() in org.apache.maven.api.model.Notifier has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/Notifier.java:[119,33] withAddress(java.lang.String) in org.apache.maven.api.model.Notifier has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java:[2058,28] getMergeId() in org.apache.maven.model.Resource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java:[2060,41] getMergeId() in org.apache.maven.model.Resource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/main/java/org/apache/maven/model/merge/ModelMerger.java:[2061,23] setMergeId(java.lang.String) in org.apache.maven.model.Resource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/WrapperProperties.java:[335,17] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/generated-sources/modello/org/apache/maven/model/WrapperProperties.java:[338,14] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/main/java/org/apache/maven/model/InputLocation.java: Some input files use unchecked or unsafe operations.
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/main/java/org/apache/maven/model/InputLocation.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-model ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-model ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 43 source files with javac [debug deprecation release 17] to target/test-classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/test/java/org/apache/maven/model/SerializationTest.java:[38,25] org.apache.maven.model.io.xpp3.MavenXpp3Reader in org.apache.maven.model.io.xpp3 has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/src/test/java/org/apache/maven/model/SerializationTest.java:[62,25] org.apache.maven.model.io.xpp3.MavenXpp3Reader in org.apache.maven.model.io.xpp3 has been deprecated
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-model ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-model ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/maven-model-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-model >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-model ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-model <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-model ---
+[INFO] 
+[INFO] --- japicmp:0.23.1:cmp (default) @ maven-model ---
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/japicmp/japicmp.diff'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/japicmp/japicmp.md'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/japicmp/japicmp.xml'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/japicmp/japicmp.html'.
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-model ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-model/4.0.0-rc-4-SNAPSHOT/maven-model-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model/target/maven-model-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-model/4.0.0-rc-4-SNAPSHOT/maven-model-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] ---------------< org.apache.maven:maven-builder-support >---------------
+[INFO] Building Maven Builder Support (deprecated) 4.0.0-rc-4-SNAPSHOT  [24/39]
+[INFO]   from compat/maven-builder-support/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-builder-support ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-builder-support ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-builder-support ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-builder-support ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-builder-support ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-builder-support ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-builder-support ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-builder-support ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 15 files clean - 0 were changed to be clean, 15 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-builder-support ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-builder-support ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-builder-support ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 9 source files with javac [debug deprecation release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-builder-support ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-builder-support ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 6 source files with javac [debug deprecation release 17] to target/test-classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[21,33] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[21,33] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[21,33] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[21,33] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[21,33] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[21,33] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[32,9] org.apache.maven.building.DefaultProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[32,49] org.apache.maven.building.DefaultProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[43,9] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[50,9] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[60,9] org.apache.maven.building.DefaultProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemCollectorTest.java:[60,49] org.apache.maven.building.DefaultProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[32,9] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[32,38] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[35,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[38,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[41,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[47,9] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[47,38] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[50,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[53,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[57,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[63,9] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[63,38] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[66,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[69,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[73,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[79,9] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[79,38] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[83,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[89,9] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[89,38] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[92,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[95,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[101,9] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[101,38] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[104,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[107,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[110,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[113,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[119,9] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[119,38] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[122,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/DefaultProblemTest.java:[125,23] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[36,27] org.apache.maven.building.FileSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[36,23] FileSource(java.io.File) in org.apache.maven.building.FileSource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[44,9] org.apache.maven.building.FileSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[44,33] org.apache.maven.building.FileSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[44,29] FileSource(java.io.File) in org.apache.maven.building.FileSource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[56,9] org.apache.maven.building.FileSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[56,33] org.apache.maven.building.FileSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[56,29] FileSource(java.io.File) in org.apache.maven.building.FileSource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[63,9] org.apache.maven.building.FileSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[63,33] org.apache.maven.building.FileSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[63,29] FileSource(java.io.File) in org.apache.maven.building.FileSource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/FileSourceTest.java:[64,55] getFile() in org.apache.maven.building.FileSource has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/ProblemCollectorFactoryTest.java:[32,9] org.apache.maven.building.ProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/ProblemCollectorFactoryTest.java:[32,39] org.apache.maven.building.ProblemCollectorFactory in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/ProblemCollectorFactoryTest.java:[34,9] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/ProblemCollectorFactoryTest.java:[34,31] org.apache.maven.building.DefaultProblem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/ProblemCollectorFactoryTest.java:[35,9] org.apache.maven.building.ProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/ProblemCollectorFactoryTest.java:[35,39] org.apache.maven.building.ProblemCollectorFactory in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[31,9] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[31,35] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[41,9] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[41,35] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[44,22] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[50,9] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[50,35] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/StringSourceTest.java:[53,22] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/UrlSourceTest.java:[36,55] org.apache.maven.building.UrlSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/UrlSourceTest.java:[43,9] org.apache.maven.building.UrlSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/UrlSourceTest.java:[43,32] org.apache.maven.building.UrlSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/UrlSourceTest.java:[53,9] org.apache.maven.building.UrlSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/src/test/java/org/apache/maven/building/UrlSourceTest.java:[53,32] org.apache.maven.building.UrlSource in org.apache.maven.building has been deprecated
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-builder-support ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-builder-support ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/target/maven-builder-support-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-builder-support >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-builder-support ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-builder-support <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-builder-support ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-builder-support ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-builder-support/4.0.0-rc-4-SNAPSHOT/maven-builder-support-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-builder-support/target/maven-builder-support-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-builder-support/4.0.0-rc-4-SNAPSHOT/maven-builder-support-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] ----------------< org.apache.maven:maven-model-builder >----------------
+[INFO] Building Maven Model Builder (deprecated) 4.0.0-rc-4-SNAPSHOT    [25/39]
+[INFO]   from compat/maven-model-builder/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-model-builder ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-model-builder ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-model-builder ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-model-builder ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-model-builder ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-model-builder ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-model-builder ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-model-builder ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 130 files clean - 0 were changed to be clean, 130 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-model-builder ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-model-builder ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-model-builder ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 110 source files with javac [debug deprecation release 17] to target/classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/ModelProblemCollectorRequest.java:[24,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/ModelProblemCollectorRequest.java:[25,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java:[57,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java:[58,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/Result.java:[27,46] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/Result.java:[28,46] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java:[90,46] org.apache.maven.model.building.Result in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java:[91,46] org.apache.maven.model.building.Result in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/ProblemDetectingValueSource.java:[23,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/ProblemDetectingValueSource.java:[24,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/StringSearchModelInterpolator.java:[36,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/StringSearchModelInterpolator.java:[37,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/StringVisitorModelInterpolator.java:[69,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/StringVisitorModelInterpolator.java:[70,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/interpolation/reflection/ReflectionValueExtractor.java:[34,55] org.apache.maven.model.interpolation.reflection.MethodMap in org.apache.maven.model.interpolation.reflection has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/plugin/DefaultReportingConverter.java:[34,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/plugin/DefaultReportingConverter.java:[35,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/DefaultProfileSelector.java:[32,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/DefaultProfileSelector.java:[33,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/FileProfileActivator.java:[30,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/FileProfileActivator.java:[31,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java:[31,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/JdkVersionProfileActivator.java:[32,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/PropertyProfileActivator.java:[27,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/profile/activation/PropertyProfileActivator.java:[28,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java:[64,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/validation/DefaultModelValidator.java:[65,39] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/ModelProblemUtils.java:[47,29] getPomFile() in org.apache.maven.model.Model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/ModelProblemUtils.java:[59,33] getPomFile() in org.apache.maven.model.Model has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/ModelProblemUtils.java:[122,41] org.apache.maven.model.building.ModelProblem in org.apache.maven.model.building has been deprecated
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java uses unchecked or unsafe operations.
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/src/main/java/org/apache/maven/model/building/DefaultModelBuilder.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- sisu:0.9.0.M3:main-index (index-project) @ maven-model-builder ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-model-builder ---
+[INFO] Copying 114 resources from src/test/resources to target/test-classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-model-builder ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 20 source files with javac [debug deprecation release 17] to target/test-classes
+[INFO] 
+[INFO] --- sisu:0.9.0.M3:test-index (index-project) @ maven-model-builder ---
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-model-builder ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-model-builder ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/target/maven-model-builder-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-model-builder >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-model-builder ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-model-builder <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-model-builder ---
+[INFO] 
+[INFO] --- japicmp:0.23.1:cmp (default) @ maven-model-builder ---
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/target/japicmp/japicmp.diff'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/target/japicmp/japicmp.md'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/target/japicmp/japicmp.xml'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/target/japicmp/japicmp.html'.
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-model-builder ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-model-builder/4.0.0-rc-4-SNAPSHOT/maven-model-builder-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-model-builder/target/maven-model-builder-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-model-builder/4.0.0-rc-4-SNAPSHOT/maven-model-builder-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] -----------------< org.apache.maven:maven-plugin-api >------------------
+[INFO] Building Maven 3 Plugin API 4.0.0-rc-4-SNAPSHOT                  [26/39]
+[INFO]   from compat/maven-plugin-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-plugin-api ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-plugin-api ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-plugin-api ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-plugin-api ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-plugin-api ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-plugin-api ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-plugin-api ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-plugin-api ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 25 files clean - 0 were changed to be clean, 25 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-plugin-api ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-plugin-api ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-plugin-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 23 source files with javac [debug deprecation release 17] to target/classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/src/main/java/org/apache/maven/monitor/logging/DefaultLog.java:[27,36] org.apache.maven.plugin.logging.Log in org.apache.maven.plugin.logging has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/src/main/java/org/apache/maven/plugin/AbstractMojo.java:[141,13] org.apache.maven.plugin.logging.Log in org.apache.maven.plugin.logging has been deprecated
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-plugin-api ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-plugin-api ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug deprecation release 17] to target/test-classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/src/test/java/org/apache/maven/plugin/descriptor/PluginDescriptorBuilderTest.java:[44,49] build(java.io.InputStream,java.lang.String) in org.apache.maven.plugin.descriptor.PluginDescriptorBuilder has been deprecated
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-plugin-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-plugin-api ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/target/maven-plugin-api-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-plugin-api >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-plugin-api ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-plugin-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-plugin-api ---
+[INFO] 
+[INFO] --- japicmp:0.23.1:cmp (default) @ maven-plugin-api ---
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/target/japicmp/japicmp.diff'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/target/japicmp/japicmp.md'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/target/japicmp/japicmp.xml'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/target/japicmp/japicmp.html'.
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-plugin-api ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-plugin-api/4.0.0-rc-4-SNAPSHOT/maven-plugin-api-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-plugin-api/target/maven-plugin-api-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-plugin-api/4.0.0-rc-4-SNAPSHOT/maven-plugin-api-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] -------------< org.apache.maven:maven-repository-metadata >-------------
+[INFO] Building Maven Repository Metadata Model 4.0.0-rc-4-SNAPSHOT     [27/39]
+[INFO]   from compat/maven-repository-metadata/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-repository-metadata ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-repository-metadata ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-repository-metadata ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-repository-metadata ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-repository-metadata ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-repository-metadata ---
+[INFO] 
+[INFO] --- modello:2.4.0:velocity (modello-v3) @ maven-repository-metadata ---
+[INFO] outputDirectory: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/generated-sources/modello
+[INFO] Working on model: ../../api/maven-api-metadata/src/main/mdo/metadata.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-repository-metadata ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-repository-metadata ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 4 files clean - 0 were changed to be clean, 4 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-repository-metadata ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-repository-metadata ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-repository-metadata ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 10 source files with javac [debug deprecation release 17] to target/classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/WrapperProperties.java:[335,17] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/WrapperProperties.java:[338,14] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/WrapperProperties.java: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/WrapperProperties.java uses unchecked or unsafe operations.
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/generated-sources/modello/org/apache/maven/artifact/repository/metadata/WrapperProperties.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-repository-metadata ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/src/test/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-repository-metadata ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug deprecation release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-repository-metadata ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-repository-metadata ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/maven-repository-metadata-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-repository-metadata >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-repository-metadata ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-repository-metadata <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-repository-metadata ---
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-repository-metadata ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-repository-metadata/4.0.0-rc-4-SNAPSHOT/maven-repository-metadata-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-repository-metadata/target/maven-repository-metadata-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-repository-metadata/4.0.0-rc-4-SNAPSHOT/maven-repository-metadata-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] ------------------< org.apache.maven:maven-settings >-------------------
+[INFO] Building Maven Settings 4.0.0-rc-4-SNAPSHOT                      [28/39]
+[INFO]   from compat/maven-settings/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-settings ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-settings ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-settings ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-settings ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-settings ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-settings ---
+[INFO] 
+[INFO] --- modello:2.4.0:velocity (velocity) @ maven-settings ---
+[INFO] outputDirectory: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 2.0.0
+[INFO] 
+[INFO] --- modello:2.4.0:velocity (v3) @ maven-settings ---
+[INFO] outputDirectory: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/settings.mdo
+[INFO] Generating current version: 1.3.0
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-settings ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-settings ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 4 files clean - 0 were changed to be clean, 4 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-settings ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-settings ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-settings ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 24 source files with javac [debug deprecation release 17] to target/classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/generated-sources/modello/org/apache/maven/settings/WrapperProperties.java:[335,17] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/generated-sources/modello/org/apache/maven/settings/WrapperProperties.java:[338,14] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/generated-sources/modello/org/apache/maven/settings/WrapperProperties.java: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/generated-sources/modello/org/apache/maven/settings/WrapperProperties.java uses unchecked or unsafe operations.
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/generated-sources/modello/org/apache/maven/settings/WrapperProperties.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-settings ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/src/test/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-settings ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-settings ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-settings ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/maven-settings-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-settings >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-settings ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-settings <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-settings ---
+[INFO] 
+[INFO] --- japicmp:0.23.1:cmp (default) @ maven-settings ---
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/japicmp/japicmp.diff'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/japicmp/japicmp.md'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/japicmp/japicmp.xml'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/japicmp/japicmp.html'.
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-settings ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-settings/4.0.0-rc-4-SNAPSHOT/maven-settings-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings/target/maven-settings-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-settings/4.0.0-rc-4-SNAPSHOT/maven-settings-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] ---------------< org.apache.maven:maven-toolchain-model >---------------
+[INFO] Building Maven Toolchain Model 4.0.0-rc-4-SNAPSHOT               [29/39]
+[INFO]   from compat/maven-toolchain-model/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-toolchain-model ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-toolchain-model ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-toolchain-model ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-toolchain-model ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-toolchain-model ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-toolchain-model ---
+[INFO] 
+[INFO] --- modello:2.4.0:velocity (velocity) @ maven-toolchain-model ---
+[INFO] outputDirectory: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/generated-sources/modello
+[INFO] Working on model: src/main/mdo/toolchains.mdo
+[INFO] Generating current version: 1.1.0
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-toolchain-model ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-toolchain-model ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-toolchain-model ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-toolchain-model ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-toolchain-model ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 6 source files with javac [debug deprecation release 17] to target/classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/generated-sources/modello/org/apache/maven/toolchain/model/WrapperProperties.java:[335,17] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/generated-sources/modello/org/apache/maven/toolchain/model/WrapperProperties.java:[338,14] save(java.io.OutputStream,java.lang.String) in java.util.Properties has been deprecated
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/generated-sources/modello/org/apache/maven/toolchain/model/WrapperProperties.java: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/generated-sources/modello/org/apache/maven/toolchain/model/WrapperProperties.java uses unchecked or unsafe operations.
+[INFO] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/generated-sources/modello/org/apache/maven/toolchain/model/WrapperProperties.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-toolchain-model ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/src/test/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-toolchain-model ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-toolchain-model ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-toolchain-model ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/maven-toolchain-model-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-toolchain-model >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-toolchain-model ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-toolchain-model <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-toolchain-model ---
+[INFO] 
+[INFO] --- japicmp:0.23.1:cmp (default) @ maven-toolchain-model ---
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/japicmp/japicmp.diff'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/japicmp/japicmp.md'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/japicmp/japicmp.xml'.
+[INFO] Written file '/Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/japicmp/japicmp.html'.
+[INFO] 
+[INFO] --- install:3.1.4:install (default-install) @ maven-toolchain-model ---
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/pom.xml to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-toolchain-model/4.0.0-rc-4-SNAPSHOT/maven-toolchain-model-4.0.0-rc-4-SNAPSHOT.pom
+[INFO] Installing /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-model/target/maven-toolchain-model-4.0.0-rc-4-SNAPSHOT.jar to /Users/vincent.potucek/.m2/repository/org/apache/maven/maven-toolchain-model/4.0.0-rc-4-SNAPSHOT/maven-toolchain-model-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] --------------< org.apache.maven:maven-toolchain-builder >--------------
+[INFO] Building Maven Toolchain Builder (deprecated) 4.0.0-rc-4-SNAPSHOT [30/39]
+[INFO]   from compat/maven-toolchain-builder/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ maven-toolchain-builder ---
+[INFO] Deleting /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/target
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-bytecode-version) @ maven-toolchain-builder ---
+[INFO] Rule 1: org.codehaus.mojo.extraenforcer.dependencies.EnforceBytecodeVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-maven-version) @ maven-toolchain-builder ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-java-version) @ maven-toolchain-builder ---
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (ensure-no-sonatype-cipher-and-sec-dispatcher) @ maven-toolchain-builder ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.dependency.BannedDependencies passed
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (prepare-for-mockito-agent) @ maven-toolchain-builder ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-check) @ maven-toolchain-builder ---
+[INFO] You have 0 Checkstyle violations.
+[INFO] 
+[INFO] --- spotless:2.44.3:apply (default) @ maven-toolchain-builder ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Java is keeping 16 files clean - 0 were changed to be clean, 16 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven-toolchain-builder ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ maven-toolchain-builder ---
+[INFO] skip non existing resourceDirectory /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/main/resources
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ maven-toolchain-builder ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 13 source files with javac [debug deprecation release 17] to target/classes
+[INFO] 
+[INFO] --- sisu:0.9.0.M3:main-index (index-project) @ maven-toolchain-builder ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ maven-toolchain-builder ---
+[INFO] Copying 5 resources from src/test/resources to target/test-classes
+[INFO] Copying 3 resources from target/maven-shared-archive-resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ maven-toolchain-builder ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 3 source files with javac [debug deprecation release 17] to target/test-classes
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[58,13] org.apache.maven.toolchain.io.DefaultToolchainsReader in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[58,13] org.apache.maven.toolchain.io.DefaultToolchainsReader in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[58,13] org.apache.maven.toolchain.io.DefaultToolchainsReader in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[61,13] org.apache.maven.toolchain.io.DefaultToolchainsWriter in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[61,13] org.apache.maven.toolchain.io.DefaultToolchainsWriter in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[61,13] org.apache.maven.toolchain.io.DefaultToolchainsWriter in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[64,13] org.apache.maven.toolchain.building.DefaultToolchainsBuilder in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[64,13] org.apache.maven.toolchain.building.DefaultToolchainsBuilder in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[64,13] org.apache.maven.toolchain.building.DefaultToolchainsBuilder in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[78,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[78,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[79,9] org.apache.maven.toolchain.building.ToolchainsBuildingResult in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[96,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[96,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[97,45] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[99,9] org.apache.maven.toolchain.building.ToolchainsBuildingResult in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[126,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[126,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[127,47] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[129,9] org.apache.maven.toolchain.building.ToolchainsBuildingResult in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[163,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[163,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[165,21] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[167,21] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[169,9] org.apache.maven.toolchain.building.ToolchainsBuildingResult in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[196,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[196,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[197,47] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[198,9] org.apache.maven.toolchain.io.ToolchainsParseException in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[198,55] org.apache.maven.toolchain.io.ToolchainsParseException in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[203,18] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[213,9] org.apache.maven.building.Source in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[213,27] org.apache.maven.building.Source in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[218,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[218,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[223,18] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[247,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[247,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[248,45] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[250,9] org.apache.maven.toolchain.building.ToolchainsBuildingResult in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[278,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[278,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[279,45] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[281,9] org.apache.maven.toolchain.building.ToolchainsBuildingResult in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[304,9] org.apache.maven.toolchain.building.ToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[304,49] org.apache.maven.toolchain.building.DefaultToolchainsBuildingRequest in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[305,45] org.apache.maven.building.StringSource in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/DefaultToolchainsBuilderTest.java:[307,9] org.apache.maven.toolchain.building.ToolchainsBuildingResult in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[35,9] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[35,45] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[41,9] org.apache.maven.building.ProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[41,45] org.apache.maven.building.ProblemCollectorFactory in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[42,30] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[43,9] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[43,45] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[52,9] org.apache.maven.building.ProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[52,45] org.apache.maven.building.ProblemCollectorFactory in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[53,30] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[54,9] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[54,45] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[62,9] org.apache.maven.building.ProblemCollector in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[62,45] org.apache.maven.building.ProblemCollectorFactory in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[64,30] org.apache.maven.building.Problem in org.apache.maven.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[65,9] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/building/ToolchainsBuildingExceptionTest.java:[65,45] org.apache.maven.toolchain.building.ToolchainsBuildingException in org.apache.maven.toolchain.building has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[34,13] org.apache.maven.toolchain.merge.MavenToolchainMerger in org.apache.maven.toolchain.merge has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[34,13] org.apache.maven.toolchain.merge.MavenToolchainMerger in org.apache.maven.toolchain.merge has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[34,13] org.apache.maven.toolchain.merge.MavenToolchainMerger in org.apache.maven.toolchain.merge has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[34,47] org.apache.maven.toolchain.merge.MavenToolchainMerger in org.apache.maven.toolchain.merge has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[36,13] org.apache.maven.toolchain.io.DefaultToolchainsReader in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[36,13] org.apache.maven.toolchain.io.DefaultToolchainsReader in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[36,13] org.apache.maven.toolchain.io.DefaultToolchainsReader in org.apache.maven.toolchain.io has been deprecated
+[WARNING] /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/src/test/java/org/apache/maven/toolchain/merge/MavenToolchainMergerTest.java:[36,50] org.apache.maven.toolchain.io.DefaultToolchainsReader in org.apache.maven.toolchain.io has been deprecated
+[INFO] 
+[INFO] --- sisu:0.9.0.M3:test-index (index-project) @ maven-toolchain-builder ---
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ maven-toolchain-builder ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ maven-toolchain-builder ---
+[INFO] Building jar: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/target/maven-toolchain-builder-4.0.0-rc-4-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (pmd) > :pmd @ maven-toolchain-builder >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-toolchain-builder ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (pmd) < :pmd @ maven-toolchain-builder <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (pmd) @ maven-toolchain-builder ---
+[WARNING] PMD Failure: org/apache/maven/toolchain/building/DefaultToolchainsBuilder.java:114 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'value'.
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary for Apache Maven 4.0.0-rc-4-SNAPSHOT:
 [INFO] 
-[INFO] Apache Maven ....................................... SUCCESS [  5.863 s]
-[INFO] Maven 4 API ........................................ SUCCESS [  0.048 s]
-[INFO] Maven 4 API :: Meta annotations .................... SUCCESS [  1.489 s]
-[INFO] Maven 4 API :: Dependency Injection ................ SUCCESS [  0.578 s]
-[INFO] Maven 4 API :: XML ................................. SUCCESS [  0.765 s]
-[INFO] Maven 4 API :: Model ............................... SUCCESS [  1.171 s]
+[INFO] Apache Maven ....................................... SUCCESS [  5.774 s]
+[INFO] Maven 4 API ........................................ SUCCESS [  0.050 s]
+[INFO] Maven 4 API :: Meta annotations .................... SUCCESS [  1.441 s]
+[INFO] Maven 4 API :: Dependency Injection ................ SUCCESS [  0.515 s]
+[INFO] Maven 4 API :: XML ................................. SUCCESS [  0.668 s]
+[INFO] Maven 4 API :: Model ............................... SUCCESS [  1.167 s]
 [INFO] Maven 4 API :: Plugin .............................. SUCCESS [  0.411 s]
-[INFO] Maven 4 API :: Settings ............................ SUCCESS [  0.367 s]
-[INFO] Maven 4 API :: Toolchain ........................... SUCCESS [  0.215 s]
-[INFO] Maven 4 API :: Repository Metadata ................. SUCCESS [  0.220 s]
-[INFO] Maven 4 API :: Core ................................ SUCCESS [  1.722 s]
-[INFO] Maven 4 API :: SPI ................................. SUCCESS [  0.268 s]
-[INFO] Maven 4 API :: CLI ................................. SUCCESS [  0.383 s]
-[INFO] Maven 4 Implementation Modules ..................... SUCCESS [  0.026 s]
-[INFO] Maven 4 XML Implementation ......................... SUCCESS [  0.644 s]
-[INFO] Maven 4 Model Support .............................. SUCCESS [ 34.355 s]
-[INFO] Maven 4 Dependency Injection ....................... SUCCESS [  0.735 s]
-[INFO] Maven 4 API Implementation ......................... FAILURE [  4.479 s]
-[INFO] Maven 4 JLine integration .......................... SKIPPED
-[INFO] Maven 4 Logging .................................... SKIPPED
-[INFO] Maven Compatibility Modules ........................ SKIPPED
-[INFO] Maven Artifact ..................................... SKIPPED
-[INFO] Maven Model ........................................ SKIPPED
-[INFO] Maven Builder Support (deprecated) ................. SKIPPED
-[INFO] Maven Model Builder (deprecated) ................... SKIPPED
-[INFO] Maven 3 Plugin API ................................. SKIPPED
-[INFO] Maven Repository Metadata Model .................... SKIPPED
-[INFO] Maven Settings ..................................... SKIPPED
-[INFO] Maven Toolchain Model .............................. SKIPPED
-[INFO] Maven Toolchain Builder (deprecated) ............... SKIPPED
+[INFO] Maven 4 API :: Settings ............................ SUCCESS [  0.380 s]
+[INFO] Maven 4 API :: Toolchain ........................... SUCCESS [  0.230 s]
+[INFO] Maven 4 API :: Repository Metadata ................. SUCCESS [  0.235 s]
+[INFO] Maven 4 API :: Core ................................ SUCCESS [  1.792 s]
+[INFO] Maven 4 API :: SPI ................................. SUCCESS [  0.250 s]
+[INFO] Maven 4 API :: CLI ................................. SUCCESS [  0.388 s]
+[INFO] Maven 4 Implementation Modules ..................... SUCCESS [  0.025 s]
+[INFO] Maven 4 XML Implementation ......................... SUCCESS [  0.647 s]
+[INFO] Maven 4 Model Support .............................. SUCCESS [ 33.813 s]
+[INFO] Maven 4 Dependency Injection ....................... SUCCESS [  0.865 s]
+[INFO] Maven 4 API Implementation ......................... SUCCESS [  4.399 s]
+[INFO] Maven 4 JLine integration .......................... SUCCESS [  0.256 s]
+[INFO] Maven 4 Logging .................................... SUCCESS [  0.352 s]
+[INFO] Maven Compatibility Modules ........................ SUCCESS [  0.023 s]
+[INFO] Maven Artifact ..................................... SUCCESS [  0.801 s]
+[INFO] Maven Model ........................................ SUCCESS [  1.599 s]
+[INFO] Maven Builder Support (deprecated) ................. SUCCESS [  0.271 s]
+[INFO] Maven Model Builder (deprecated) ................... SUCCESS [  1.758 s]
+[INFO] Maven 3 Plugin API ................................. SUCCESS [  0.438 s]
+[INFO] Maven Repository Metadata Model .................... SUCCESS [  0.300 s]
+[INFO] Maven Settings ..................................... SUCCESS [  5.735 s]
+[INFO] Maven Toolchain Model .............................. SUCCESS [  0.219 s]
+[INFO] Maven Toolchain Builder (deprecated) ............... FAILURE [  0.339 s]
 [INFO] Maven 4 Core ....................................... SKIPPED
 [INFO] Maven Settings Builder (deprecated) ................ SKIPPED
 [INFO] Maven Artifact Resolver Provider (deprecated) ...... SKIPPED
@@ -1604,10 +2806,10 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  53.922 s
-[INFO] Finished at: 2025-05-18T12:01:21+02:00
+[INFO] Total time:  01:05 min
+[INFO] Finished at: 2025-05-18T12:08:57+02:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-pmd-plugin:3.26.0:check (pmd) on project maven-impl: PMD 7.12.0 has found 1 violation. For more details see: /Users/vincent.potucek/IdeaProjects/maven/impl/maven-impl/target/pmd.xml -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-pmd-plugin:3.26.0:check (pmd) on project maven-toolchain-builder: PMD 7.12.0 has found 1 violation. For more details see: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-toolchain-builder/target/pmd.xml -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
@@ -1616,4 +2818,4 @@
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
 [ERROR] 
 [ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn <args> -rf :maven-impl
+[ERROR]   mvn <args> -rf :maven-toolchain-builder
