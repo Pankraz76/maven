@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
-            "\\[ERROR].*?: ([\\w.$]+)(?:\\.[^.]+)?.*?\\[(.*?)\\].*?([A-Z][A-Z0-9_]+)$"
+            "\\[ERROR\\] (?:Medium|High|Low): ([\\w.$]+)(?:\\.[^\\s]+)?\\s+\\[([A-Z_]+)\\]"
     );
 
     private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
@@ -33,6 +33,7 @@ public class SpotbugsExclusionGenerator {
             writeXmlFile(xmlContent, xmlOutputPath);
 
             System.out.println("Successfully updated Spotbugs exclusion file: " + xmlOutputPath);
+            System.out.println("Total exclusions: " + existingBugs.size());
         } catch (IOException e) {
             System.err.println("Error processing files: " + e.getMessage());
             e.printStackTrace();
