@@ -1,0 +1,200 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache Maven                                                       [pom]
+[INFO] Maven 4 API                                                        [pom]
+[INFO] Maven 4 API :: Meta annotations                                    [jar]
+[INFO] Maven 4 API :: Dependency Injection                                [jar]
+[INFO] Maven 4 API :: XML                                                 [jar]
+[INFO] Maven 4 API :: Model                                               [jar]
+[INFO] Maven 4 API :: Plugin                                              [jar]
+[INFO] Maven 4 API :: Settings                                            [jar]
+[INFO] Maven 4 API :: Toolchain                                           [jar]
+[INFO] Maven 4 API :: Repository Metadata                                 [jar]
+[INFO] Maven 4 API :: Core                                                [jar]
+[INFO] Maven 4 API :: SPI                                                 [jar]
+[INFO] Maven 4 API :: CLI                                                 [jar]
+[INFO] Maven 4 Implementation Modules                                     [pom]
+[INFO] Maven 4 XML Implementation                                         [jar]
+[INFO] Maven 4 Model Support                                              [jar]
+[INFO] Maven 4 Dependency Injection                                       [jar]
+[INFO] Maven 4 API Implementation                                         [jar]
+[INFO] Maven 4 JLine integration                                          [jar]
+[INFO] Maven 4 Logging                                                    [jar]
+[INFO] Maven Compatibility Modules                                        [pom]
+[INFO] Maven Artifact                                                     [jar]
+[INFO] Maven Model                                                        [jar]
+[INFO] Maven Builder Support (deprecated)                                 [jar]
+[INFO] Maven Model Builder (deprecated)                                   [jar]
+[INFO] Maven 3 Plugin API                                                 [jar]
+[INFO] Maven Repository Metadata Model                                    [jar]
+[INFO] Maven Settings                                                     [jar]
+[INFO] Maven Toolchain Model                                              [jar]
+[INFO] Maven Toolchain Builder (deprecated)                               [jar]
+[INFO] Maven 4 Core                                                       [jar]
+[INFO] Maven Settings Builder (deprecated)                                [jar]
+[INFO] Maven Artifact Resolver Provider (deprecated)                      [jar]
+[INFO] Maven Compat (deprecated)                                          [jar]
+[INFO] Maven 4 CLI                                                        [jar]
+[INFO] Maven Plugin Testing Mechanism                                     [jar]
+[INFO] Maven Embedder (deprecated)                                        [jar]
+[INFO] Apache Maven Distribution                                          [pom]
+[INFO] Maven 4 Executor                                                   [jar]
+[INFO] 
+[INFO] -----------------------< org.apache.maven:maven >-----------------------
+[INFO] Building Apache Maven 4.0.0-rc-4-SNAPSHOT                         [1/39]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> spotbugs:4.9.3.0:check (default-cli) > :spotbugs @ maven >>>
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:spotbugs (spotbugs) @ maven ---
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.9.3.0:spotbugs report goal
+[INFO] 
+[INFO] <<< spotbugs:4.9.3.0:check (default-cli) < :spotbugs @ maven <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:check (default-cli) @ maven ---
+[INFO] 
+[INFO] ---------------------< org.apache.maven:maven-api >---------------------
+[INFO] Building Maven 4 API 4.0.0-rc-4-SNAPSHOT                          [2/39]
+[INFO]   from api/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> spotbugs:4.9.3.0:check (default-cli) > :spotbugs @ maven-api >>>
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:spotbugs (spotbugs) @ maven-api ---
+[INFO] Skipping com.github.spotbugs:spotbugs-maven-plugin:4.9.3.0:spotbugs report goal
+[INFO] 
+[INFO] <<< spotbugs:4.9.3.0:check (default-cli) < :spotbugs @ maven-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:check (default-cli) @ maven-api ---
+[INFO] 
+[INFO] ---------------< org.apache.maven:maven-api-annotations >---------------
+[INFO] Building Maven 4 API :: Meta annotations 4.0.0-rc-4-SNAPSHOT      [3/39]
+[INFO]   from api/maven-api-annotations/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spotbugs:4.9.3.0:check (default-cli) > :spotbugs @ maven-api-annotations >>>
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:spotbugs (spotbugs) @ maven-api-annotations ---
+[INFO] Fork Value is true
+[INFO] Done SpotBugs Analysis....
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< spotbugs:4.9.3.0:check (default-cli) < :spotbugs @ maven-api-annotations <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:check (default-cli) @ maven-api-annotations ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] -------------------< org.apache.maven:maven-api-di >--------------------
+[INFO] Building Maven 4 API :: Dependency Injection 4.0.0-rc-4-SNAPSHOT  [4/39]
+[INFO]   from api/maven-api-di/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spotbugs:4.9.3.0:check (default-cli) > :spotbugs @ maven-api-di >>>
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:spotbugs (spotbugs) @ maven-api-di ---
+[INFO] Fork Value is true
+[INFO] Done SpotBugs Analysis....
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< spotbugs:4.9.3.0:check (default-cli) < :spotbugs @ maven-api-di <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:check (default-cli) @ maven-api-di ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] -------------------< org.apache.maven:maven-api-xml >-------------------
+[INFO] Building Maven 4 API :: XML 4.0.0-rc-4-SNAPSHOT                   [5/39]
+[INFO]   from api/maven-api-xml/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spotbugs:4.9.3.0:check (default-cli) > :spotbugs @ maven-api-xml >>>
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:spotbugs (spotbugs) @ maven-api-xml ---
+[INFO] Fork Value is true
+[INFO] Done SpotBugs Analysis....
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< spotbugs:4.9.3.0:check (default-cli) < :spotbugs @ maven-api-xml <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs:4.9.3.0:check (default-cli) @ maven-api-xml ---
+[INFO] BugInstance size is 2
+[INFO] Error size is 0
+[INFO] Total bugs: 2
+[ERROR] Medium: org.apache.maven.api.xml.XmlNode$Builder.attributes(Map) may expose internal representation by storing an externally mutable object into XmlNode$Builder.attributes [org.apache.maven.api.xml.XmlNode$Builder] At XmlNode.java:[line 416] EI_EXPOSE_REP2
+[ERROR] Medium: org.apache.maven.api.xml.XmlNode$Builder.children(List) may expose internal representation by storing an externally mutable object into XmlNode$Builder.children [org.apache.maven.api.xml.XmlNode$Builder] At XmlNode.java:[line 429] EI_EXPOSE_REP2
+[INFO] 
+
+
+To see bug detail using the Spotbugs GUI, use the following command "mvn spotbugs:gui"
+
+
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apache Maven 4.0.0-rc-4-SNAPSHOT:
+[INFO] 
+[INFO] Apache Maven ....................................... SUCCESS [  0.612 s]
+[INFO] Maven 4 API ........................................ SUCCESS [  0.004 s]
+[INFO] Maven 4 API :: Meta annotations .................... SUCCESS [  1.919 s]
+[INFO] Maven 4 API :: Dependency Injection ................ SUCCESS [  1.648 s]
+[INFO] Maven 4 API :: XML ................................. FAILURE [  1.853 s]
+[INFO] Maven 4 API :: Model ............................... SKIPPED
+[INFO] Maven 4 API :: Plugin .............................. SKIPPED
+[INFO] Maven 4 API :: Settings ............................ SKIPPED
+[INFO] Maven 4 API :: Toolchain ........................... SKIPPED
+[INFO] Maven 4 API :: Repository Metadata ................. SKIPPED
+[INFO] Maven 4 API :: Core ................................ SKIPPED
+[INFO] Maven 4 API :: SPI ................................. SKIPPED
+[INFO] Maven 4 API :: CLI ................................. SKIPPED
+[INFO] Maven 4 Implementation Modules ..................... SKIPPED
+[INFO] Maven 4 XML Implementation ......................... SKIPPED
+[INFO] Maven 4 Model Support .............................. SKIPPED
+[INFO] Maven 4 Dependency Injection ....................... SKIPPED
+[INFO] Maven 4 API Implementation ......................... SKIPPED
+[INFO] Maven 4 JLine integration .......................... SKIPPED
+[INFO] Maven 4 Logging .................................... SKIPPED
+[INFO] Maven Compatibility Modules ........................ SKIPPED
+[INFO] Maven Artifact ..................................... SKIPPED
+[INFO] Maven Model ........................................ SKIPPED
+[INFO] Maven Builder Support (deprecated) ................. SKIPPED
+[INFO] Maven Model Builder (deprecated) ................... SKIPPED
+[INFO] Maven 3 Plugin API ................................. SKIPPED
+[INFO] Maven Repository Metadata Model .................... SKIPPED
+[INFO] Maven Settings ..................................... SKIPPED
+[INFO] Maven Toolchain Model .............................. SKIPPED
+[INFO] Maven Toolchain Builder (deprecated) ............... SKIPPED
+[INFO] Maven 4 Core ....................................... SKIPPED
+[INFO] Maven Settings Builder (deprecated) ................ SKIPPED
+[INFO] Maven Artifact Resolver Provider (deprecated) ...... SKIPPED
+[INFO] Maven Compat (deprecated) .......................... SKIPPED
+[INFO] Maven 4 CLI ........................................ SKIPPED
+[INFO] Maven Plugin Testing Mechanism ..................... SKIPPED
+[INFO] Maven Embedder (deprecated) ........................ SKIPPED
+[INFO] Apache Maven Distribution .......................... SKIPPED
+[INFO] Maven 4 Executor ................................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.266 s
+[INFO] Finished at: 2025-05-18T14:47:47+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.github.spotbugs:spotbugs-maven-plugin:4.9.3.0:check (default-cli) on project maven-api-xml: failed with 2 bugs and 0 errors -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :maven-api-xml
