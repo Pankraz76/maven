@@ -178,12 +178,6 @@
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <!-- till https://github.com/spotbugs/spotbugs/issues/1338 fails on java11+ -->
-    <Class name="com.puppycrawl.tools.checkstyle.Main" />
-    <Method name="loadProperties" />
-    <Bug pattern="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" />
-  </Match>
-  <Match>
     <Class name="org.apache.maven.api.model.Reporting$Builder"/>
     <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
   </Match>

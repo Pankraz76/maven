@@ -8,27 +8,20 @@ import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
-            "\\[ERROR\\] (?:Medium|High|Low): ([\\w.$]+)(?:#([\\w]+)\\([^)]+\\))? (?:\\[([A-Z_]+)\\]|may expose internal representation)"
+            "\\[ERROR\\] (?:Medium|High|Low): ([\\w.$]+)(?:#([\\w]+)\\(([^)]*)\\))?\\s*(?:\\[([A-Z_]+)\\]|may expose internal representation)"
     );
 
     private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
-            "<Match>\\s*<Class name=\"([^\"]+)\"\\s*/>\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
+            "<Match>\\s*<Class name=\"([^\"]+)\"\\s*/>(?:\\s*<Method name=\"([^\"]+)\"\\s*/>)?\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
 
     public static void main(String[] args) {
         String spotbugsLogPath = "spotbugs.txt";
         String xmlOutputPath = ".spotbugs/spotbugs-exclude.xml";
 
         try {
-            // Step 1: Parse SpotBugs log
             Set<BugInstance> newBugs = parseSpotbugsLog(spotbugsLogPath);
-
-            // Step 2: Read existing XML exclusions (if present)
             Set<BugInstance> existingBugs = readExistingExclusions(xmlOutputPath);
-
-            // Step 3: Merge new and existing bugs
             existingBugs.addAll(newBugs);
-
-            // Step 4: Generate and write merged XML
             String xmlContent = generateXmlExclusions(existingBugs);
             writeXmlFile(xmlContent, xmlOutputPath);
 
@@ -48,11 +41,20 @@ public class SpotbugsExclusionGenerator {
                 Matcher matcher = SPOTBUGS_PATTERN.matcher(line);
                 if (matcher.find()) {
                     String className = matcher.group(1);
-                    // Group 3 is the bug pattern, but sometimes it's in group 2 for different formats
-                    String bugPattern = matcher.group(3) != null ? matcher.group(3) :
-                            (matcher.group(2) != null ? matcher.group(2) : "EI_EXPOSE_REP");
-                    bugs.add(new BugInstance(className, bugPattern));
-                    System.out.println("New bug found: " + className + " - " + bugPattern);
+                    String methodName = matcher.group(2);
+                    String methodParams = matcher.group(3);
+                    String bugPattern = matcher.group(4) != null ? matcher.group(4) :
+                            (line.contains("may expose internal representation") ?
+                                    (line.contains(" storing ") ? "EI_EXPOSE_REP2" : "EI_EXPOSE_REP") : null);
+
+                    if (bugPattern != null) {
+                        String fullMethod = methodName != null ?
+                                methodName + "(" + (methodParams != null ? methodParams : "") + ")" : null;
+                        bugs.add(new BugInstance(className, fullMethod, bugPattern));
+                        System.out.println("New bug found: " + className +
+                                (fullMethod != null ? "#" + fullMethod : "") +
+                                " - " + bugPattern);
+                    }
                 }
             }
         }
@@ -75,12 +77,12 @@ public class SpotbugsExclusionGenerator {
             }
         }
 
-        // Look for existing exclusions
         Matcher matcher = EXISTING_EXCLUSION_PATTERN.matcher(content);
         while (matcher.find()) {
             String className = matcher.group(1);
-            String bugPattern = matcher.group(2);
-            existingBugs.add(new BugInstance(className, bugPattern));
+            String method = matcher.group(2);
+            String bugPattern = matcher.group(3);
+            existingBugs.add(new BugInstance(className, method, bugPattern));
         }
 
         return existingBugs;
@@ -94,6 +96,9 @@ public class SpotbugsExclusionGenerator {
         for (BugInstance bug : bugInstances) {
             xml.append("  <Match>\n");
             xml.append("    <Class name=\"").append(bug.getClassName()).append("\"/>\n");
+            if (bug.getMethod() != null) {
+                xml.append("    <Method name=\"").append(bug.getMethod()).append("\"/>\n");
+            }
             xml.append("    <Bug pattern=\"").append(bug.getBugPattern()).append("\"/>\n");
             xml.append("  </Match>\n");
         }
@@ -112,15 +117,21 @@ public class SpotbugsExclusionGenerator {
 
     private static class BugInstance {
         private final String className;
+        private final String method;
         private final String bugPattern;
 
-        public BugInstance(String className, String bugPattern) {
+        public BugInstance(String className, String method, String bugPattern) {
             this.className = className;
+            this.method = method;
             this.bugPattern = bugPattern;
         }
 
         public String getClassName() {
             return className;
+        }
+
+        public String getMethod() {
+            return method;
         }
 
         public String getBugPattern() {
@@ -132,12 +143,17 @@ public class SpotbugsExclusionGenerator {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             BugInstance that = (BugInstance) o;
-            return className.equals(that.className) && bugPattern.equals(that.bugPattern);
+            return className.equals(that.className) &&
+                    (method != null ? method.equals(that.method) : that.method == null) &&
+                    bugPattern.equals(that.bugPattern);
         }
 
         @Override
         public int hashCode() {
-            return 31 * className.hashCode() + bugPattern.hashCode();
+            int result = className.hashCode();
+            result = 31 * result + (method != null ? method.hashCode() : 0);
+            result = 31 * result + bugPattern.hashCode();
+            return result;
         }
     }
 }
