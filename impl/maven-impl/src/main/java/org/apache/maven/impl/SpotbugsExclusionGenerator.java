@@ -12,7 +12,7 @@ public class SpotbugsExclusionGenerator {
             "\\[ERROR\\] \\w+: (\\S+) (?:\\[\\S+\\] )?\\[\\S+\\] At \\S+\\.java:\\S+\\] (\\S+)");
 
     public static void main(String[] args) {
-        String spotbugsLogPath = "spotbugs.log"; // path to Spotbugs log file
+        String spotbugsLogPath = "spotbugs.txt"; // path to Spotbugs log file
         String xmlOutputPath = ".spotbugs/spotbugs-exclude.xml"; // path to output XML file
 
         try {
