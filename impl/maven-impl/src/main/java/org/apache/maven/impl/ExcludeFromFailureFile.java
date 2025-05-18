@@ -11,17 +11,32 @@
  *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+ * OF ANY KIND, either express or implied.  See the License for
+ * the specific language governing permissions and limitations
  * under the License.
  */
 package org.apache.maven.impl;
 
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
-import java.util.regex.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ExcludeFromFailureFile {
 
@@ -62,7 +77,7 @@ public class ExcludeFromFailureFile {
             Set<String> newRules = entry.getValue();
 
             String existing = excludeProps.getProperty(key);
-            Set<String> merged = new TreeSet<>(newRules); // TreeSet to sort and deduplicate
+            Set<String> merged = new TreeSet<>(newRules); // Sorted & deduplicated
 
             if (existing != null && !existing.isEmpty()) {
                 merged.addAll(Arrays.asList(existing.split(",")));
