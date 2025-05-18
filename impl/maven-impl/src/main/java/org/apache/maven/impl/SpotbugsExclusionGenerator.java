@@ -54,10 +54,6 @@ public class SpotbugsExclusionGenerator {
         xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
         xml.append("<FindBugsFilter>\n");
 
-        // Add header comment
-        xml.append("  <!-- Generated Spotbugs exclusions -->\n");
-        xml.append("  <!-- This file was automatically generated from Spotbugs output -->\n\n");
-
         // Add each bug instance as a Match entry
         for (BugInstance bug : bugInstances) {
             xml.append("  <Match>\n");
