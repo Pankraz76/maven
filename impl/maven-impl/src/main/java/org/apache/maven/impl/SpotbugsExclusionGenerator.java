@@ -80,7 +80,6 @@ public class SpotbugsExclusionGenerator {
             String className = matcher.group(1);
             String bugPattern = matcher.group(2);
             existingBugs.add(new BugInstance(className, bugPattern));
-            System.out.println("Existing exclusion loaded: " + className + " - " + bugPattern);
         }
 
         return existingBugs;
