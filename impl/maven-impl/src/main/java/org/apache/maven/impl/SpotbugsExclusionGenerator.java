@@ -8,10 +8,11 @@ import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
-            "\\[ERROR] .*?[:\\s] (?:Class )?(\\S+) .*? (?:In|At) \\S+\\.java.*? (\\S+)$"
+            "\\[ERROR].*?: ([\\w.$]+)(?:\\.[^.]+)?.*?\\[(.*?)\\].*?([A-Z][A-Z0-9_]+)$"
     );
+    
     private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
-            "<Class name=\"([^\"]+)\"\\s*/>\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
+            "<Match>\\s*<Class name=\"([^\"]+)\"\\s*/>\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
 
     public static void main(String[] args) {
         String spotbugsLogPath = "spotbugs.txt";
@@ -25,7 +26,7 @@ public class SpotbugsExclusionGenerator {
             Set<BugInstance> existingBugs = readExistingExclusions(xmlOutputPath);
 
             // Step 3: Merge new and existing bugs
-            existingBugs.addAll(newBugs); // merge
+            existingBugs.addAll(newBugs);
 
             // Step 4: Generate and write merged XML
             String xmlContent = generateXmlExclusions(existingBugs);
@@ -47,7 +48,7 @@ public class SpotbugsExclusionGenerator {
                 Matcher matcher = SPOTBUGS_PATTERN.matcher(line);
                 if (matcher.find()) {
                     String className = matcher.group(1);
-                    String bugPattern = matcher.group(2);
+                    String bugPattern = matcher.group(3); // Get the error code from group 3
                     bugs.add(new BugInstance(className, bugPattern));
                     System.out.println("New bug found: " + className + " - " + bugPattern);
                 }
@@ -59,24 +60,26 @@ public class SpotbugsExclusionGenerator {
     private static Set<BugInstance> readExistingExclusions(String path) throws IOException {
         Set<BugInstance> existingBugs = new HashSet<>();
         File file = new File(path);
+        
         if (!file.exists()) {
             return existingBugs;
         }
 
+        StringBuilder content = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            StringBuilder xml = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
-                xml.append(line).append("\n");
+                content.append(line).append("\n");
             }
+        }
 
-            Matcher matcher = EXISTING_EXCLUSION_PATTERN.matcher(xml.toString());
-            while (matcher.find()) {
-                String className = matcher.group(1);
-                String bugPattern = matcher.group(2);
-                existingBugs.add(new BugInstance(className, bugPattern));
-                System.out.println("Existing exclusion loaded: " + className + " - " + bugPattern);
-            }
+        // Look for existing exclusions
+        Matcher matcher = EXISTING_EXCLUSION_PATTERN.matcher(content);
+        while (matcher.find()) {
+            String className = matcher.group(1);
+            String bugPattern = matcher.group(2);
+            existingBugs.add(new BugInstance(className, bugPattern));
+            System.out.println("Existing exclusion loaded: " + className + " - " + bugPattern);
         }
 
         return existingBugs;
