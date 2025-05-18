@@ -113,7 +113,6 @@ public class ExcludeFromFailureFile {
 
     private static void writePropertiesFile(Properties props, String path) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
-            writer.write("# PMD exclusion rules");
             writer.newLine();
             writer.newLine();
 
