@@ -800,6 +800,10 @@ under the License.</licenseText>
           <groupId>com.github.spotbugs</groupId>
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>4.9.3.0</version>
+          <configuration>
+            <effort>max</effort>
+            <excludeFilterFile>.spotbugs/spotbugs-exclude.xml</excludeFilterFile>
+          </configuration>
           <executions>
             <execution>
               <id>spotbugs</id>
