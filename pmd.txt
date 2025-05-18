@@ -559,558 +559,62 @@
 [INFO] 
 [INFO] 
 [INFO] --- pmd:3.26.0:check (default-cli) @ maven-core ---
-[WARNING] PMD Failure: org.apache.maven.AbstractMavenLifecycleParticipant:33 Rule:AbstractClassWithoutAbstractMethod Priority:3 This abstract class does not have any abstract methods.
-[WARNING] PMD Failure: org.apache.maven.DefaultMaven:413 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.DefaultMaven:494 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.DefaultMaven:646 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.DefaultMaven:648 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.ReactorReader:96 Rule:MissingOverride Priority:3 The method 'getRepository()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.ReactorReader:100 Rule:MissingOverride Priority:3 The method 'findArtifact(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.ReactorReader:125 Rule:MissingOverride Priority:3 The method 'findVersions(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.ReactorReader:247 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.MavenArtifactTypeRegistry:322 Rule:MissingOverride Priority:3 The method 'get(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.RepositoryUtils:342 Rule:ForLoopVariableCount Priority:3 Too many control variables in the for statement.
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:46 Rule:MissingOverride Priority:3 The method 'createArtifact(String, String, String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:50 Rule:MissingOverride Priority:3 The method 'createArtifactWithClassifier(String, String, String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:55 Rule:MissingOverride Priority:3 The method 'createDependencyArtifact(String, String, VersionRange, String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:65 Rule:MissingOverride Priority:3 The method 'createDependencyArtifact(String, String, VersionRange, String, String, String, boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:76 Rule:MissingOverride Priority:3 The method 'createDependencyArtifact(String, String, VersionRange, String, String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:87 Rule:MissingOverride Priority:3 The method 'createDependencyArtifact(String, String, VersionRange, String, String, String, String, boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:99 Rule:MissingOverride Priority:3 The method 'createBuildArtifact(String, String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:103 Rule:MissingOverride Priority:3 The method 'createProjectArtifact(String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:107 Rule:MissingOverride Priority:3 The method 'createParentArtifact(String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:111 Rule:MissingOverride Priority:3 The method 'createPluginArtifact(String, String, VersionRange)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:115 Rule:MissingOverride Priority:3 The method 'createProjectArtifact(String, String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.factory.DefaultArtifactFactory:119 Rule:MissingOverride Priority:3 The method 'createExtensionArtifact(String, String, VersionRange)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.handler.manager.DefaultArtifactHandlerManager:46 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ConcurrentHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:73 Rule:MissingOverride Priority:3 The method 'isOffline()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:77 Rule:MissingOverride Priority:3 The method 'setOffline(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:83 Rule:MissingOverride Priority:3 The method 'isForceUpdate()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:87 Rule:MissingOverride Priority:3 The method 'setForceUpdate(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:93 Rule:MissingOverride Priority:3 The method 'getLocalRepository()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:97 Rule:MissingOverride Priority:3 The method 'setLocalRepository(ArtifactRepository)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:103 Rule:MissingOverride Priority:3 The method 'getRemoteRepositories()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.DefaultRepositoryRequest:111 Rule:MissingOverride Priority:3 The method 'setRemoteRepositories(List<ArtifactRepository>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:112 Rule:MissingOverride Priority:3 The method 'pathOf(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:116 Rule:MissingOverride Priority:3 The method 'pathOfRemoteRepositoryMetadata(ArtifactMetadata)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:120 Rule:MissingOverride Priority:3 The method 'pathOfLocalRepositoryMetadata(ArtifactMetadata, ArtifactRepository)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:124 Rule:MissingOverride Priority:3 The method 'setLayout(ArtifactRepositoryLayout)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:128 Rule:MissingOverride Priority:3 The method 'getLayout()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:132 Rule:MissingOverride Priority:3 The method 'setSnapshotUpdatePolicy(ArtifactRepositoryPolicy)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:136 Rule:MissingOverride Priority:3 The method 'getSnapshots()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:140 Rule:MissingOverride Priority:3 The method 'setReleaseUpdatePolicy(ArtifactRepositoryPolicy)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:144 Rule:MissingOverride Priority:3 The method 'getReleases()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:148 Rule:MissingOverride Priority:3 The method 'getKey()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:152 Rule:MissingOverride Priority:3 The method 'toString()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:182 Rule:MissingOverride Priority:3 The method 'find(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:192 Rule:MissingOverride Priority:3 The method 'findVersions(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:196 Rule:MissingOverride Priority:3 The method 'getId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:200 Rule:MissingOverride Priority:3 The method 'getUrl()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:204 Rule:MissingOverride Priority:3 The method 'getBasedir()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:213 Rule:MissingOverride Priority:3 The method 'getProtocol()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:217 Rule:MissingOverride Priority:3 The method 'setId(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:221 Rule:MissingOverride Priority:3 The method 'setUrl(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:258 Rule:LiteralsFirstInComparisons Priority:3 Position literals first in String comparisons.
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:322 Rule:MissingOverride Priority:3 The method 'hashCode()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:329 Rule:MissingOverride Priority:3 The method 'equals(Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:349 Rule:MissingOverride Priority:3 The method 'getAuthentication()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:353 Rule:MissingOverride Priority:3 The method 'setAuthentication(Authentication)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:357 Rule:MissingOverride Priority:3 The method 'getProxy()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:361 Rule:MissingOverride Priority:3 The method 'setProxy(Proxy)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:365 Rule:MissingOverride Priority:3 The method 'isBlacklisted()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:369 Rule:MissingOverride Priority:3 The method 'setBlacklisted(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:373 Rule:MissingOverride Priority:3 The method 'isUniqueVersion()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:377 Rule:MissingOverride Priority:3 The method 'isProjectAware()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:381 Rule:MissingOverride Priority:3 The method 'getMirroredRepositories()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:385 Rule:MissingOverride Priority:3 The method 'setMirroredRepositories(List<ArtifactRepository>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:393 Rule:MissingOverride Priority:3 The method 'isBlocked()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.MavenArtifactRepository:397 Rule:MissingOverride Priority:3 The method 'setBlocked(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.layout.DefaultRepositoryLayout:40 Rule:MissingOverride Priority:3 The method 'getId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.layout.DefaultRepositoryLayout:44 Rule:MissingOverride Priority:3 The method 'pathOf(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.layout.DefaultRepositoryLayout:66 Rule:MissingOverride Priority:3 The method 'pathOfLocalRepositoryMetadata(ArtifactMetadata, ArtifactRepository)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.layout.DefaultRepositoryLayout:87 Rule:MissingOverride Priority:3 The method 'pathOfRemoteRepositoryMetadata(ArtifactMetadata)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader:44 Rule:MissingOverride Priority:3 The method 'read(File, Map<String, ?>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader:50 Rule:MissingOverride Priority:3 The method 'read(Reader, Map<String, ?>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.repository.metadata.io.DefaultMetadataReader:64 Rule:MissingOverride Priority:3 The method 'read(InputStream, Map<String, ?>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.resolver.filter.AbstractScopeArtifactFilter:65 Rule:MissingOverride Priority:3 The method 'include(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.resolver.filter.AndArtifactFilter:44 Rule:MissingOverride Priority:3 The method 'include(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.resolver.filter.ExcludesArtifactFilter:35 Rule:MissingOverride Priority:3 The method 'include(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.resolver.filter.ExclusionSetFilter:32 Rule:UseVarargs Priority:4 Consider using varargs for methods or constructors which take an array the last parameter..
-[WARNING] PMD Failure: org.apache.maven.artifact.resolver.filter.ExclusionSetFilter:40 Rule:MissingOverride Priority:3 The method 'include(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.artifact.resolver.filter.IncludesArtifactFilter:40 Rule:MissingOverride Priority:3 The method 'include(Artifact)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.bridge.MavenRepositorySystem:406 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'snapshots'.
-[WARNING] PMD Failure: org.apache.maven.bridge.MavenRepositorySystem:410 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'releases'.
-[WARNING] PMD Failure: org.apache.maven.bridge.MavenRepositorySystem:430 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'snapshots'.
-[WARNING] PMD Failure: org.apache.maven.bridge.MavenRepositorySystem:433 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'releases'.
-[WARNING] PMD Failure: org.apache.maven.bridge.MavenRepositorySystem:780 Rule:LiteralsFirstInComparisons Priority:3 Position literals first in String comparisons.
-[WARNING] PMD Failure: org.apache.maven.classrealm.ArtifactClassRealmConstituent:35 Rule:MissingOverride Priority:3 The method 'getGroupId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.ArtifactClassRealmConstituent:39 Rule:MissingOverride Priority:3 The method 'getArtifactId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.ArtifactClassRealmConstituent:43 Rule:MissingOverride Priority:3 The method 'getType()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.ArtifactClassRealmConstituent:47 Rule:MissingOverride Priority:3 The method 'getClassifier()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.ArtifactClassRealmConstituent:51 Rule:MissingOverride Priority:3 The method 'getVersion()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.ArtifactClassRealmConstituent:55 Rule:MissingOverride Priority:3 The method 'getFile()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:144 Rule:MissingOverride Priority:3 The method 'getMavenApiRealm()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:186 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'parentImports'.
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:192 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'foreignImports'.
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:212 Rule:MissingOverride Priority:3 The method 'getCoreRealm()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:216 Rule:MissingOverride Priority:3 The method 'createProjectRealm(Model, List<Artifact>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:228 Rule:MissingOverride Priority:3 The method 'createExtensionRealm(Plugin, List<Artifact>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:242 Rule:MissingOverride Priority:3 The method 'createPluginRealm(Plugin, ClassLoader, List<String>, Map<String, ClassLoader>, List<Artifact>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:251 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'parent'.
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:302 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:312 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:326 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:333 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:339 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:346 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmManager:349 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmRequest:51 Rule:MissingOverride Priority:3 The method 'getType()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmRequest:55 Rule:MissingOverride Priority:3 The method 'getParent()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmRequest:59 Rule:MissingOverride Priority:3 The method 'getImports()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmRequest:63 Rule:MissingOverride Priority:3 The method 'getParentImports()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmRequest:67 Rule:MissingOverride Priority:3 The method 'getForeignImports()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.classrealm.DefaultClassRealmRequest:71 Rule:MissingOverride Priority:3 The method 'getConstituents()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.BasedirBeanConfigurationPathTranslator:41 Rule:MissingOverride Priority:3 The method 'translatePath(File)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:47 Rule:MissingOverride Priority:3 The method 'getBean()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:51 Rule:MissingOverride Priority:3 The method 'setBean(Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:56 Rule:MissingOverride Priority:3 The method 'getConfiguration()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:60 Rule:MissingOverride Priority:3 The method 'getConfigurationElement()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:64 Rule:MissingOverride Priority:3 The method 'setConfiguration(Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:68 Rule:MissingOverride Priority:3 The method 'setConfiguration(Object, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:136 Rule:MissingOverride Priority:3 The method 'getClassLoader()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:140 Rule:MissingOverride Priority:3 The method 'setClassLoader(ClassLoader)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:145 Rule:MissingOverride Priority:3 The method 'getValuePreprocessor()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:149 Rule:MissingOverride Priority:3 The method 'setValuePreprocessor(BeanConfigurationValuePreprocessor)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:154 Rule:MissingOverride Priority:3 The method 'getPathTranslator()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.DefaultBeanConfigurationRequest:158 Rule:MissingOverride Priority:3 The method 'setPathTranslator(BeanConfigurationPathTranslator)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.internal.DefaultBeanConfigurator:65 Rule:MissingOverride Priority:3 The method 'configureBean(BeanConfigurationRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.internal.BeanExpressionEvaluator:116 Rule:MissingOverride Priority:3 The method 'evaluate(String, Class<?>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.internal.BeanExpressionEvaluator:127 Rule:MissingOverride Priority:3 The method 'evaluate(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.internal.BeanExpressionEvaluator:131 Rule:MissingOverride Priority:3 The method 'alignToBaseDirectory(File)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.internal.EnhancedConfigurationConverter:36 Rule:MissingOverride Priority:3 The method 'fromExpression(PlexusConfiguration, ExpressionEvaluator, Class<?>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.configuration.internal.EnhancedConfigurationConverter:69 Rule:MissingOverride Priority:3 The method 'fromConfiguration(ConverterLookup, PlexusConfiguration, Class<?>, Class<?>, ClassLoader, ExpressionEvaluator, ConfigurationListener)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.eventspy.AbstractEventSpy:27 Rule:MissingOverride Priority:3 The method 'init(Context)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.eventspy.AbstractEventSpy:29 Rule:MissingOverride Priority:3 The method 'onEvent(Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.eventspy.AbstractEventSpy:31 Rule:MissingOverride Priority:3 The method 'close()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.exception.DefaultExceptionHandler:117 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'message'.
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:27 Rule:MissingOverride Priority:3 The method 'projectDiscoveryStarted(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:31 Rule:MissingOverride Priority:3 The method 'sessionStarted(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:35 Rule:MissingOverride Priority:3 The method 'sessionEnded(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:39 Rule:MissingOverride Priority:3 The method 'projectSkipped(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:43 Rule:MissingOverride Priority:3 The method 'projectStarted(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:47 Rule:MissingOverride Priority:3 The method 'projectSucceeded(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:51 Rule:MissingOverride Priority:3 The method 'projectFailed(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:55 Rule:MissingOverride Priority:3 The method 'forkStarted(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:59 Rule:MissingOverride Priority:3 The method 'forkSucceeded(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:63 Rule:MissingOverride Priority:3 The method 'forkFailed(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:67 Rule:MissingOverride Priority:3 The method 'mojoSkipped(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:71 Rule:MissingOverride Priority:3 The method 'mojoStarted(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:75 Rule:MissingOverride Priority:3 The method 'mojoSucceeded(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:79 Rule:MissingOverride Priority:3 The method 'mojoFailed(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:83 Rule:MissingOverride Priority:3 The method 'forkedProjectStarted(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:87 Rule:MissingOverride Priority:3 The method 'forkedProjectSucceeded(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.AbstractExecutionListener:91 Rule:MissingOverride Priority:3 The method 'forkedProjectFailed(ExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.BuildSummary:30 Rule:AbstractClassWithoutAbstractMethod Priority:3 This abstract class does not have any abstract methods.
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionRequestPopulator:168 Rule:AvoidReassigningLoopVariables Priority:3 Avoid reassigning the loop control variable 'server'.
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionRequestPopulator:190 Rule:AvoidReassigningLoopVariables Priority:3 Avoid reassigning the loop control variable 'proxy'.
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionRequestPopulator:204 Rule:AvoidReassigningLoopVariables Priority:3 Avoid reassigning the loop control variable 'mirror'.
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:43 Rule:MissingOverride Priority:3 The method 'setProject(MavenProject)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:49 Rule:MissingOverride Priority:3 The method 'getProject()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:53 Rule:MissingOverride Priority:3 The method 'setTopologicallySortedProjects(List<MavenProject>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:59 Rule:MissingOverride Priority:3 The method 'getTopologicallySortedProjects()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:65 Rule:MissingOverride Priority:3 The method 'getDependencyResolutionResult()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:69 Rule:MissingOverride Priority:3 The method 'setDependencyResolutionResult(DependencyResolutionResult)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:75 Rule:MissingOverride Priority:3 The method 'getExceptions()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:79 Rule:MissingOverride Priority:3 The method 'addException(Throwable)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:85 Rule:MissingOverride Priority:3 The method 'hasExceptions()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:89 Rule:MissingOverride Priority:3 The method 'getBuildSummary(MavenProject)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.DefaultMavenExecutionResult:93 Rule:MissingOverride Priority:3 The method 'addBuildSummary(BuildSummary)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.MavenSession:342 Rule:UnnecessaryVarargsArrayCreation Priority:3 Unnecessary explicit array creation for varargs method call.
-[WARNING] PMD Failure: org.apache.maven.execution.scope.internal.MojoExecutionScope:43 Rule:MissingOverride Priority:3 The method 'scope(Key<T>, Provider<T>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.scope.internal.MojoExecutionScope:54 Rule:MissingOverride Priority:3 The method 'beforeMojoExecution(MojoExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.scope.internal.MojoExecutionScope:60 Rule:MissingOverride Priority:3 The method 'afterMojoExecutionSuccess(MojoExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.scope.internal.MojoExecutionScope:66 Rule:MissingOverride Priority:3 The method 'afterExecutionFailure(MojoExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.execution.scope.internal.MojoExecutionScope:75 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'IdentityHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.extension.internal.CoreExportsProvider:48 Rule:MissingOverride Priority:3 The method 'get()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.graph.DefaultGraphBuilder:389 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.graph.DefaultGraphBuilder:405 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.graph.DefaultProjectDependencyGraph:108 Rule:MissingOverride Priority:3 The method 'getAllProjects()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.graph.DefaultProjectDependencyGraph:112 Rule:MissingOverride Priority:3 The method 'getSortedProjects()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.graph.DefaultProjectDependencyGraph:116 Rule:MissingOverride Priority:3 The method 'getDownstreamProjects(MavenProject, boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.graph.DefaultProjectDependencyGraph:134 Rule:MissingOverride Priority:3 The method 'getUpstreamProjects(MavenProject, boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.DefaultRepositorySystemSessionFactory:154 Rule:MissingOverride Priority:3 The method 'newRepositorySessionBuilder(MavenExecutionRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.DefaultRepositorySystemSessionFactory:271 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.DefaultRepositorySystemSessionFactory:289 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.DefaultRepositorySystemSessionFactory:362 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.aether.DefaultRepositorySystemSessionFactory:392 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.aether.DefaultRepositorySystemSessionFactory:417 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.aether.DefaultRepositorySystemSessionFactory:493 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.aether.LoggingRepositoryListener:40 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.LoggingRepositoryListener:45 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.LoggingRepositoryListener:53 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.LoggingRepositoryListener:55 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.LoggingRepositoryListener:57 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.LoggingRepositoryListener:93 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.LoggingRepositoryListener:101 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.aether.ReverseTreeRepositoryListener:104 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.aether.ReverseTreeRepositoryListener:218 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'trace'.
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultLifecycleRegistry:140 Rule:MissingOverride Priority:3 The method 'computePhases(Lifecycle)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultLog:35 Rule:MissingOverride Priority:3 The method 'debug(CharSequence)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultLog:129 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultPackagingRegistry:76 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'id'.
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultPackagingRegistry:115 Rule:OneDeclarationPerLine Priority:4 Use one line for each declaration, it enhances code readability..
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultPackagingRegistry:131 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultProject:100 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultProjectManager:91 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultProjectManager:106 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'artifact'.
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultSession:87 Rule:MissingOverride Priority:3 The method 'getMavenSession()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultSession:141 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultSession:219 Rule:MissingOverride Priority:3 The method 'toArtifactRepository(RemoteRepository)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.impl.DefaultTypeRegistry:53 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ConcurrentHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.impl.Graph:89 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomArtifactTransformer:74 Rule:MissingOverride Priority:3 The method 'injectTransformedArtifacts(RepositorySystemSession, MavenProject)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomArtifactTransformer:131 Rule:MissingOverride Priority:3 The method 'remapInstallArtifacts(RepositorySystemSession, InstallRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomArtifactTransformer:138 Rule:MissingOverride Priority:3 The method 'remapDeployArtifacts(RepositorySystemSession, DeployRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomArtifactTransformer:163 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomArtifactTransformer:186 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'artifacts'.
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomBuilder:227 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'model'.
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomBuilder:249 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'model'.
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomBuilder:262 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'model'.
-[WARNING] PMD Failure: org.apache.maven.internal.transformation.impl.DefaultConsumerPomBuilder:276 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.DefaultLifecycleExecutor:81 Rule:MissingOverride Priority:3 The method 'execute(MavenSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.DefaultLifecycleExecutor:97 Rule:MissingOverride Priority:3 The method 'getPluginsBoundByDefaultToAllLifecycles(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.DefaultLifecycleExecutor:111 Rule:MissingOverride Priority:3 The method 'calculateExecutionPlan(MavenSession, boolean, String[])' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.DefaultLifecycleExecutor:129 Rule:MissingOverride Priority:3 The method 'calculateExecutionPlan(MavenSession, String[])' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.DefaultLifecycleExecutor:138 Rule:MissingOverride Priority:3 The method 'calculateForkedExecutions(MojoExecution, MavenSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.DefaultLifecycleExecutor:146 Rule:MissingOverride Priority:3 The method 'executeForkedExecutions(MojoExecution, MavenSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.MavenExecutionPlan:69 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.MavenExecutionPlan:97 Rule:MissingOverride Priority:3 The method 'iterator()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.MavenExecutionPlan:119 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultLifecycleMappingDelegate:82 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'lifecyclePhase'.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultLifecyclePluginAnalyzer:144 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultLifecycleStarter:80 Rule:UnusedAssignment Priority:3 The initializer for variable 'reactorContext' is never used (overwritten on line 107).
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultLifecycleStarter:81 Rule:UnusedAssignment Priority:3 The initializer for variable 'projectBuilds' is never used (overwritten on line 92).
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultLifecycleStarter:119 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultLifecycleTaskSegmentCalculator:105 Rule:AvoidReassigningLoopVariables Priority:3 Avoid reassigning the loop control variable 'task'.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultMojoExecutionConfigurator:174 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultMojoExecutionConfigurator:180 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.DefaultProjectArtifactFactory:121 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'originalScope'.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:69 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:70 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:71 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:87 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:91 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:92 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:109 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:117 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:122 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:123 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:125 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:146 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDebugLogger:147 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDependencyResolver:233 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'scopesToCollect'.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleDependencyResolver:236 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'scopesToResolve'.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.ReactorDependencyFilter:361 Rule:MissingOverride Priority:3 The method 'accept(DependencyNode, List<DependencyNode>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleModuleBuilder:130 Rule:PreserveStackTrace Priority:3 Thrown exception does not preserve the stack trace of exception 't' on all code paths.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.LifecycleModuleBuilder:133 Rule:PreserveStackTrace Priority:3 Thrown exception does not preserve the stack trace of exception 't' on all code paths.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.MojoDescriptorCreator:245 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.Task:30 Rule:AbstractClassWithoutAbstractMethod Priority:3 This abstract class does not have any abstract methods.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.BuilderCommon:127 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.BuilderCommon:129 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.BuilderCommon:132 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.BuilderCommon:134 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.BuilderCommon:140 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.BuilderCommon:157 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.BuilderCommon:196 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.multithreaded.MultiThreadedBuilder:137 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder:51 Rule:MissingOverride Priority:3 The method 'build(MavenSession, ReactorContext, ProjectBuildList, List<TaskSegment>, ReactorBuildStatus)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.BuildContext:288 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.BuildContext:316 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.BuildContext:324 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.BuildContext:330 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.BuildContext:790 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.BuildPlanLogger:99 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.ConcurrentLifecycleStarter:81 Rule:MissingOverride Priority:3 The method 'execute(MavenSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.ConcurrentLifecycleStarter:102 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.internal.concurrent.ConcurrentLifecycleStarter:145 Rule:AvoidReassigningLoopVariables Priority:3 Avoid reassigning the loop control variable 'task'.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.providers.AbstractLifecycleProvider:37 Rule:UseVarargs Priority:4 Consider using varargs for methods or constructors which take an array the last parameter..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.providers.AbstractLifecycleProvider:38 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.lifecycle.providers.packaging.AbstractLifecycleMappingProvider:65 Rule:UseVarargs Priority:4 Consider using varargs for methods or constructors which take an array the last parameter..
-[WARNING] PMD Failure: org.apache.maven.lifecycle.providers.packaging.AbstractLifecycleMappingProvider:72 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.logging.ProjectBuildLogAppender:41 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'projectId'.
-[WARNING] PMD Failure: org.apache.maven.model.plugin.DefaultLifecycleBindingsInjector:63 Rule:MissingOverride Priority:3 The method 'injectLifecycleBindings(Model, ModelBuildingRequest, ModelProblemCollector)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.CompoundMojoExecutionListener:34 Rule:MissingOverride Priority:3 The method 'beforeMojoExecution(MojoExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.CompoundMojoExecutionListener:40 Rule:MissingOverride Priority:3 The method 'afterMojoExecutionSuccess(MojoExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.CompoundMojoExecutionListener:46 Rule:MissingOverride Priority:3 The method 'afterExecutionFailure(MojoExecutionEvent)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DebugConfigurationListener:47 Rule:MissingOverride Priority:3 The method 'notifyFieldChangeUsingSetter(String, Object, Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DebugConfigurationListener:53 Rule:MissingOverride Priority:3 The method 'notifyFieldChangeUsingReflection(String, Object, Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultExtensionRealmCache:111 Rule:MissingOverride Priority:3 The method 'get(Key)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultExtensionRealmCache:115 Rule:MissingOverride Priority:3 The method 'put(Key, ClassRealm, ExtensionDescriptor, List<Artifact>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultExtensionRealmCache:130 Rule:MissingOverride Priority:3 The method 'flush()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultExtensionRealmCache:142 Rule:MissingOverride Priority:3 The method 'register(MavenProject, Key, CacheRecord)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultExtensionRealmCache:146 Rule:MissingOverride Priority:3 The method 'dispose()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginArtifactsCache:119 Rule:MissingOverride Priority:3 The method 'createKey(Plugin, DependencyFilter, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginArtifactsCache:127 Rule:MissingOverride Priority:3 The method 'get(Key)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginArtifactsCache:137 Rule:MissingOverride Priority:3 The method 'put(Key, List<Artifact>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginArtifactsCache:155 Rule:MissingOverride Priority:3 The method 'put(Key, PluginResolutionException)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginArtifactsCache:167 Rule:MissingOverride Priority:3 The method 'flush()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginArtifactsCache:179 Rule:MissingOverride Priority:3 The method 'register(MavenProject, Key, CacheRecord)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginDescriptorCache:54 Rule:MissingOverride Priority:3 The method 'flush()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginDescriptorCache:58 Rule:MissingOverride Priority:3 The method 'createKey(Plugin, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginDescriptorCache:62 Rule:MissingOverride Priority:3 The method 'get(Key)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginDescriptorCache:83 Rule:MissingOverride Priority:3 The method 'put(Key, PluginDescriptor)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:136 Rule:MissingOverride Priority:3 The method 'createKey(Plugin, ClassLoader, Map<String, ClassLoader>, DependencyFilter, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:146 Rule:MissingOverride Priority:3 The method 'get(Key)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:163 Rule:PreserveStackTrace Priority:3 Thrown exception does not preserve the stack trace of exception 'e' on all code paths.
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:166 Rule:PreserveStackTrace Priority:3 Thrown exception does not preserve the stack trace of exception 'e' on all code paths.
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:172 Rule:MissingOverride Priority:3 The method 'put(Key, ClassRealm, List<Artifact>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:187 Rule:MissingOverride Priority:3 The method 'flush()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:207 Rule:MissingOverride Priority:3 The method 'register(MavenProject, Key, CacheRecord)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.DefaultPluginRealmCache:211 Rule:MissingOverride Priority:3 The method 'dispose()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.MavenPluginPrerequisitesChecker:35 Rule:MissingOverride Priority:3 The method 'accept(PluginDescriptor)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterException:170 Rule:ForLoopCanBeForeach Priority:3 This for loop can be replaced by a foreach loop.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluator:216 Rule:LiteralsFirstInComparisons Priority:3 Position literals first in String comparisons.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluator:218 Rule:LiteralsFirstInComparisons Priority:3 Position literals first in String comparisons.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluator:218 Rule:LiteralsFirstInComparisons Priority:3 Position literals first in String comparisons.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluator:236 Rule:LiteralsFirstInComparisons Priority:3 Position literals first in String comparisons.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluator:340 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'expr'.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluator:354 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'file'.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluatorV4:220 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'expr'.
-[WARNING] PMD Failure: org.apache.maven.plugin.PluginParameterExpressionEvaluatorV4:234 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'file'.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultLegacySupport:43 Rule:MissingOverride Priority:3 The method 'setSession(MavenSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultLegacySupport:56 Rule:MissingOverride Priority:3 The method 'getSession()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultLegacySupport:61 Rule:MissingOverride Priority:3 The method 'getRepositorySession()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:195 Rule:MissingOverride Priority:3 The method 'getPluginDescriptor(Plugin, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:285 Rule:MissingOverride Priority:3 The method 'getMojoDescriptor(Plugin, String, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:331 Rule:MissingOverride Priority:3 The method 'setupPluginRealm(PluginDescriptor, MavenSession, ClassLoader, List<String>, DependencyFilter)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:490 Rule:MissingOverride Priority:3 The method 'getConfiguredMojo(Class<T>, MavenSession, MojoExecution)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:694 Rule:PreserveStackTrace Priority:3 Thrown exception does not preserve the stack trace of exception 'e' on all code paths.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:703 Rule:PreserveStackTrace Priority:3 Thrown exception does not preserve the stack trace of exception 'e' on all code paths.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:904 Rule:MissingOverride Priority:3 The method 'releaseMojo(Object, MojoExecution)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:912 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultMavenPluginManager:924 Rule:MissingOverride Priority:3 The method 'setupExtensionsRealm(MavenProject, Plugin, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginDependenciesResolver:100 Rule:MissingOverride Priority:3 The method 'resolve(Plugin, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginDependenciesResolver:164 Rule:MissingOverride Priority:3 The method 'resolvePlugin(Plugin, Artifact, DependencyFilter, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginDependenciesResolver:174 Rule:MissingOverride Priority:3 The method 'resolve(Plugin, Artifact, DependencyFilter, List<RemoteRepository>, RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginDependenciesResolver:196 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'pluginArtifact'.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:128 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:212 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ConcurrentHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:213 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'EnumSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:232 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:253 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:273 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:281 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'EnumSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:290 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'EnumSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:296 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DefaultPluginValidationManager:335 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ConcurrentHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:341 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:343 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:343 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:345 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:345 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:345 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:349 Rule:UseEnumCollections Priority:3 This collection could be an EnumMap.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PluginValidationIssues:350 Rule:UseEnumCollections Priority:3 This collection could be an EnumMap.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DeprecatedCoreExpressionValidator:43 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.DeprecatedCoreExpressionValidator:49 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.MavenPluginMavenPrerequisiteChecker:51 Rule:UnusedAssignment Priority:3 The initializer for variable 'isRequirementMet' is never used (overwritten on line 53).
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.MavenPluginMavenPrerequisiteChecker:55 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.MojoLogWrapper:35 Rule:MissingOverride Priority:3 The method 'debug(CharSequence)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.PlexusContainerDefaultDependenciesValidator:44 Rule:MissingOverride Priority:3 The method 'doValidate(RepositorySystemSession, Artifact, ArtifactDescriptorResult)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.ValidatingConfigurationListener:59 Rule:MissingOverride Priority:3 The method 'notifyFieldChangeUsingSetter(String, Object, Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.internal.ValidatingConfigurationListener:67 Rule:MissingOverride Priority:3 The method 'notifyFieldChangeUsingReflection(String, Object, Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:74 Rule:MissingOverride Priority:3 The method 'getPrefix()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:78 Rule:MissingOverride Priority:3 The method 'setPrefix(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:84 Rule:MissingOverride Priority:3 The method 'getPluginGroups()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:88 Rule:MissingOverride Priority:3 The method 'setPluginGroups(List<String>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:98 Rule:MissingOverride Priority:3 The method 'getPom()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:102 Rule:MissingOverride Priority:3 The method 'setPom(Model)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:108 Rule:MissingOverride Priority:3 The method 'getRepositories()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:112 Rule:MissingOverride Priority:3 The method 'setRepositories(List<RemoteRepository>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:122 Rule:MissingOverride Priority:3 The method 'getRepositorySession()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.DefaultPluginPrefixRequest:126 Rule:MissingOverride Priority:3 The method 'setRepositorySession(RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver:80 Rule:MissingOverride Priority:3 The method 'resolve(PluginPrefixRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver:81 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver:95 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver:103 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver:141 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResolver:143 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResult:53 Rule:MissingOverride Priority:3 The method 'getGroupId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResult:61 Rule:MissingOverride Priority:3 The method 'getArtifactId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.prefix.internal.DefaultPluginPrefixResult:69 Rule:MissingOverride Priority:3 The method 'getRepository()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:89 Rule:MissingOverride Priority:3 The method 'getGroupId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:93 Rule:MissingOverride Priority:3 The method 'setGroupId(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:99 Rule:MissingOverride Priority:3 The method 'getArtifactId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:103 Rule:MissingOverride Priority:3 The method 'setArtifactId(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:109 Rule:MissingOverride Priority:3 The method 'getPom()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:113 Rule:MissingOverride Priority:3 The method 'setPom(Model)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:119 Rule:MissingOverride Priority:3 The method 'getRepositories()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:123 Rule:MissingOverride Priority:3 The method 'setRepositories(List<RemoteRepository>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:133 Rule:MissingOverride Priority:3 The method 'getRepositorySession()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.DefaultPluginVersionRequest:137 Rule:MissingOverride Priority:3 The method 'setRepositorySession(RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:109 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:118 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:126 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:190 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:200 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'TreeSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:201 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'TreeSet'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:218 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:233 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:251 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:256 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver:298 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResult:43 Rule:MissingOverride Priority:3 The method 'getVersion()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.plugin.version.internal.DefaultPluginVersionResult:51 Rule:MissingOverride Priority:3 The method 'getRepository()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionRequest:43 Rule:MissingOverride Priority:3 The method 'getResolutionFilter()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionRequest:47 Rule:MissingOverride Priority:3 The method 'getMavenProject()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionRequest:51 Rule:MissingOverride Priority:3 The method 'getRepositorySession()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionRequest:55 Rule:MissingOverride Priority:3 The method 'setResolutionFilter(DependencyFilter)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionRequest:60 Rule:MissingOverride Priority:3 The method 'setMavenProject(MavenProject)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionRequest:65 Rule:MissingOverride Priority:3 The method 'setRepositorySession(RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionResult:46 Rule:MissingOverride Priority:3 The method 'getDependencyGraph()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionResult:54 Rule:MissingOverride Priority:3 The method 'getDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionResult:58 Rule:MissingOverride Priority:3 The method 'getResolvedDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionResult:67 Rule:MissingOverride Priority:3 The method 'getUnresolvedDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionResult:71 Rule:MissingOverride Priority:3 The method 'getCollectionErrors()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultDependencyResolutionResult:83 Rule:MissingOverride Priority:3 The method 'getResolutionErrors(Dependency)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultMavenProjectHelper:49 Rule:MissingOverride Priority:3 The method 'attachArtifact(MavenProject, String, String, File)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultMavenProjectHelper:69 Rule:MissingOverride Priority:3 The method 'attachArtifact(MavenProject, String, File)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultMavenProjectHelper:80 Rule:MissingOverride Priority:3 The method 'attachArtifact(MavenProject, File, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultMavenProjectHelper:103 Rule:MissingOverride Priority:3 The method 'addResource(MavenProject, String, List<String>, List<String>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultMavenProjectHelper:113 Rule:MissingOverride Priority:3 The method 'addTestResource(MavenProject, String, List<String>, List<String>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.BuildSession:578 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.project.BuildSession:858 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.BuildSession:861 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.BuildSession:872 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.BuildSession:875 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingHelper:86 Rule:MissingOverride Priority:3 The method 'createArtifactRepositories(List<Repository>, List<ArtifactRepository>, ProjectBuildingRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingHelper:137 Rule:MissingOverride Priority:3 The method 'createProjectRealm(MavenProject, Model, ProjectBuildingRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingHelper:257 Rule:MissingOverride Priority:3 The method 'selectProjectRealm(MavenProject)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:103 Rule:MissingOverride Priority:3 The method 'getProject()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:107 Rule:MissingOverride Priority:3 The method 'setProject(MavenProject)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:111 Rule:MissingOverride Priority:3 The method 'setLocalRepository(ArtifactRepository)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:116 Rule:MissingOverride Priority:3 The method 'getLocalRepository()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:120 Rule:MissingOverride Priority:3 The method 'getRemoteRepositories()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:124 Rule:MissingOverride Priority:3 The method 'setRemoteRepositories(List<ArtifactRepository>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:134 Rule:MissingOverride Priority:3 The method 'getPluginArtifactRepositories()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:138 Rule:MissingOverride Priority:3 The method 'setPluginArtifactRepositories(List<ArtifactRepository>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:148 Rule:MissingOverride Priority:3 The method 'getSystemProperties()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:152 Rule:MissingOverride Priority:3 The method 'setSystemProperties(Properties)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:162 Rule:MissingOverride Priority:3 The method 'getUserProperties()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:166 Rule:MissingOverride Priority:3 The method 'setUserProperties(Properties)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:177 Rule:MissingOverride Priority:3 The method 'isProcessPlugins()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:181 Rule:MissingOverride Priority:3 The method 'setProcessPlugins(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:186 Rule:MissingOverride Priority:3 The method 'setResolveDependencies(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:191 Rule:MissingOverride Priority:3 The method 'isResolveDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:201 Rule:MissingOverride Priority:3 The method 'setResolveVersionRanges(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:212 Rule:MissingOverride Priority:3 The method 'isResolveVersionRanges()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:216 Rule:MissingOverride Priority:3 The method 'setValidationLevel(int)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:221 Rule:MissingOverride Priority:3 The method 'getValidationLevel()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:225 Rule:MissingOverride Priority:3 The method 'getActiveProfileIds()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:229 Rule:MissingOverride Priority:3 The method 'setActiveProfileIds(List<String>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:237 Rule:MissingOverride Priority:3 The method 'getInactiveProfileIds()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:241 Rule:MissingOverride Priority:3 The method 'setInactiveProfileIds(List<String>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:249 Rule:MissingOverride Priority:3 The method 'setProfiles(List<Profile>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:257 Rule:MissingOverride Priority:3 The method 'addProfile(Profile)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:261 Rule:MissingOverride Priority:3 The method 'getProfiles()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:266 Rule:MissingOverride Priority:3 The method 'getBuildStartTime()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:271 Rule:MissingOverride Priority:3 The method 'setBuildStartTime(Date)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:275 Rule:MissingOverride Priority:3 The method 'getBuildStartInstant()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:279 Rule:MissingOverride Priority:3 The method 'setBuildStartInstant(Instant)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:283 Rule:MissingOverride Priority:3 The method 'getRepositorySession()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:287 Rule:MissingOverride Priority:3 The method 'setRepositorySession(RepositorySystemSession)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:292 Rule:MissingOverride Priority:3 The method 'setRepositoryMerging(RepositoryMerging)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingRequest:297 Rule:MissingOverride Priority:3 The method 'getRepositoryMerging()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingResult:76 Rule:MissingOverride Priority:3 The method 'getProjectId()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingResult:80 Rule:MissingOverride Priority:3 The method 'getPomFile()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingResult:84 Rule:MissingOverride Priority:3 The method 'getProject()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingResult:88 Rule:MissingOverride Priority:3 The method 'getProblems()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectBuildingResult:92 Rule:MissingOverride Priority:3 The method 'getDependencyResolutionResult()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectDependenciesResolver:71 Rule:MissingOverride Priority:3 The method 'resolve(DependencyResolutionRequest)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectDependenciesResolver:175 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectRealmCache:88 Rule:MissingOverride Priority:3 The method 'get(Key)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectRealmCache:92 Rule:MissingOverride Priority:3 The method 'put(Key, ClassRealm, DependencyFilter)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectRealmCache:106 Rule:MissingOverride Priority:3 The method 'flush()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.DefaultProjectRealmCache:118 Rule:MissingOverride Priority:3 The method 'register(MavenProject, Key, CacheRecord)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.Graph:89 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.project.MavenProject:348 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'directory'.
-[WARNING] PMD Failure: org.apache.maven.project.MavenProject:367 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'directory'.
-[WARNING] PMD Failure: org.apache.maven.project.MavenProject:399 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'directory'.
-[WARNING] PMD Failure: org.apache.maven.project.ProjectModelResolver:113 Rule:MissingOverride Priority:3 The method 'addRepository(Repository)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.ProjectModelResolver:152 Rule:MissingOverride Priority:3 The method 'newCopy()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.ProjectModelResolver:156 Rule:MissingOverride Priority:3 The method 'resolveModel(String, String, String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:73 Rule:MissingOverride Priority:3 The method 'setArtifactId(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:78 Rule:MissingOverride Priority:3 The method 'getAvailableVersions()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:82 Rule:MissingOverride Priority:3 The method 'setAvailableVersions(List<ArtifactVersion>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:87 Rule:MissingOverride Priority:3 The method 'getBaseVersion()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:91 Rule:MissingOverride Priority:3 The method 'setBaseVersion(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:96 Rule:MissingOverride Priority:3 The method 'getDownloadUrl()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:100 Rule:MissingOverride Priority:3 The method 'setDownloadUrl(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:105 Rule:MissingOverride Priority:3 The method 'setGroupId(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:110 Rule:MissingOverride Priority:3 The method 'getRepository()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:114 Rule:MissingOverride Priority:3 The method 'setRepository(ArtifactRepository)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:119 Rule:MissingOverride Priority:3 The method 'getScope()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:123 Rule:MissingOverride Priority:3 The method 'setScope(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:128 Rule:MissingOverride Priority:3 The method 'getVersion()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:132 Rule:MissingOverride Priority:3 The method 'setVersion(String)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:137 Rule:MissingOverride Priority:3 The method 'getVersionRange()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:141 Rule:MissingOverride Priority:3 The method 'setVersionRange(VersionRange)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:146 Rule:MissingOverride Priority:3 The method 'isRelease()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:150 Rule:MissingOverride Priority:3 The method 'setRelease(boolean)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:155 Rule:MissingOverride Priority:3 The method 'isSnapshot()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:159 Rule:MissingOverride Priority:3 The method 'addMetadata(ArtifactMetadata)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.AttachedArtifact:164 Rule:MissingOverride Priority:3 The method 'getMetadataList()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.DefaultProjectArtifactsCache:195 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'SetWithResolutionResult'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.project.artifact.DefaultProjectArtifactsCache:196 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'SetWithResolutionResult'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.project.artifact.PluginArtifact:50 Rule:MissingOverride Priority:3 The method 'getDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.PluginArtifact:54 Rule:MissingOverride Priority:3 The method 'getManagedDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.ProjectArtifact:54 Rule:MissingOverride Priority:3 The method 'getDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.artifact.ProjectArtifact:58 Rule:MissingOverride Priority:3 The method 'getManagedDependencies()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.project.collector.DefaultProjectsSelector:83 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.collector.MultiModuleCollectionStrategy:73 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.collector.MultiModuleCollectionStrategy:87 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.project.collector.MultiModuleCollectionStrategy:111 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.resolver.MavenChainedWorkspaceReader:123 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'ArrayList'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.resolver.Key:141 Rule:MissingOverride Priority:3 The method 'equals(Object)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.resolver.Key:149 Rule:MissingOverride Priority:3 The method 'hashCode()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.rtinfo.internal.DefaultRuntimeInformation:70 Rule:GuardLogStatement Priority:2 Logger calls should be surrounded by log level guards..
-[WARNING] PMD Failure: org.apache.maven.session.scope.internal.SessionScope:37 Rule:MissingOverride Priority:3 The method 'scope(Key<T>, Provider<T>)' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.session.scope.internal.SessionScope:48 Rule:MissingOverride Priority:3 The method 'isTypeAnnotation(Class<? extends Annotation>)' is missing an @Override annotation..
+[INFO] 
+[INFO] --------------< org.apache.maven:maven-settings-builder >---------------
+[INFO] Building Maven Settings Builder (deprecated) 4.0.0-rc-4-SNAPSHOT [32/39]
+[INFO]   from compat/maven-settings-builder/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (default-cli) > :pmd @ maven-settings-builder >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-settings-builder ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (default-cli) < :pmd @ maven-settings-builder <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (default-cli) @ maven-settings-builder ---
+[WARNING] PMD Failure: org/apache/maven/settings/building/DefaultSettingsBuilder.java:223 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'value'.
+[WARNING] PMD Failure: org.apache.maven.settings.building.DefaultSettingsProblemCollector:53 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'line'.
+[WARNING] PMD Failure: org.apache.maven.settings.building.DefaultSettingsProblemCollector:54 Rule:AvoidReassigningParameters Priority:2 Avoid reassigning parameters such as 'column'.
+[WARNING] PMD Failure: org.apache.maven.settings.crypto.DefaultSettingsDecrypter:60 Rule:AvoidReassigningLoopVariables Priority:3 Avoid reassigning the loop control variable 'server'.
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary for Apache Maven 4.0.0-rc-4-SNAPSHOT:
 [INFO] 
-[INFO] Apache Maven ....................................... SUCCESS [  0.430 s]
-[INFO] Maven 4 API ........................................ SUCCESS [  0.003 s]
-[INFO] Maven 4 API :: Meta annotations .................... SUCCESS [  0.722 s]
-[INFO] Maven 4 API :: Dependency Injection ................ SUCCESS [  0.172 s]
+[INFO] Apache Maven ....................................... SUCCESS [  0.307 s]
+[INFO] Maven 4 API ........................................ SUCCESS [  0.004 s]
+[INFO] Maven 4 API :: Meta annotations .................... SUCCESS [  0.635 s]
+[INFO] Maven 4 API :: Dependency Injection ................ SUCCESS [  0.181 s]
 [INFO] Maven 4 API :: XML ................................. SUCCESS [  0.123 s]
-[INFO] Maven 4 API :: Model ............................... SUCCESS [  0.110 s]
-[INFO] Maven 4 API :: Plugin .............................. SUCCESS [  0.098 s]
+[INFO] Maven 4 API :: Model ............................... SUCCESS [  0.100 s]
+[INFO] Maven 4 API :: Plugin .............................. SUCCESS [  0.093 s]
 [INFO] Maven 4 API :: Settings ............................ SUCCESS [  0.087 s]
-[INFO] Maven 4 API :: Toolchain ........................... SUCCESS [  0.080 s]
+[INFO] Maven 4 API :: Toolchain ........................... SUCCESS [  0.082 s]
 [INFO] Maven 4 API :: Repository Metadata ................. SUCCESS [  0.079 s]
-[INFO] Maven 4 API :: Core ................................ SUCCESS [  0.123 s]
-[INFO] Maven 4 API :: SPI ................................. SUCCESS [  0.095 s]
-[INFO] Maven 4 API :: CLI ................................. SUCCESS [  0.084 s]
+[INFO] Maven 4 API :: Core ................................ SUCCESS [  0.120 s]
+[INFO] Maven 4 API :: SPI ................................. SUCCESS [  0.089 s]
+[INFO] Maven 4 API :: CLI ................................. SUCCESS [  0.090 s]
 [INFO] Maven 4 Implementation Modules ..................... SUCCESS [  0.002 s]
-[INFO] Maven 4 XML Implementation ......................... SUCCESS [  0.092 s]
-[INFO] Maven 4 Model Support .............................. SUCCESS [  0.078 s]
-[INFO] Maven 4 Dependency Injection ....................... SUCCESS [  0.079 s]
-[INFO] Maven 4 API Implementation ......................... SUCCESS [  0.140 s]
-[INFO] Maven 4 JLine integration .......................... SUCCESS [  0.085 s]
-[INFO] Maven 4 Logging .................................... SUCCESS [  0.082 s]
+[INFO] Maven 4 XML Implementation ......................... SUCCESS [  0.094 s]
+[INFO] Maven 4 Model Support .............................. SUCCESS [  0.070 s]
+[INFO] Maven 4 Dependency Injection ....................... SUCCESS [  0.081 s]
+[INFO] Maven 4 API Implementation ......................... SUCCESS [  0.132 s]
+[INFO] Maven 4 JLine integration .......................... SUCCESS [  0.083 s]
+[INFO] Maven 4 Logging .................................... SUCCESS [  0.083 s]
 [INFO] Maven Compatibility Modules ........................ SUCCESS [  0.002 s]
-[INFO] Maven Artifact ..................................... SUCCESS [  0.073 s]
-[INFO] Maven Model ........................................ SUCCESS [  0.081 s]
-[INFO] Maven Builder Support (deprecated) ................. SUCCESS [  0.074 s]
-[INFO] Maven Model Builder (deprecated) ................... SUCCESS [  0.100 s]
-[INFO] Maven 3 Plugin API ................................. SUCCESS [  0.082 s]
-[INFO] Maven Repository Metadata Model .................... SUCCESS [  0.066 s]
-[INFO] Maven Settings ..................................... SUCCESS [  0.065 s]
-[INFO] Maven Toolchain Model .............................. SUCCESS [  0.064 s]
-[INFO] Maven Toolchain Builder (deprecated) ............... SUCCESS [  0.074 s]
-[INFO] Maven 4 Core ....................................... FAILURE [  0.207 s]
-[INFO] Maven Settings Builder (deprecated) ................ SKIPPED
+[INFO] Maven Artifact ..................................... SUCCESS [  0.077 s]
+[INFO] Maven Model ........................................ SUCCESS [  0.089 s]
+[INFO] Maven Builder Support (deprecated) ................. SUCCESS [  0.076 s]
+[INFO] Maven Model Builder (deprecated) ................... SUCCESS [  0.091 s]
+[INFO] Maven 3 Plugin API ................................. SUCCESS [  0.079 s]
+[INFO] Maven Repository Metadata Model .................... SUCCESS [  0.071 s]
+[INFO] Maven Settings ..................................... SUCCESS [  0.072 s]
+[INFO] Maven Toolchain Model .............................. SUCCESS [  0.068 s]
+[INFO] Maven Toolchain Builder (deprecated) ............... SUCCESS [  0.085 s]
+[INFO] Maven 4 Core ....................................... SUCCESS [  0.134 s]
+[INFO] Maven Settings Builder (deprecated) ................ FAILURE [  0.080 s]
 [INFO] Maven Artifact Resolver Provider (deprecated) ...... SKIPPED
 [INFO] Maven Compat (deprecated) .......................... SKIPPED
 [INFO] Maven 4 CLI ........................................ SKIPPED
@@ -1121,10 +625,10 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.860 s
-[INFO] Finished at: 2025-05-18T12:16:53+02:00
+[INFO] Total time:  3.651 s
+[INFO] Finished at: 2025-05-18T12:17:31+02:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-pmd-plugin:3.26.0:check (default-cli) on project maven-core: PMD 7.12.0 has found 517 violations. For more details see: /Users/vincent.potucek/IdeaProjects/maven/impl/maven-core/target/pmd.xml -> [Help 1]
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-pmd-plugin:3.26.0:check (default-cli) on project maven-settings-builder: PMD 7.12.0 has found 4 violations. For more details see: /Users/vincent.potucek/IdeaProjects/maven/compat/maven-settings-builder/target/pmd.xml -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
@@ -1133,4 +637,4 @@
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
 [ERROR] 
 [ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn <args> -rf :maven-core
+[ERROR]   mvn <args> -rf :maven-settings-builder
