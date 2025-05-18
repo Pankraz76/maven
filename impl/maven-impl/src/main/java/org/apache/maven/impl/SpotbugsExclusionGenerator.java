@@ -7,9 +7,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
-    // Pattern to extract class and bug pattern from Spotbugs errors
+    // Updated pattern to extract class and bug pattern from Spotbugs errors
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
-            "\\[ERROR\\] \\w+: (\\S+) (?:\\[\\S+\\] )?\\[\\S+\\] At \\S+\\.java:\\S+\\] (\\S+)");
+            "\\[ERROR\\] \\w+: .*?\\[(.*?)\\] At .*?:\\[line \\d+\\] (\\S+)");
 
     public static void main(String[] args) {
         String spotbugsLogPath = "spotbugs.txt"; // path to Spotbugs log file
@@ -43,6 +43,7 @@ public class SpotbugsExclusionGenerator {
                     String className = matcher.group(1);
                     String bugPattern = matcher.group(2);
                     bugInstances.add(new BugInstance(className, bugPattern));
+                    System.out.println("Matched bug: " + className + ", pattern: " + bugPattern);
                 }
             }
         }
