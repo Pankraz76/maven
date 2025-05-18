@@ -36,7 +36,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -127,8 +126,7 @@ public class DiIndexProcessor extends AbstractProcessor {
         // Try to read existing content
         try {
             FileObject inputFile = processingEnv.getFiler().getResource(StandardLocation.CLASS_OUTPUT, "", path);
-            try (BufferedReader reader =
-                    new BufferedReader(new InputStreamReader(inputFile.openInputStream(), StandardCharsets.UTF_8))) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputFile.openInputStream()))) {
                 String line;
                 StringBuilder contentBuilder = new StringBuilder();
                 while ((line = reader.readLine()) != null) {
