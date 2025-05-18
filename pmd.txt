@@ -644,83 +644,100 @@
 [INFO] 
 [INFO] 
 [INFO] --- pmd:3.26.0:check (default-cli) @ maven-testing ---
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.MojoExtension:585 Rule:UseVarargs Priority:4 Consider using varargs for methods or constructors which take an array the last parameter..
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.PluginStub:114 Rule:MissingOverride Priority:3 The method 'getDependenciesMap()' is missing an @Override annotation..
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:357 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:376 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:425 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:472 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:506 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:541 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:604 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:625 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:643 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:674 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:726 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:742 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:825 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:868 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:994 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:1001 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:1003 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:1011 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.RepositorySystemSupplier:1013 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'LinkedHashMap'; use the interface instead.
-[WARNING] PMD Failure: org.apache.maven.api.plugin.testing.stubs.SessionStub:122 Rule:LooseCoupling Priority:3 Avoid using implementation types like 'HashMap'; use the interface instead.
+[INFO] 
+[INFO] ------------------< org.apache.maven:maven-embedder >-------------------
+[INFO] Building Maven Embedder (deprecated) 4.0.0-rc-4-SNAPSHOT         [37/39]
+[INFO]   from compat/maven-embedder/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (default-cli) > :pmd @ maven-embedder >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-embedder ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (default-cli) < :pmd @ maven-embedder <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (default-cli) @ maven-embedder ---
+[INFO] 
+[INFO] -------------------< org.apache.maven:apache-maven >--------------------
+[INFO] Building Apache Maven Distribution 4.0.0-rc-4-SNAPSHOT           [38/39]
+[INFO]   from apache-maven/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (default-cli) > :pmd @ apache-maven >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ apache-maven ---
+[INFO] Skipping org.apache.maven.plugins:maven-pmd-plugin:3.26.0:pmd report goal
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (default-cli) < :pmd @ apache-maven <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (default-cli) @ apache-maven ---
+[INFO] 
+[INFO] ------------------< org.apache.maven:maven-executor >-------------------
+[INFO] Building Maven 4 Executor 4.0.0-rc-4-SNAPSHOT                    [39/39]
+[INFO]   from impl/maven-executor/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> pmd:3.26.0:check (default-cli) > :pmd @ maven-executor >>>
+[INFO] 
+[INFO] --- pmd:3.26.0:pmd (pmd) @ maven-executor ---
+[WARNING] Unable to locate Source XRef to link to -- DISABLED
+[INFO] PMD version: 7.12.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.1.0 skin
+[INFO] 
+[INFO] <<< pmd:3.26.0:check (default-cli) < :pmd @ maven-executor <<<
+[INFO] 
+[INFO] 
+[INFO] --- pmd:3.26.0:check (default-cli) @ maven-executor ---
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary for Apache Maven 4.0.0-rc-4-SNAPSHOT:
 [INFO] 
-[INFO] Apache Maven ....................................... SUCCESS [  0.308 s]
+[INFO] Apache Maven ....................................... SUCCESS [  0.385 s]
 [INFO] Maven 4 API ........................................ SUCCESS [  0.003 s]
-[INFO] Maven 4 API :: Meta annotations .................... SUCCESS [  0.676 s]
-[INFO] Maven 4 API :: Dependency Injection ................ SUCCESS [  0.202 s]
-[INFO] Maven 4 API :: XML ................................. SUCCESS [  0.130 s]
-[INFO] Maven 4 API :: Model ............................... SUCCESS [  0.114 s]
-[INFO] Maven 4 API :: Plugin .............................. SUCCESS [  0.108 s]
-[INFO] Maven 4 API :: Settings ............................ SUCCESS [  0.090 s]
-[INFO] Maven 4 API :: Toolchain ........................... SUCCESS [  0.083 s]
-[INFO] Maven 4 API :: Repository Metadata ................. SUCCESS [  0.080 s]
-[INFO] Maven 4 API :: Core ................................ SUCCESS [  0.128 s]
-[INFO] Maven 4 API :: SPI ................................. SUCCESS [  0.101 s]
-[INFO] Maven 4 API :: CLI ................................. SUCCESS [  0.088 s]
+[INFO] Maven 4 API :: Meta annotations .................... SUCCESS [  0.663 s]
+[INFO] Maven 4 API :: Dependency Injection ................ SUCCESS [  0.181 s]
+[INFO] Maven 4 API :: XML ................................. SUCCESS [  0.125 s]
+[INFO] Maven 4 API :: Model ............................... SUCCESS [  0.110 s]
+[INFO] Maven 4 API :: Plugin .............................. SUCCESS [  0.099 s]
+[INFO] Maven 4 API :: Settings ............................ SUCCESS [  0.088 s]
+[INFO] Maven 4 API :: Toolchain ........................... SUCCESS [  0.081 s]
+[INFO] Maven 4 API :: Repository Metadata ................. SUCCESS [  0.076 s]
+[INFO] Maven 4 API :: Core ................................ SUCCESS [  0.111 s]
+[INFO] Maven 4 API :: SPI ................................. SUCCESS [  0.090 s]
+[INFO] Maven 4 API :: CLI ................................. SUCCESS [  0.086 s]
 [INFO] Maven 4 Implementation Modules ..................... SUCCESS [  0.002 s]
-[INFO] Maven 4 XML Implementation ......................... SUCCESS [  0.094 s]
-[INFO] Maven 4 Model Support .............................. SUCCESS [  0.075 s]
-[INFO] Maven 4 Dependency Injection ....................... SUCCESS [  0.083 s]
-[INFO] Maven 4 API Implementation ......................... SUCCESS [  0.133 s]
-[INFO] Maven 4 JLine integration .......................... SUCCESS [  0.086 s]
-[INFO] Maven 4 Logging .................................... SUCCESS [  0.083 s]
-[INFO] Maven Compatibility Modules ........................ SUCCESS [  0.002 s]
-[INFO] Maven Artifact ..................................... SUCCESS [  0.079 s]
-[INFO] Maven Model ........................................ SUCCESS [  0.107 s]
-[INFO] Maven Builder Support (deprecated) ................. SUCCESS [  0.091 s]
-[INFO] Maven Model Builder (deprecated) ................... SUCCESS [  0.101 s]
-[INFO] Maven 3 Plugin API ................................. SUCCESS [  0.091 s]
-[INFO] Maven Repository Metadata Model .................... SUCCESS [  0.082 s]
-[INFO] Maven Settings ..................................... SUCCESS [  0.076 s]
-[INFO] Maven Toolchain Model .............................. SUCCESS [  0.077 s]
-[INFO] Maven Toolchain Builder (deprecated) ............... SUCCESS [  0.084 s]
-[INFO] Maven 4 Core ....................................... SUCCESS [  0.139 s]
-[INFO] Maven Settings Builder (deprecated) ................ SUCCESS [  0.075 s]
-[INFO] Maven Artifact Resolver Provider (deprecated) ...... SUCCESS [  0.083 s]
-[INFO] Maven Compat (deprecated) .......................... SUCCESS [  0.107 s]
-[INFO] Maven 4 CLI ........................................ SUCCESS [  0.098 s]
-[INFO] Maven Plugin Testing Mechanism ..................... FAILURE [  0.090 s]
-[INFO] Maven Embedder (deprecated) ........................ SKIPPED
-[INFO] Apache Maven Distribution .......................... SKIPPED
-[INFO] Maven 4 Executor ................................... SKIPPED
+[INFO] Maven 4 XML Implementation ......................... SUCCESS [  0.090 s]
+[INFO] Maven 4 Model Support .............................. SUCCESS [  0.078 s]
+[INFO] Maven 4 Dependency Injection ....................... SUCCESS [  0.080 s]
+[INFO] Maven 4 API Implementation ......................... SUCCESS [  0.136 s]
+[INFO] Maven 4 JLine integration .......................... SUCCESS [  0.084 s]
+[INFO] Maven 4 Logging .................................... SUCCESS [  0.078 s]
+[INFO] Maven Compatibility Modules ........................ SUCCESS [  0.001 s]
+[INFO] Maven Artifact ..................................... SUCCESS [  0.080 s]
+[INFO] Maven Model ........................................ SUCCESS [  0.087 s]
+[INFO] Maven Builder Support (deprecated) ................. SUCCESS [  0.074 s]
+[INFO] Maven Model Builder (deprecated) ................... SUCCESS [  0.092 s]
+[INFO] Maven 3 Plugin API ................................. SUCCESS [  0.078 s]
+[INFO] Maven Repository Metadata Model .................... SUCCESS [  0.067 s]
+[INFO] Maven Settings ..................................... SUCCESS [  0.065 s]
+[INFO] Maven Toolchain Model .............................. SUCCESS [  0.064 s]
+[INFO] Maven Toolchain Builder (deprecated) ............... SUCCESS [  0.074 s]
+[INFO] Maven 4 Core ....................................... SUCCESS [  0.121 s]
+[INFO] Maven Settings Builder (deprecated) ................ SUCCESS [  0.072 s]
+[INFO] Maven Artifact Resolver Provider (deprecated) ...... SUCCESS [  0.084 s]
+[INFO] Maven Compat (deprecated) .......................... SUCCESS [  0.106 s]
+[INFO] Maven 4 CLI ........................................ SUCCESS [  0.094 s]
+[INFO] Maven Plugin Testing Mechanism ..................... SUCCESS [  0.081 s]
+[INFO] Maven Embedder (deprecated) ........................ SUCCESS [  0.082 s]
+[INFO] Apache Maven Distribution .......................... SUCCESS [  0.140 s]
+[INFO] Maven 4 Executor ................................... SUCCESS [  0.064 s]
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
+[INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.245 s
-[INFO] Finished at: 2025-05-18T12:19:37+02:00
+[INFO] Total time:  4.381 s
+[INFO] Finished at: 2025-05-18T12:20:14+02:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-pmd-plugin:3.26.0:check (default-cli) on project maven-testing: PMD 7.12.0 has found 22 violations. For more details see: /Users/vincent.potucek/IdeaProjects/maven/impl/maven-testing/target/pmd.xml -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-[ERROR] 
-[ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn <args> -rf :maven-testing
