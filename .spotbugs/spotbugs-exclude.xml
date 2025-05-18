@@ -26,6 +26,11 @@
   </Match>
 
   <Match>
+    <Class name="org.apache.maven.api.model.DeploymentRepository"/>
+    <Bug pattern="EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC"/>
+  </Match>
+
+  <Match>
     <Class name="org.apache.maven.api.model.DependencyManagement$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
@@ -91,6 +96,11 @@
   </Match>
 
   <Match>
+    <Class name="org.apache.maven.api.model.Model"/>
+    <Bug pattern="SE_BAD_FIELD"/>
+  </Match>
+
+  <Match>
     <Class name="org.apache.maven.api.model.ModelBase$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
@@ -118,6 +128,11 @@
   <Match>
     <Class name="org.apache.maven.api.model.ModelBase$Builder"/>
     <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
+  </Match>
+
+  <Match>
+    <Class name="org.apache.maven.api.model.ConfigurationContainer"/>
+    <Bug pattern="SE_BAD_FIELD"/>
   </Match>
 
   <Match>
@@ -218,6 +233,11 @@
   <Match>
     <Class name="org.apache.maven.api.model.License$Builder"/>
     <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
+  </Match>
+
+  <Match>
+    <Class name="org.apache.maven.api.model.Repository"/>
+    <Bug pattern="EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC"/>
   </Match>
 
   <Match>
@@ -328,6 +348,11 @@
   <Match>
     <Class name="org.apache.maven.api.model.ReportSet$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+
+  <Match>
+    <Class name="org.apache.maven.api.model.Extension"/>
+    <Bug pattern="SE_BAD_FIELD"/>
   </Match>
 
   <Match>
