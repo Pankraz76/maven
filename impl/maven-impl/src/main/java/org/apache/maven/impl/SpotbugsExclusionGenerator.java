@@ -36,7 +36,6 @@ public class SpotbugsExclusionGenerator {
             System.out.println("Total exclusions: " + existingBugs.size());
         } catch (IOException e) {
             System.err.println("Error processing files: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 
