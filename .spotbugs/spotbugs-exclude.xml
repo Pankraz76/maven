@@ -31,8 +31,18 @@
   </Match>
 
   <Match>
+    <Class name="Failed to execute goal com"/>
+    <Bug pattern="k"/>
+  </Match>
+
+  <Match>
     <Class name="org.apache.maven.api.model.Source$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+
+  <Match>
+    <Class name="Useless control flow in new org"/>
+    <Bug pattern="At"/>
   </Match>
 
   <Match>
@@ -98,6 +108,11 @@
   <Match>
     <Class name="org.apache.maven.di.tool.DiIndexProcessor"/>
     <Bug pattern="DM_DEFAULT_ENCODING"/>
+  </Match>
+
+  <Match>
+    <Class name="org"/>
+    <Bug pattern="may"/>
   </Match>
 
   <Match>
@@ -358,6 +373,11 @@
   <Match>
     <Class name="org.apache.maven.api.model.ReportPlugin$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+
+  <Match>
+    <Class name="[Help 1] http://cwiki"/>
+    <Bug pattern="n"/>
   </Match>
 
   <Match>

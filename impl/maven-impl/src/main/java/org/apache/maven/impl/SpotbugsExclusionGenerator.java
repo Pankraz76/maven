@@ -8,9 +8,9 @@ import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
-            "\\[ERROR].*?: ([\\w.$]+)(?:\\.[^.]+)?.*?\\[(.*?)\\].*?([A-Z][A-Z0-9_]+)$"
+            "\\[ERROR] (?:\\w+: )?(.*?)\\.(?:[^\\s]+)?\\s*(?:\\[.*?\\])?\\s*(\\w+(?:_\\w+)*)"
     );
-    
+
     private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
             "<Match>\\s*<Class name=\"([^\"]+)\"\\s*/>\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
 
@@ -48,7 +48,7 @@ public class SpotbugsExclusionGenerator {
                 Matcher matcher = SPOTBUGS_PATTERN.matcher(line);
                 if (matcher.find()) {
                     String className = matcher.group(1);
-                    String bugPattern = matcher.group(3); // Get the error code from group 3
+                    String bugPattern = matcher.group(2);
                     bugs.add(new BugInstance(className, bugPattern));
                     System.out.println("New bug found: " + className + " - " + bugPattern);
                 }
@@ -60,7 +60,7 @@ public class SpotbugsExclusionGenerator {
     private static Set<BugInstance> readExistingExclusions(String path) throws IOException {
         Set<BugInstance> existingBugs = new HashSet<>();
         File file = new File(path);
-        
+
         if (!file.exists()) {
             return existingBugs;
         }
