@@ -570,4 +570,29 @@
     <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
   </Match>
 
+  <!-- New rules for remaining warnings -->
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.Requirement$Builder"/>
+    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
+  </Match>
+
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.Resolution$Builder"/>
+    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
+  </Match>
+
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder"/>
+    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
+  </Match>
+
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder"/>
+    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
+  </Match>
+
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder"/>
+    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
+  </Match>
 </FindBugsFilter>
