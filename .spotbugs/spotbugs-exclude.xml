@@ -13,8 +13,9 @@
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder.phases"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder"/>
+    <Method name="phases"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
     <Class name="org.apache.maven.api.model.PatternSet$Builder"/>
@@ -28,28 +29,24 @@
     <Class name="org.apache.maven.api.model.Relocation$Builder"/>
     <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
   </Match>
-  <Match>
-    <Class name="Failed to execute goal com"/>
-    <Bug pattern="k"/>
-  </Match>
+  <!-- Removed invalid/faulty entry: <Class name="Failed to execute goal com"/> -->
   <Match>
     <Class name="org.apache.maven.api.model.Source$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution.getGoals"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Execution"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution"/>
+    <Method name="getGoals"/>
+    <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
-  <Match>
-    <Class name="Useless control flow in new org"/>
-    <Bug pattern="At"/>
-  </Match>
+  <!-- Removed invalid/faulty entry: <Class name="Useless control flow in new org"/> -->
   <Match>
     <Class name="org.apache.maven.api.model.ReportSet"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder.phases(Collection)"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder"/>
+    <Method name="phases(Collection)"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
@@ -65,11 +62,13 @@
     <Bug pattern="SE_BAD_FIELD"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration.getLifecycles"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration"/>
+    <Method name="getLifecycles"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase.getExecutions"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase"/>
+    <Method name="getExecutions"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
@@ -89,32 +88,33 @@
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor$Builder.mojos(Collection)"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor$Builder"/>
+    <Method name="mojos(Collection)"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder.goals"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder"/>
+    <Method name="goals"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
     <Class name="org.apache.maven.di.tool.DiIndexProcessor"/>
     <Bug pattern="DM_DEFAULT_ENCODING"/>
   </Match>
-  <Match>
-    <Class name="org"/>
-    <Bug pattern="may"/>
-  </Match>
+  <!-- Removed invalid/faulty entry: <Class name="org"/> -->
   <Match>
     <Class name="org.apache.maven.api.model.PatternSet$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder.lifecycles"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder"/>
+    <Method name="lifecycles"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase.getExecutions"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Phase"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase"/>
+    <Method name="getExecutions"/>
+    <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
     <Class name="org.apache.maven.api.model.ActivationOS$Builder"/>
@@ -133,19 +133,23 @@
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor.getResolutions"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.MojoDescriptor"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder.parameters"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor.getParameters()"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor"/>
+    <Method name="getResolutions"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration.getLifecycles()"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder"/>
+    <Method name="parameters"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor"/>
+    <Method name="getParameters"/>
+    <Bug pattern="EI_EXPOSE_REP"/>
+  </Match>
+  <Match>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration"/>
+    <Method name="getLifecycles"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
@@ -165,7 +169,8 @@
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor.getMojos"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor"/>
+    <Method name="getMojos"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
@@ -173,7 +178,7 @@
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder.lifecycles(Collection)"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder"/>
     <Method name="lifecycles(Collection)"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
@@ -194,7 +199,8 @@
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder.resolutions(Collection)"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder"/>
+    <Method name="resolutions(Collection)"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>
   <Match>
@@ -202,7 +208,8 @@
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor.getMojos()"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor"/>
+    <Method name="getMojos()"/>
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
@@ -214,171 +221,7 @@
     <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
   </Match>
   <Match>
-    <Class name="Useless"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="Useless"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.Resolution$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.MailingList$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Model$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.xml.XmlNode$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ReportSet$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Extension"/>
-    <Bug pattern="SE_BAD_FIELD"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder.resolutions"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.MailingList$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.PluginContainer$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ModelBase"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.RepositoryPolicy$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle.getPhases"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.PluginExecution$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Repository$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor$Builder.mojos"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder.phases"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Build$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.PluginContainer$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.PluginConfiguration$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.DeploymentRepository"/>
-    <Bug pattern="EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ReportPlugin"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Notifier$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.BuildBase$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="Useless"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.PluginContainer"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.PluginManagement$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder.lifecycles"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ModelBase$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase.getExecutions()"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor.getParameters"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder.goals"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ReportPlugin$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="[Help 1] http://cwiki"/>
-    <Bug pattern="n"/>
-  </Match>
-  <Match>
-    <Class name="Useless"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.Requirement$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution.getGoals()"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ModelBase$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ConfigurationContainer"/>
-    <Bug pattern="SE_BAD_FIELD"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Build$Builder"/>
+    <Class name="org.apache.maven.api.model.CiManagement"/>
     <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
   </Match>
   <Match>
@@ -386,175 +229,8 @@
     <Bug pattern="EI_EXPOSE_REP"/>
   </Match>
   <Match>
-    <Class name="Useless"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Extension$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.PluginConfiguration$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor.getResolutions()"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Reporting"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.CiManagement$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase"/>
-    <Bug pattern="SE_BAD_FIELD"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.BuildBase$Builder"/>
+    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder"/>
+    <Method name="lifecycles(Collection)"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor$Builder.mojos"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.PluginDescriptor$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase$Builder.executions"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.Phase$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Plugin"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Plugin$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution"/>
-    <Bug pattern="SE_BAD_FIELD"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Parent$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor.getResolutions"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.DependencyManagement"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Site$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase$Builder.executions"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.License$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder.parameters"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.DependencyManagement$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.DistributionManagement$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle.getPhases()"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Notifier"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution.getGoals"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Contributor"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Exclusion$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.ActivationFile$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.FileSet$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.PluginDescriptor.getMojos"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.PluginDescriptor"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder.parameters(Collection)"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Execution$Builder.goals(Collection)"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor.getParameters"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.MojoDescriptor"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Contributor$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder.resolutions"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.MojoDescriptor$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Lifecycle.getPhases"/>
-    <Bug pattern="EI_EXPOSE_REP"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.Phase$Builder.executions(Collection)"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration.getLifecycles"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.FileSet$Builder"/>
-    <Bug pattern="EI_EXPOSE_REP2"/>
-  </Match>
-  <Match>
-    <Class name="Useless"/>
-    <Bug pattern="org.apache.maven.api.plugin.descriptor.lifecycle.LifecycleConfiguration$Builder"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.plugin.descriptor.Requirement$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Contributor$Builder"/>
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW"/>
   </Match>
 </FindBugsFilter>
