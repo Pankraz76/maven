@@ -808,7 +808,7 @@ under the License.</licenseText>
             <execution>
               <id>spotbugs</id>
               <goals>
-                                <goal>check</goal>
+                <goal>check</goal>
               </goals>
               <phase>verify</phase>
             </execution>
@@ -892,7 +892,9 @@ under the License.</licenseText>
                 <exclude>**/*.svg</exclude>
                 <exclude>.asf.yaml</exclude>
                 <exclude>.pmd/exclude.properties</exclude>
+                <exclude>.spotbugs/spotbugs-exclude.xml</exclude>
                 <exclude>pmd.txt</exclude>
+                <exclude>spotbugs.txt</exclude>
                 <exclude>.mvn/**</exclude>
                 <exclude>.jbang/**</exclude>
                 <!--
