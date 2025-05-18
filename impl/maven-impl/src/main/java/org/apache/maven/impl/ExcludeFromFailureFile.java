@@ -1,61 +1,60 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 package org.apache.maven.impl;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ExcludeFromFailureFile {
+    // Pattern to extract class, line number, and rule from PMD warnings
+    private static final Pattern PMD_PATTERN = Pattern.compile(
+            "PMD Failure: (\\S+):(\\d+) Rule:(\\S+) Priority:\\d+");
 
-    private static final Pattern PMD_PATTERN =
-            Pattern.compile("PMD Failure: ([\\w\\.]+):(\\d+) Rule:([\\w]+) Priority:\\d+");
+    public static void main(String[] args) {
+        String pmdLogPath = "pmd.log"; // path to PMD log file
+        String propertiesPath = ".pmd/exclude.properties"; // path to exclude properties file
 
-    public static void main(String[] args) throws IOException {
-        Path logPath = Paths.get("pmd.txt"); // path to pmd.log
-        Path propsPath = Paths.get(".pmd/exclude.properties"); // path to exclude.properties
-
-        // Load existing properties
-        Properties excludeProps = new Properties();
-        if (Files.exists(propsPath)) {
-            try (InputStream in = Files.newInputStream(propsPath)) {
-                excludeProps.load(in);
+        try {
+            // Step 1: Parse existing properties file
+            Properties existingProps = new Properties();
+            try (FileReader reader = new FileReader(propertiesPath)) {
+                existingProps.load(reader);
+            } catch (IOException e) {
+                // File might not exist yet, which is okay
+                System.out.println("No existing properties file found, creating new one");
             }
+
+            // Step 2: Parse PMD log file
+            Map<String, String> pmdViolations = parsePmdLog(pmdLogPath);
+
+            // Step 3: Merge with existing properties
+            Properties mergedProps = mergeProperties(existingProps, pmdViolations);
+
+            // Step 4: Write merged properties back to file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(propertiesPath))) {
+                for (String key : mergedProps.stringPropertyNames()) {
+                    writer.write(key + "=" + mergedProps.getProperty(key));
+                    writer.newLine();
+                }
+            }
+
+            System.out.println("Successfully merged PMD violations into properties file");
+        } catch (IOException e) {
+            System.err.println("Error processing files: " + e.getMessage());
+            e.printStackTrace();
         }
+    }
 
-        // Parse PMD log and collect new rules
-        Map<String, Set<String>> newEntries = new HashMap<>();
+    private static Map<String, String> parsePmdLog(String pmdLogPath) throws IOException {
+        Map<String, String> violations = new HashMap<>();
 
-        try (BufferedReader reader = Files.newBufferedReader(logPath)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(pmdLogPath))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 Matcher matcher = PMD_PATTERN.matcher(line);
@@ -63,34 +62,47 @@ public class ExcludeFromFailureFile {
                     String className = matcher.group(1);
                     String rule = matcher.group(3);
 
-                    newEntries.computeIfAbsent(className, k -> new HashSet<>()).add(rule);
+                    // Add to violations map, merging if class already exists
+                    if (violations.containsKey(className)) {
+                        String existingRules = violations.get(className);
+                        if (!existingRules.contains(rule)) {
+                            violations.put(className, existingRules + "," + rule);
+                        }
+                    } else {
+                        violations.put(className, rule);
+                    }
                 }
             }
         }
+        return violations;
+    }
 
-        // Merge with existing properties
-        for (Map.Entry<String, Set<String>> entry : newEntries.entrySet()) {
-            String key = entry.getKey();
-            Set<String> newRules = entry.getValue();
+    private static Properties mergeProperties(Properties existing, Map<String, String> newViolations) {
+        Properties merged = new Properties();
 
-            String existing = excludeProps.getProperty(key);
-            Set<String> merged = new TreeSet<>(newRules); // Sorted & deduplicated
+        // Add all existing properties first
+        merged.putAll(existing);
 
-            if (existing != null && !existing.isEmpty()) {
-                merged.addAll(Arrays.asList(existing.split(",")));
+        // Merge with new violations
+        for (Map.Entry<String, String> entry : newViolations.entrySet()) {
+            String className = entry.getKey();
+            String newRules = entry.getValue();
+
+            if (merged.containsKey(className)) {
+                // Merge rules if class already exists
+                String existingRules = merged.getProperty(className);
+                for (String rule : newRules.split(",")) {
+                    if (!existingRules.contains(rule)) {
+                        existingRules += "," + rule;
+                    }
+                }
+                merged.setProperty(className, existingRules);
+            } else {
+                // Add new entry
+                merged.setProperty(className, newRules);
             }
-
-            excludeProps.setProperty(key, String.join(",", merged));
         }
 
-        // Ensure output directory exists
-        Files.createDirectories(propsPath.getParent());
-
-        // Write back merged properties
-        try (OutputStream out = Files.newOutputStream(propsPath)) {
-            excludeProps.store(out, "Merged PMD exclusions");
-        }
-
-        System.out.println("Exclude file updated successfully.");
+        return merged;
     }
 }
