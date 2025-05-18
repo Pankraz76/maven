@@ -36,8 +36,13 @@ public class ExcludeFromFailureFile {
             // Step 3: Merge with existing properties
             Properties mergedProps = mergeProperties(existingProps, pmdViolations);
 
-            // Step 4: Write merged properties back to file
+            // Step 4: Write merged properties back to file without comments/timestamps
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(propertiesPath))) {
+                // Write a simple header comment if needed
+                writer.write("# PMD exclusion rules");
+                writer.newLine();
+                writer.newLine();
+
                 for (String key : mergedProps.stringPropertyNames()) {
                     writer.write(key + "=" + mergedProps.getProperty(key));
                     writer.newLine();
