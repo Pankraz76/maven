@@ -17,7 +17,7 @@ public class ExcludeFromFailureFile {
             "PMD Failure: (\\S+):(\\d+) Rule:(\\S+) Priority:\\d+");
 
     public static void main(String[] args) {
-        String pmdLogPath = "pmd.log"; // path to PMD log file
+        String pmdLogPath = "pmd.txt"; // path to PMD log file
         String propertiesPath = ".pmd/exclude.properties"; // path to exclude properties file
 
         try {
