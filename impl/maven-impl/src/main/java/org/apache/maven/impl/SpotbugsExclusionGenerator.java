@@ -94,7 +94,7 @@ public class SpotbugsExclusionGenerator {
             xml.append("  <Match>\n");
             xml.append("    <Class name=\"").append(bug.getClassName()).append("\"/>\n");
             xml.append("    <Bug pattern=\"").append(bug.getBugPattern()).append("\"/>\n");
-            xml.append("  </Match>\n\n");
+            xml.append("  </Match>\n");
         }
 
         xml.append("</FindBugsFilter>");
