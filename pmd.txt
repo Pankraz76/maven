@@ -69,3 +69,11 @@
 [INFO] You have 0 Checkstyle violations.
 [INFO] 
 [INFO] --- spotless:2.44.3:apply (default) @ maven ---
+[INFO] Index file does not exist. Fallback to an empty index
+[INFO] Spotless.Pom is keeping 1 files clean - 0 were changed to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- remote-resources:3.3.0:process (process-resource-bundles) @ maven ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.7
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- apache-rat:0.16.1:check (rat-check) @ maven ---
