@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FindBugsFilter>
   <Match>
+    <Class name="org.apache.maven.di.tool.DiIndexProcessor"/>
+    <Bug pattern="DM_DEFAULT_ENCODING"/>
+  </Match>
+
+  <Match>
     <Class name="org.apache.maven.api.xml.XmlNode$Builder"/>
     <Bug pattern="EI_EXPOSE_REP2"/>
   </Match>

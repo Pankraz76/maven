@@ -7,25 +7,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
-    // Updated pattern to extract class and bug pattern from Spotbugs errors
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
             "\\[ERROR\\] \\w+: .*?\\[(.*?)\\] At .*?:\\[line \\d+\\] (\\S+)");
+    private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
+            "<Class name=\"([^\"]+)\"\\s*/>\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
 
     public static void main(String[] args) {
-        String spotbugsLogPath = "spotbugs.txt"; // path to Spotbugs log file
-        String xmlOutputPath = ".spotbugs/spotbugs-exclude.xml"; // path to output XML file
+        String spotbugsLogPath = "spotbugs.txt";
+        String xmlOutputPath = ".spotbugs/spotbugs-exclude.xml";
 
         try {
-            // Step 1: Parse the Spotbugs log file
-            Set<BugInstance> bugInstances = parseSpotbugsLog(spotbugsLogPath);
+            // Step 1: Parse SpotBugs log
+            Set<BugInstance> newBugs = parseSpotbugsLog(spotbugsLogPath);
 
-            // Step 2: Generate XML content
-            String xmlContent = generateXmlExclusions(bugInstances);
+            // Step 2: Read existing XML exclusions (if present)
+            Set<BugInstance> existingBugs = readExistingExclusions(xmlOutputPath);
 
-            // Step 3: Write to XML file
+            // Step 3: Merge new and existing bugs
+            existingBugs.addAll(newBugs); // merge
+
+            // Step 4: Generate and write merged XML
+            String xmlContent = generateXmlExclusions(existingBugs);
             writeXmlFile(xmlContent, xmlOutputPath);
 
-            System.out.println("Successfully generated Spotbugs exclusion file: " + xmlOutputPath);
+            System.out.println("Successfully updated Spotbugs exclusion file: " + xmlOutputPath);
         } catch (IOException e) {
             System.err.println("Error processing files: " + e.getMessage());
             e.printStackTrace();
@@ -33,7 +38,7 @@ public class SpotbugsExclusionGenerator {
     }
 
     private static Set<BugInstance> parseSpotbugsLog(String logPath) throws IOException {
-        Set<BugInstance> bugInstances = new HashSet<>();
+        Set<BugInstance> bugs = new HashSet<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(logPath))) {
             String line;
@@ -42,12 +47,38 @@ public class SpotbugsExclusionGenerator {
                 if (matcher.find()) {
                     String className = matcher.group(1);
                     String bugPattern = matcher.group(2);
-                    bugInstances.add(new BugInstance(className, bugPattern));
-                    System.out.println("Matched bug: " + className + ", pattern: " + bugPattern);
+                    bugs.add(new BugInstance(className, bugPattern));
+                    System.out.println("New bug found: " + className + " - " + bugPattern);
                 }
             }
         }
-        return bugInstances;
+        return bugs;
+    }
+
+    private static Set<BugInstance> readExistingExclusions(String path) throws IOException {
+        Set<BugInstance> existingBugs = new HashSet<>();
+        File file = new File(path);
+        if (!file.exists()) {
+            return existingBugs;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            StringBuilder xml = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                xml.append(line).append("\n");
+            }
+
+            Matcher matcher = EXISTING_EXCLUSION_PATTERN.matcher(xml.toString());
+            while (matcher.find()) {
+                String className = matcher.group(1);
+                String bugPattern = matcher.group(2);
+                existingBugs.add(new BugInstance(className, bugPattern));
+                System.out.println("Existing exclusion loaded: " + className + " - " + bugPattern);
+            }
+        }
+
+        return existingBugs;
     }
 
     private static String generateXmlExclusions(Set<BugInstance> bugInstances) {
@@ -55,7 +86,6 @@ public class SpotbugsExclusionGenerator {
         xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
         xml.append("<FindBugsFilter>\n");
 
-        // Add each bug instance as a Match entry
         for (BugInstance bug : bugInstances) {
             xml.append("  <Match>\n");
             xml.append("    <Class name=\"").append(bug.getClassName()).append("\"/>\n");
@@ -68,10 +98,8 @@ public class SpotbugsExclusionGenerator {
     }
 
     private static void writeXmlFile(String content, String path) throws IOException {
-        // Create parent directories if they don't exist
         File file = new File(path);
         file.getParentFile().mkdirs();
-
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             writer.write(content);
         }
