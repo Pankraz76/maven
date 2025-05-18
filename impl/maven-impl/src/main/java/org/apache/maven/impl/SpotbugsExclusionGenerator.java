@@ -11,8 +11,11 @@ public class SpotbugsExclusionGenerator {
             "\\[ERROR\\] (?:Medium|High|Low): ([\\w.$]+)(?:#([\\w]+)\\(([^)]*)\\))?\\s*(?:\\[([A-Z_]+)\\]|may expose internal representation)"
     );
 
+    // Matches full <Match> block including optional <Method> and trailing </Match>, supports multiline
     private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
-            "<Match>\\s*<Class name=\"([^\"]+)\"\\s*/>(?:\\s*<Method name=\"([^\"]+)\"\\s*/>)?\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
+            "<Match>\\s*<Class name=\"([^\"]+)\"\\s*/>\\s*(?:<Method name=\"([^\"]+)\"\\s*/>)?\\s*<Bug pattern=\"([^\"]+)\"\\s*/>\\s*</Match>",
+            Pattern.MULTILINE
+    );
 
     public static void main(String[] args) {
         String spotbugsLogPath = "spotbugs.txt";
@@ -43,17 +46,23 @@ public class SpotbugsExclusionGenerator {
                     String className = matcher.group(1);
                     String methodName = matcher.group(2);
                     String methodParams = matcher.group(3);
-                    String bugPattern = matcher.group(4) != null ? matcher.group(4) :
-                            (line.contains("may expose internal representation") ?
-                                    (line.contains(" storing ") ? "EI_EXPOSE_REP2" : "EI_EXPOSE_REP") : null);
+                    String bugPattern = matcher.group(4);
+                    if (bugPattern == null) {
+                        if (line.contains("may expose internal representation")) {
+                            bugPattern = line.contains(" storing ") ? "EI_EXPOSE_REP2" : "EI_EXPOSE_REP";
+                        }
+                    }
 
                     if (bugPattern != null) {
-                        String fullMethod = methodName != null ?
-                                methodName + "(" + (methodParams != null ? methodParams : "") + ")" : null;
-                        bugs.add(new BugInstance(className, fullMethod, bugPattern));
-                        System.out.println("New bug found: " + className +
-                                (fullMethod != null ? "#" + fullMethod : "") +
-                                " - " + bugPattern);
+                        String fullMethod = methodName != null
+                                ? methodName + "(" + (methodParams != null ? methodParams : "") + ")"
+                                : null;
+                        BugInstance bug = new BugInstance(className, fullMethod, bugPattern);
+                        if (bugs.add(bug)) {
+                            System.out.println("New bug found: " + className +
+                                    (fullMethod != null ? "#" + fullMethod : "") +
+                                    " - " + bugPattern);
+                        }
                     }
                 }
             }
@@ -95,11 +104,11 @@ public class SpotbugsExclusionGenerator {
 
         for (BugInstance bug : bugInstances) {
             xml.append("  <Match>\n");
-            xml.append("    <Class name=\"").append(bug.getClassName()).append("\"/>\n");
+            xml.append("    <Class name=\"").append(escapeXml(bug.getClassName())).append("\"/>\n");
             if (bug.getMethod() != null) {
-                xml.append("    <Method name=\"").append(bug.getMethod()).append("\"/>\n");
+                xml.append("    <Method name=\"").append(escapeXml(bug.getMethod())).append("\"/>\n");
             }
-            xml.append("    <Bug pattern=\"").append(bug.getBugPattern()).append("\"/>\n");
+            xml.append("    <Bug pattern=\"").append(escapeXml(bug.getBugPattern())).append("\"/>\n");
             xml.append("  </Match>\n");
         }
 
@@ -109,10 +118,24 @@ public class SpotbugsExclusionGenerator {
 
     private static void writeXmlFile(String content, String path) throws IOException {
         File file = new File(path);
-        file.getParentFile().mkdirs();
+        File parent = file.getParentFile();
+        if (parent != null && !parent.exists()) {
+            if (!parent.mkdirs()) {
+                throw new IOException("Failed to create directories: " + parent.getAbsolutePath());
+            }
+        }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             writer.write(content);
         }
+    }
+
+    private static String escapeXml(String s) {
+        if (s == null) return null;
+        return s.replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace("\"", "&quot;")
+                .replace("'", "&apos;");
     }
 
     private static class BugInstance {
@@ -141,11 +164,11 @@ public class SpotbugsExclusionGenerator {
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+            if (!(o instanceof BugInstance)) return false;
             BugInstance that = (BugInstance) o;
-            return className.equals(that.className) &&
-                    (method != null ? method.equals(that.method) : that.method == null) &&
-                    bugPattern.equals(that.bugPattern);
+            if (!className.equals(that.className)) return false;
+            if (method != null ? !method.equals(that.method) : that.method != null) return false;
+            return bugPattern.equals(that.bugPattern);
         }
 
         @Override
