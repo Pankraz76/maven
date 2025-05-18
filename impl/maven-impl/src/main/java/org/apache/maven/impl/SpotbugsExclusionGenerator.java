@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 
 public class SpotbugsExclusionGenerator {
     private static final Pattern SPOTBUGS_PATTERN = Pattern.compile(
-            "\\[ERROR\\] \\w+: .*?\\[(.*?)\\] At .*?:\\[line \\d+\\] (\\S+)");
+            "\\[ERROR\\] .*?[:\\s] (?:Class )?(\\S+) .*? (?:In|At) \\S+\\.java.*? (\\S+)$"
+    );
     private static final Pattern EXISTING_EXCLUSION_PATTERN = Pattern.compile(
             "<Class name=\"([^\"]+)\"\\s*/>\\s*<Bug pattern=\"([^\"]+)\"\\s*/>");
 
