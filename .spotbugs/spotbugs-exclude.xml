@@ -6,5 +6,6 @@
   </Match>
   <Match>
     <Class name="org.apache.maven.api.xml.XmlNode$Builder" />
+    <Bug pattern="EI_EXPOSE_REP2" />
   </Match>
 </FindBugsFilter>
