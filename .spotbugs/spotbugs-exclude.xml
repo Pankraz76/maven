@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FindBugsFilter>
   <Match>
-    <Bug pattern="EI_EXPOSE_REP2" />
-  </Match>
-  <Match>
-    <Bug pattern="SE_BAD_FIELD" />
+    <Class name="org.apache.maven.di.tool.DiIndexProcessor" />
+    <Method name="updateFileIfChanged" />
+    <Bug pattern="DM_DEFAULT_ENCODING" />
   </Match>
 </FindBugsFilter>

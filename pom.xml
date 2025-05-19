@@ -802,8 +802,8 @@ under the License.</licenseText>
           <version>4.9.3.0</version>
           <configuration>
             <effort>max</effort>
-            <excludeFilterFile>.spotbugs/spotbugs-include.xml</excludeFilterFile>
-            <excludeFilterFile>.spotbugs/spotbugs-exclude.xml</excludeFilterFile>
+<!--            <excludeFilterFile>.spotbugs/spotbugs-include.xml</excludeFilterFile>-->
+<!--            <excludeFilterFile>.spotbugs/spotbugs-exclude.xml</excludeFilterFile>-->
           </configuration>
           <executions>
             <execution>
