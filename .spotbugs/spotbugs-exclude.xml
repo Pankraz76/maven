@@ -1,47 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FindBugsFilter>
   <Match>
-    <Class name="com.puppycrawl.tools.checkstyle.Main" />
-    <Method name="loadProperties" />
-    <Bug pattern="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" />
+    <Bug pattern="EI_EXPOSE_REP2" />
   </Match>
-
-  <!-- Maven API Model suppressions -->
-  <!-- Suppress all UCF_USELESS_CONTROL_FLOW in Builder classes -->
   <Match>
-    <Class name="org.apache.maven.api.model.*$Builder" />
-    <Bug pattern="UCF_USELESS_CONTROL_FLOW" />
-  </Match>
-
-  <!-- Suppress EI_EXPOSE_REP/EI_EXPOSE_REP2 for all model classes -->
-  <Match>
-    <Class name="org.apache.maven.api.model.*" />
-    <Or>
-      <Bug pattern="EI_EXPOSE_REP" />
-      <Bug pattern="EI_EXPOSE_REP2" />
-    </Or>
-  </Match>
-
-  <!-- Suppress serialization issues -->
-  <Match>
-    <Class name="org.apache.maven.api.model.ConfigurationContainer" />
     <Bug pattern="SE_BAD_FIELD" />
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Extension" />
-    <Bug pattern="SE_BAD_FIELD" />
-  </Match>
-  <Match>
-    <Class name="org.apache.maven.api.model.Model" />
-    <Bug pattern="SE_BAD_FIELD" />
-  </Match>
-
-  <!-- Suppress equals() implementation issues -->
-  <Match>
-    <Or>
-      <Class name="org.apache.maven.api.model.DeploymentRepository" />
-      <Class name="org.apache.maven.api.model.Repository" />
-    </Or>
-    <Bug pattern="EQ_OVERRIDING_EQUALS_NOT_SYMMETRIC" />
   </Match>
 </FindBugsFilter>
