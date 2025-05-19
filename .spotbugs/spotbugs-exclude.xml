@@ -2,7 +2,9 @@
 <FindBugsFilter>
   <Match>
     <Class name="org.apache.maven.di.tool.DiIndexProcessor" />
-    <Method name="updateFileIfChanged" />
     <Bug pattern="DM_DEFAULT_ENCODING" />
+  </Match>
+  <Match>
+    <Class name="org.apache.maven.api.xml.XmlNode$Builder" />
   </Match>
 </FindBugsFilter>

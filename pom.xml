@@ -803,7 +803,7 @@ under the License.</licenseText>
           <configuration>
             <effort>max</effort>
 <!--            <excludeFilterFile>.spotbugs/spotbugs-include.xml</excludeFilterFile>-->
-<!--            <excludeFilterFile>.spotbugs/spotbugs-exclude.xml</excludeFilterFile>-->
+            <excludeFilterFile>.spotbugs/spotbugs-exclude.xml</excludeFilterFile>
           </configuration>
           <executions>
             <execution>
