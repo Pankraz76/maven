@@ -66,7 +66,9 @@ public class ExcludeFromFailureFile {
                     if (matcher.find()) {
                         String className = matcher.group(1).replace('/', '.');
                         String rule = matcher.group(3);
-                        newEntries.computeIfAbsent(className, k -> new HashSet<>()).add(rule);
+                        newEntries
+                                .computeIfAbsent(className, k -> new HashSet<>())
+                                .add(rule);
                     }
                 }
             }
@@ -90,7 +92,9 @@ public class ExcludeFromFailureFile {
                     if (matcher.find()) {
                         String className = matcher.group(1);
                         String rule = matcher.group(3);
-                        newEntries.computeIfAbsent(className, k -> new HashSet<>()).add(rule);
+                        newEntries
+                                .computeIfAbsent(className, k -> new HashSet<>())
+                                .add(rule);
                     }
                 }
             }
@@ -109,7 +113,8 @@ public class ExcludeFromFailureFile {
         return props;
     }
 
-    private static void mergeAndSave(Properties excludeProps, Map<String, Set<String>> newEntries, Path propsPath) throws IOException {
+    private static void mergeAndSave(Properties excludeProps, Map<String, Set<String>> newEntries, Path propsPath)
+            throws IOException {
         for (Map.Entry<String, Set<String>> entry : newEntries.entrySet()) {
             String key = entry.getKey();
             Set<String> newRules = entry.getValue();
