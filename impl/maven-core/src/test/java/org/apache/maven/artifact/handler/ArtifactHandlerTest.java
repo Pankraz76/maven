@@ -47,7 +47,6 @@ class ArtifactHandlerTest {
     PlexusContainer container;
 
     @Test
-    @SuppressWarnings("checkstyle:UnusedLocalVariable")
     void testAptConsistency() throws Exception {
         File apt = getTestFile("src/site/apt/artifact-handlers.apt");
 
