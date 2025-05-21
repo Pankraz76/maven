@@ -866,6 +866,8 @@ under the License.</licenseText>
                 <exclude>**/*.svg</exclude>
                 <exclude>.asf.yaml</exclude>
                 <exclude>.pmd/exclude.properties</exclude>
+                <exclude>.pmd/obsoletes.xml</exclude>
+                <exclude>pmd.txt</exclude>
                 <exclude>.mvn/**</exclude>
                 <exclude>.jbang/**</exclude>
                 <!--
