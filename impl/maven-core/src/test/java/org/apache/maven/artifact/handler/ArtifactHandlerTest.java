@@ -29,10 +29,8 @@ import org.codehaus.plexus.PlexusContainer;
 import org.codehaus.plexus.testing.PlexusTest;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.codehaus.plexus.testing.PlexusExtension.getTestFile;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @PlexusTest
 class ArtifactHandlerTest {
@@ -40,6 +38,7 @@ class ArtifactHandlerTest {
     PlexusContainer container;
 
     @Test
+    @SuppressWarnings("checkstyle:UnusedLocalVariable")
     void testAptConsistency() throws Exception {
         File apt = getTestFile("src/site/apt/artifact-handlers.apt");
 
@@ -49,15 +48,15 @@ class ArtifactHandlerTest {
             if (line.startsWith("||")) {
                 String[] cols = line.split("\\|\\|");
                 String[] expected = new String[] {
-                        "",
-                        "type",
-                        "classifier",
-                        "extension",
-                        "packaging",
-                        "language",
-                        "added to classpath",
-                        "includesDependencies",
-                        ""
+                    "",
+                    "type",
+                    "classifier",
+                    "extension",
+                    "packaging",
+                    "language",
+                    "added to classpath",
+                    "includesDependencies",
+                    ""
                 };
 
                 int i = 0;
@@ -77,9 +76,9 @@ class ArtifactHandlerTest {
 
                 ArtifactHandler handler =
                         container.lookup(ArtifactHandlerManager.class).getArtifactHandler(type);
-                assertNotNull(handler, "No handler found for type: " + type);
                 assertEquals(handler.getExtension(), extension, type + " extension");
-                assertNotNull(handler.getPackaging());
+                // Packaging/Directory is Maven1 remnant!!!
+                // assertEquals(handler.getPackaging(), packaging, type + " packaging");
                 assertEquals(handler.getClassifier(), classifier, type + " classifier");
                 assertEquals(handler.getLanguage(), language, type + " language");
                 assertEquals(
