@@ -38,7 +38,7 @@ import java.util.regex.Pattern;
 public class ExcludeFromFailureFile {
 
     private static final Pattern PMD_PATTERN =
-            Pattern.compile("PMD Failure: ([\\w\\.]+):(\\d+) Rule:([\\w]+) Priority:\\d+");
+            Pattern.compile("PMD Failure: ([\\w/]+)\\.java:(\\d+) Rule:(\\w+) Priority:\\d+ .*");
 
     public static void main(String[] args) throws IOException {
         Path logPath = Paths.get("pmd.txt"); // path to pmd.log
@@ -60,7 +60,7 @@ public class ExcludeFromFailureFile {
             while ((line = reader.readLine()) != null) {
                 Matcher matcher = PMD_PATTERN.matcher(line);
                 if (matcher.find()) {
-                    String className = matcher.group(1);
+                    String className = matcher.group(1).replace('/', '.');
                     String rule = matcher.group(3);
 
                     newEntries.computeIfAbsent(className, k -> new HashSet<>()).add(rule);
