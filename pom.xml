@@ -801,14 +801,9 @@ under the License.</licenseText>
           <artifactId>maven-pmd-plugin</artifactId>
           <configuration>
             <analysisCache>true</analysisCache>
-            <excludeFromFailureFile>.pmd/exclude.properties</excludeFromFailureFile>
+<!--            <excludeFromFailureFile>.pmd/exclude.properties</excludeFromFailureFile>-->
             <printFailingErrors>true</printFailingErrors>
-            <minimumPriority>3</minimumPriority>
-            <rulesets>
-<!--              <ruleset>category/java/errorprone.xml</ruleset>-->
-<!--              <ruleset>category/java/bestpractices.xml</ruleset>-->
-<!--              <ruleset>${project.basedir}.pmd/obsoletes.xml</ruleset>-->
-            </rulesets>
+<!--            <minimumPriority>3</minimumPriority>-->
           </configuration>
           <dependencies>
             <dependency>
