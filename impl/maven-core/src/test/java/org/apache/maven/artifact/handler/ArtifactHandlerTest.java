@@ -36,15 +36,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @PlexusTest
 class ArtifactHandlerTest {
-    @Inject
-    PlexusContainer container;
-    // Define as a constant if used in multiple places
     private static final List<String> VALID_PACKAGING_TYPES = List.of(
             "pom", "jar", "test-jar", "maven-plugin", "ejb", "war", "ear", "rar",
             "java-source", "javadoc", "aar", "apk", "bundle", "eclipse-plugin",
             "eclipse-test-plugin", "hpi", "jpi", "kar", "lpkg", "maven-archetype",
             "nar", "par", "sar", "swc", "swf", "zip"
     );
+
+    @Inject
+    PlexusContainer container;
 
     @Test
     @SuppressWarnings("checkstyle:UnusedLocalVariable")
