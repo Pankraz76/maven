@@ -76,7 +76,7 @@ class ArtifactHandlerTest {
                 String addedToClasspath = trimApt(cols[6]);
                 String includesDependencies = trimApt(cols[7]);
 
-                assertThat(List.of("pom", "jar", "test-jar")).contains(packaging);
+                assertThat(List.of("pom", "jar", "test-jar","maven-plugin","ejb","war")).contains(packaging);
 
                 ArtifactHandler handler =
                         container.lookup(ArtifactHandlerManager.class).getArtifactHandler(type);
