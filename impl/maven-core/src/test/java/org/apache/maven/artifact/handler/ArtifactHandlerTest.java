@@ -83,7 +83,7 @@ class ArtifactHandlerTest {
                 String addedToClasspath = trimApt(cols[6]);
                 String includesDependencies = trimApt(cols[7]);
 
-                assertThat(List.of(VALID_PACKAGING_TYPES)).contains(packaging);
+                assertThat(VALID_PACKAGING_TYPES).contains(packaging);
 
                 ArtifactHandler handler =
                         container.lookup(ArtifactHandlerManager.class).getArtifactHandler(type);
