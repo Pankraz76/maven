@@ -31,6 +31,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.codehaus.plexus.testing.PlexusExtension.getTestFile;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @PlexusTest
 class ArtifactHandlerTest {
@@ -38,7 +39,6 @@ class ArtifactHandlerTest {
     PlexusContainer container;
 
     @Test
-    @SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
     void testAptConsistency() throws Exception {
         File apt = getTestFile("src/site/apt/artifact-handlers.apt");
 
@@ -77,6 +77,7 @@ class ArtifactHandlerTest {
                 ArtifactHandler handler =
                         container.lookup(ArtifactHandlerManager.class).getArtifactHandler(type);
                 assertEquals(handler.getExtension(), extension, type + " extension");
+                assertNotNull(packaging);
                 // Packaging/Directory is Maven1 remnant!!!
                 // assertEquals(handler.getPackaging(), packaging, type + " packaging");
                 assertEquals(handler.getClassifier(), classifier, type + " classifier");
