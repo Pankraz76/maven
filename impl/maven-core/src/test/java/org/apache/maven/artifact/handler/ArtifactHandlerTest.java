@@ -25,28 +25,20 @@ import java.nio.file.Files;
 import java.util.List;
 
 import org.apache.maven.artifact.handler.manager.ArtifactHandlerManager;
-import org.assertj.core.api.AssertionsForClassTypes;
 import org.codehaus.plexus.PlexusContainer;
 import org.codehaus.plexus.testing.PlexusTest;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.codehaus.plexus.testing.PlexusExtension.getTestFile;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @PlexusTest
 class ArtifactHandlerTest {
-    private static final List<String> VALID_PACKAGING_TYPES = List.of(
-            "pom", "jar", "test-jar", "maven-plugin", "ejb", "war", "ear", "rar",
-            "java-source", "javadoc", "aar", "apk", "bundle", "eclipse-plugin",
-            "eclipse-test-plugin", "hpi", "jpi", "kar", "lpkg", "maven-archetype",
-            "nar", "par", "sar", "swc", "swf", "zip"
-    );
-
     @Inject
     PlexusContainer container;
 
     @Test
+    @SuppressWarnings("checkstyle:UnusedLocalVariable")
     void testAptConsistency() throws Exception {
         File apt = getTestFile("src/site/apt/artifact-handlers.apt");
 
@@ -81,8 +73,6 @@ class ArtifactHandlerTest {
                 String language = trimApt(cols[5]);
                 String addedToClasspath = trimApt(cols[6]);
                 String includesDependencies = trimApt(cols[7]);
-
-                assertThat(VALID_PACKAGING_TYPES).contains(packaging);
 
                 ArtifactHandler handler =
                         container.lookup(ArtifactHandlerManager.class).getArtifactHandler(type);

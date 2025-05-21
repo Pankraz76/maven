@@ -95,13 +95,7 @@ public class CheckThreadSafetyMojo extends AbstractMojo {
                     getLog().info("[MAVEN-CORE-IT-LOG] Thread " + this + " uses " + tccl);
                     Thread.currentThread().setContextClassLoader(tccl);
                     while (go.isEmpty()) {
-                        // [WARNING] PMD Failure: Rule:EmptyControlStatement Priority:3 Empty while statement.
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
-                        // wait for the start
+                        // wait for start
                     }
                     for (int j = 0; j < 10 * 1000; j++) {
                         try {

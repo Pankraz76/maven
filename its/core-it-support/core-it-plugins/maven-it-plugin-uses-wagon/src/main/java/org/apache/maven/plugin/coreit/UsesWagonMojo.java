@@ -47,7 +47,7 @@ public class UsesWagonMojo extends AbstractMojo {
             throw new MojoExecutionException(e.getMessage(), e);
         }
         try {
-            @SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
+            @SuppressWarnings("checkstyle:UnusedLocalVariable")
             FileWagon theWagon = (FileWagon) fileWagon;
         } catch (ClassCastException e) {
             getLog().error("", e);
@@ -65,7 +65,7 @@ public class UsesWagonMojo extends AbstractMojo {
             throw new MojoExecutionException(e.getMessage(), e);
         }
         try {
-            @SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
+            @SuppressWarnings("checkstyle:UnusedLocalVariable")
             ScpWagon theWagon = (ScpWagon) scpWagon;
         } catch (ClassCastException e) {
             getLog().error("", e);
