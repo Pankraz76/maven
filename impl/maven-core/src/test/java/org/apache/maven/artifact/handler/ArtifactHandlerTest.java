@@ -38,6 +38,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ArtifactHandlerTest {
     @Inject
     PlexusContainer container;
+    // Define as a constant if used in multiple places
+    private static final List<String> VALID_PACKAGING_TYPES = List.of(
+            "pom", "jar", "test-jar", "maven-plugin", "ejb", "war", "ear", "rar",
+            "java-source", "javadoc", "aar", "apk", "bundle", "eclipse-plugin",
+            "eclipse-test-plugin", "hpi", "jpi", "kar", "lpkg", "maven-archetype",
+            "nar", "par", "sar", "swc", "swf", "zip"
+    );
 
     @Test
     @SuppressWarnings("checkstyle:UnusedLocalVariable")
@@ -76,7 +83,7 @@ class ArtifactHandlerTest {
                 String addedToClasspath = trimApt(cols[6]);
                 String includesDependencies = trimApt(cols[7]);
 
-                assertThat(List.of("pom", "jar", "test-jar","maven-plugin","ejb","war","ear","rar","java-source")).contains(packaging);
+                assertThat(List.of(VALID_PACKAGING_TYPES)).contains(packaging);
 
                 ArtifactHandler handler =
                         container.lookup(ArtifactHandlerManager.class).getArtifactHandler(type);
