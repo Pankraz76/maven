@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  *
  * @author jdcasey
  */
-@SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
+@SuppressWarnings("checkstyle:UnusedLocalVariable")
 class MavenITmng2690MojoLoadingErrorsTest extends AbstractMavenIntegrationTestCase {
 
     MavenITmng2690MojoLoadingErrorsTest() {

@@ -28,7 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * IT that verifies that lifecycle participant
  * methods are invoked even with various build failures/errors.
  */
-@SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
+@SuppressWarnings("checkstyle:UnusedLocalVariable")
 class MavenITmng5640LifecycleParticipantAfterSessionEnd extends AbstractMavenIntegrationTestCase {
     MavenITmng5640LifecycleParticipantAfterSessionEnd() {
         super("[3.2.2,)");
