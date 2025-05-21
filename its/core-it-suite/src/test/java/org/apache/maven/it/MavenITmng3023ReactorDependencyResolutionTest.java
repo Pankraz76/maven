@@ -34,7 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @author jdcasey
  *
  */
-@SuppressWarnings("checkstyle:UnusedLocalVariable")
+@SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
 public class MavenITmng3023ReactorDependencyResolutionTest extends AbstractMavenIntegrationTestCase {
 
     public MavenITmng3023ReactorDependencyResolutionTest() {

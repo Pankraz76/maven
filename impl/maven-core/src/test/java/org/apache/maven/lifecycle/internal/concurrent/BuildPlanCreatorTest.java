@@ -121,7 +121,7 @@ class BuildPlanCreatorTest {
                 String.format("Expected '%s' to be a successor of '%s'", successor.toString(), predecessor.toString()));
     }
 
-    @SuppressWarnings("checkstyle:UnusedLocalVariable")
+    @SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
     private BuildPlan calculateLifecycleMappings(Map<MavenProject, List<MavenProject>> projects, String phase) {
         DefaultLifecycleRegistry lifecycles = new DefaultLifecycleRegistry(Collections.emptyList());
         BuildPlanExecutor builder = new BuildPlanExecutor(null, null, null, null, null, null, null, null, lifecycles);

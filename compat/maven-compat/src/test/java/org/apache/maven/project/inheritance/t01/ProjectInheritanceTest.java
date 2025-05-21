@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  */
 @Deprecated
-@SuppressWarnings("checkstyle:UnusedLocalVariable")
+@SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
 class ProjectInheritanceTest extends AbstractProjectInheritanceTestCase {
     // ----------------------------------------------------------------------
     //

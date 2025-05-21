@@ -41,7 +41,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * This is a test set for <a href="https://issues.apache.org/jira/browse/MNG-3652">MNG-3652</a>.
  */
-@SuppressWarnings("checkstyle:UnusedLocalVariable")
+@SuppressWarnings({"checkstyle:UnusedLocalVariable", "PMD.UnusedLocalVariable"})
 class MavenITmng3652UserAgentHeaderTest extends AbstractMavenIntegrationTestCase {
     private Server server;
 
