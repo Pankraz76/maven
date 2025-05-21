@@ -79,7 +79,7 @@ class ArtifactHandlerTest {
                         container.lookup(ArtifactHandlerManager.class).getArtifactHandler(type);
                 assertNotNull(handler, "No handler found for type: " + type);
                 assertEquals(handler.getExtension(), extension, type + " extension");
-//                assertEquals(handler.getPackaging(), packaging, type + " packaging");
+                assertNotNull(handler.getPackaging());
                 assertEquals(handler.getClassifier(), classifier, type + " classifier");
                 assertEquals(handler.getLanguage(), language, type + " language");
                 assertEquals(
