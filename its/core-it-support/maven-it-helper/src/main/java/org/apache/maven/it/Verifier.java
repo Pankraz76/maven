@@ -999,13 +999,7 @@ public class Verifier {
         if (filePath.contains("!/")) {
             Path basedir = Paths.get(getBasedir()).toAbsolutePath();
             String urlString = "jar:" + basedir.toUri().toASCIIString() + "/" + filePath;
-
-            InputStream is = null;
-            try {
-                URL url = new URL(urlString);
-
-                is = url.openStream();
-
+            try (InputStream is = new URL(urlString).openStream()) {
                 if (is == null) {
                     if (wanted) {
                         throw new VerificationException("Expected JAR resource was not found: " + filePath);
@@ -1020,14 +1014,6 @@ public class Verifier {
             } catch (IOException e) {
                 if (wanted) {
                     throw new VerificationException("Error looking for JAR resource: " + filePath);
-                }
-            } finally {
-                if (is != null) {
-                    try {
-                        is.close();
-                    } catch (IOException e) {
-                        // ignore
-                    }
                 }
             }
         } else {
