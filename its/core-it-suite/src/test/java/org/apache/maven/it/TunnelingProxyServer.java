@@ -133,28 +133,27 @@ public class TunnelingProxyServer implements Runnable {
         }
 
         private String readLine(PushbackInputStream is) throws IOException {
-            StringBuilder buffer = new StringBuilder(1024);
-
-            while (true) {
-                int b = is.read();
-                if (b < 0) {
-                    return null;
-                } else if (b == '\n') {
-                    break;
-                } else if (b == '\r') {
-                    b = is.read();
-                    if (b != '\n') {
-                        is.unread(b);
-                    }
-                    break;
-                } else {
-                    buffer.append((char) b);
-                }
-            }
-
-            return buffer.toString();
+            return readLineHelper(is, new StringBuilder(1024));
         }
-    }
+
+        private String readLineHelper(PushbackInputStream is, StringBuilder buffer) throws IOException {
+            int b = is.read();
+            if (b < 0) {
+                return !buffer.isEmpty() ? buffer.toString() : null;
+            }
+            if (b == '\n') {
+                return buffer.toString();
+            }
+            if (b == '\r') {
+                int next = is.read();
+                if (next != '\n') {
+                    is.unread(next);
+                }
+                return buffer.toString();
+            }
+            buffer.append((char) b);
+            return readLineHelper(is, buffer);
+        }    }
 
     static class StreamPumper extends Thread {
 
@@ -168,16 +167,14 @@ public class TunnelingProxyServer implements Runnable {
         }
 
         public void run() {
-            try {
                 for (byte[] buffer = new byte[1024 * 8]; ; ) {
+            try {
                     int n = is.read(buffer);
                     if (n < 0) {
                         break;
                     }
                     os.write(buffer, 0, n);
-                }
-            } catch (IOException e) {
-                // closed
+            } catch (IOException ignored) { // closed
             } finally {
                 try {
                     is.close();
@@ -189,6 +186,7 @@ public class TunnelingProxyServer implements Runnable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
             }
         }
     }
