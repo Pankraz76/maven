@@ -47,21 +47,11 @@ class PropertiesUtil {
         Properties props = new Properties();
 
         if (inputFile.exists()) {
-            InputStream is = null;
-            try {
-                is = new FileInputStream(inputFile);
+            try (InputStream is = new FileInputStream(inputFile)) {
                 props.load(is);
             } catch (IOException e) {
                 throw new MojoExecutionException(
                         "Input file " + inputFile + " could not be read: " + e.getMessage(), e);
-            } finally {
-                if (is != null) {
-                    try {
-                        is.close();
-                    } catch (IOException e) {
-                        // just ignore
-                    }
-                }
             }
         }
 
