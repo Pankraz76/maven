@@ -47,8 +47,7 @@ public class ResolveMojo extends AbstractMojo {
     @Component
     private ProjectDependenciesResolver dependencyResolver;
 
-    public void execute() throws MojoExecutionException {
-
+    public void execute() {
         try {
             DefaultProjectBuildingRequest buildingRequest =
                     new DefaultProjectBuildingRequest(mavenSession.getProjectBuildingRequest());
@@ -58,8 +57,7 @@ public class ResolveMojo extends AbstractMojo {
             request.setMavenProject(project);
             request.setRepositorySession(buildingRequest.getRepositorySession());
 
-            @SuppressWarnings("checkstyle:UnusedLocalVariable")
-            DependencyResolutionResult result = dependencyResolver.resolve(request);
+            dependencyResolver.resolve(request);
 
             getLog().info("Resolution successful, resolved ok");
         } catch (Exception e) {
