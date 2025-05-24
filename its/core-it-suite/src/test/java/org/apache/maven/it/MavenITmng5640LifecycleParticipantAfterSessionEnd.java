@@ -22,7 +22,9 @@ import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -94,7 +96,7 @@ class MavenITmng5640LifecycleParticipantAfterSessionEnd extends AbstractMavenInt
         // See https://issues.apache.org/jira/browse/MNG-5641
         // verifier.verifyFilePresent( "target/afterSessionStart.txt" );
         verifier.verifyFilePresent("target/afterSessionEnd.txt");
-        assertThat(exception.getMessage(), equalTo(""));
+        assertThat(exception.getMessage(), startsWith("Exit code was non-zero: 1; command line and log"));
     }
 
     /**
