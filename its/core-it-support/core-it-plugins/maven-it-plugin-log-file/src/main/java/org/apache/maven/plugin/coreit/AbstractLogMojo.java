@@ -78,17 +78,13 @@ public abstract class AbstractLogMojo extends AbstractMojo {
         File file = getLogFile();
         getLog().info("[MAVEN-CORE-IT-LOG] Updating log file: " + file);
         getLog().info("[MAVEN-CORE-IT-LOG]   " + value);
-        try {
-            file.getParentFile().mkdirs();
-            try (OutputStream out = new FileOutputStream(file, true)) {
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, encoding));
-                if (value != null) {
-                    writer.write(value.toString());
-                    writer.newLine();
-                    writer.flush();
-                }
-            } catch (IOException e) {
-                // just ignore, we tried our best to clean up
+        file.getParentFile().mkdirs();
+        try (OutputStream out = new FileOutputStream(file, true)) {
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, encoding));
+            if (value != null) {
+                writer.write(value.toString());
+                writer.newLine();
+                writer.flush();
             }
         } catch (IOException e) {
             throw new MojoExecutionException("Failed to update log file " + logFile, e);
@@ -111,8 +107,7 @@ public abstract class AbstractLogMojo extends AbstractMojo {
             OutputStream out = new FileOutputStream(file);
             try {
                 out.close();
-            } catch (IOException e) {
-                // just ignore, we tried our best to clean up
+            } catch (IOException ignored) {
             }
         } catch (IOException e) {
             throw new MojoExecutionException("Failed to reset log file " + logFile, e);
