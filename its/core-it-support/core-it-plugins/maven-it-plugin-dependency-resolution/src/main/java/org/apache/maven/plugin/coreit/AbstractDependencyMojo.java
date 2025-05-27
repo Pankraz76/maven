@@ -103,8 +103,7 @@ public abstract class AbstractDependencyMojo extends AbstractMojo {
             if (writer != null) {
                 try {
                     writer.close();
-                } catch (IOException e) {
-                    // just ignore
+                } catch (IOException ignored) {
                 }
             }
         }
@@ -152,8 +151,7 @@ public abstract class AbstractDependencyMojo extends AbstractMojo {
             if (writer != null) {
                 try {
                     writer.close();
-                } catch (IOException e) {
-                    // just ignore
+                } catch (IOException ignored) {
                 }
             }
         }
@@ -211,8 +209,7 @@ public abstract class AbstractDependencyMojo extends AbstractMojo {
             if (os != null) {
                 try {
                     os.close();
-                } catch (IOException e) {
-                    // just ignore
+                } catch (IOException ignored) {
                 }
             }
         }
