@@ -80,20 +80,15 @@ public abstract class AbstractLogMojo extends AbstractMojo {
         getLog().info("[MAVEN-CORE-IT-LOG]   " + value);
         try {
             file.getParentFile().mkdirs();
-            OutputStream out = new FileOutputStream(file, true);
-            try {
+            try (OutputStream out = new FileOutputStream(file, true)) {
                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, encoding));
                 if (value != null) {
                     writer.write(value.toString());
                     writer.newLine();
                     writer.flush();
                 }
-            } finally {
-                try {
-                    out.close();
-                } catch (IOException e) {
-                    // just ignore, we tried our best to clean up
-                }
+            } catch (IOException e) {
+                // just ignore, we tried our best to clean up
             }
         } catch (IOException e) {
             throw new MojoExecutionException("Failed to update log file " + logFile, e);
