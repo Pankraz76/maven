@@ -32,10 +32,9 @@ import org.apache.maven.api.cli.ExecutorRequest;
 import org.apache.maven.cling.executor.embedded.EmbeddedMavenExecutor;
 import org.apache.maven.cling.executor.forked.ForkedMavenExecutor;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import org.junit.jupiter.api.condition.DisabledOnOs;
-import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.io.CleanupMode;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -64,7 +63,7 @@ public abstract class MavenExecutorTestSupport {
         System.out.println(Files.readString(cwd.resolve(logfile)));
     }
 
-    @DisabledOnOs(OS.WINDOWS)
+    @Disabled("JUnit on Windows fails to clean up as mvn3 seems does not close log file properly")
     @Timeout(15)
     @Test
     void dump3(
@@ -127,7 +126,7 @@ public abstract class MavenExecutorTestSupport {
                 mavenVersion(mvn4ExecutorRequestBuilder().build()));
     }
 
-    @DisabledOnOs(OS.WINDOWS)
+    @Disabled("JUnit on Windows fails to clean up as mvn3 seems does not close log file properly")
     @Timeout(15)
     @Test
     void defaultFs3x(@TempDir(cleanup = CleanupMode.ON_SUCCESS) Path tempDir) throws Exception {
