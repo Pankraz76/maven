@@ -71,6 +71,7 @@ public class CheckThreadSafetyMojo extends AbstractMojo {
      *
      * @throws MojoExecutionException If the output file could not be created.
      */
+    @Override
     public void execute() throws MojoExecutionException {
         Properties componentProperties = new Properties();
 
@@ -91,6 +92,7 @@ public class CheckThreadSafetyMojo extends AbstractMojo {
             threads[i] = new Thread() {
                 private final ClassLoader tccl = cl;
 
+                @Override
                 public void run() {
                     getLog().info("[MAVEN-CORE-IT-LOG] Thread " + this + " uses " + tccl);
                     Thread.currentThread().setContextClassLoader(tccl);

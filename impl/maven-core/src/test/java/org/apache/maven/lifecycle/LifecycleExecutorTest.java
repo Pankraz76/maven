@@ -69,6 +69,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
     @Inject
     private MojoDescriptorCreator mojoDescriptorCreator;
 
+    @Override
     protected String getProjectsDirectory() {
         return "src/test/projects/lifecycle-executor";
     }
@@ -401,6 +402,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
         final List<String> log = new ArrayList<>();
 
         MojoExecutionListener mojoListener = new MojoExecutionListener() {
+            @Override
             public void beforeMojoExecution(MojoExecutionEvent event) throws MojoExecutionException {
                 assertNotNull(event.getSession());
                 assertNotNull(event.getProject());
@@ -412,6 +414,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
                         + event.getExecution().getExecutionId());
             }
 
+            @Override
             public void afterMojoExecutionSuccess(MojoExecutionEvent event) throws MojoExecutionException {
                 assertNotNull(event.getSession());
                 assertNotNull(event.getProject());
@@ -423,6 +426,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
                         + event.getExecution().getExecutionId());
             }
 
+            @Override
             public void afterExecutionFailure(MojoExecutionEvent event) {
                 assertNotNull(event.getSession());
                 assertNotNull(event.getProject());
@@ -435,6 +439,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
             }
         };
         ProjectExecutionListener projectListener = new ProjectExecutionListener() {
+            @Override
             public void beforeProjectExecution(ProjectExecutionEvent event) throws LifecycleExecutionException {
                 assertNotNull(event.getSession());
                 assertNotNull(event.getProject());
@@ -444,6 +449,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
                 log.add("beforeProjectExecution " + event.getProject().getArtifactId());
             }
 
+            @Override
             public void beforeProjectLifecycleExecution(ProjectExecutionEvent event)
                     throws LifecycleExecutionException {
                 assertNotNull(event.getSession());
@@ -454,6 +460,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
                 log.add("beforeProjectLifecycleExecution " + event.getProject().getArtifactId());
             }
 
+            @Override
             public void afterProjectExecutionSuccess(ProjectExecutionEvent event) throws LifecycleExecutionException {
                 assertNotNull(event.getSession());
                 assertNotNull(event.getProject());
@@ -463,6 +470,7 @@ class LifecycleExecutorTest extends AbstractCoreMavenComponentTestCase {
                 log.add("afterProjectExecutionSuccess " + event.getProject().getArtifactId());
             }
 
+            @Override
             public void afterProjectExecutionFailure(ProjectExecutionEvent event) {
                 assertNotNull(event.getSession());
                 assertNotNull(event.getProject());

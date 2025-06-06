@@ -33,6 +33,7 @@ import org.eclipse.sisu.plexus.CompositeBeanHelper;
  * interface.
  */
 class EnhancedConfigurationConverter extends ObjectWithFieldsConverter {
+    @Override
     protected Object fromExpression(
             final PlexusConfiguration configuration, final ExpressionEvaluator evaluator, final Class<?> type)
             throws ComponentConfigurationException {
@@ -66,6 +67,7 @@ class EnhancedConfigurationConverter extends ObjectWithFieldsConverter {
         }
     }
 
+    @Override
     public Object fromConfiguration(
             final ConverterLookup lookup,
             final PlexusConfiguration configuration,

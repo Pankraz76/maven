@@ -72,6 +72,7 @@ public class GenerateMojo extends AbstractMojo {
      *
      * @throws MojoExecutionException If the output file could not be created.
      */
+    @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         getLog().info("[MAVEN-CORE-IT-LOG] Using output directory " + outputDirectory);
 
@@ -80,6 +81,7 @@ public class GenerateMojo extends AbstractMojo {
 
         InvocationHandler handler = new InvocationHandler() {
 
+            @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 return null;
             }

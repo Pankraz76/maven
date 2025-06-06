@@ -34,6 +34,7 @@ public class SessionScope extends org.apache.maven.impl.di.SessionScope implemen
         getScopeState().seed(clazz, value::get);
     }
 
+    @Override
     public <T> Provider<T> scope(final Key<T> key, final Provider<T> unscoped) {
         Object qualifier = key.getAnnotation() instanceof Named n ? n.value() : key.getAnnotation();
         org.apache.maven.di.Key<T> k =
@@ -45,6 +46,7 @@ public class SessionScope extends org.apache.maven.impl.di.SessionScope implemen
         return SessionScope.<T>seededKeySupplier(clazz)::get;
     }
 
+    @Override
     protected boolean isTypeAnnotation(Class<? extends Annotation> annotationType) {
         return "org.apache.maven.api.di.Typed".equals(annotationType.getName())
                 || "org.eclipse.sisu.Typed".equals(annotationType.getName())
