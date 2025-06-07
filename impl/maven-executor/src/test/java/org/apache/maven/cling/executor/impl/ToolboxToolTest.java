@@ -52,7 +52,7 @@ public class ToolboxToolTest {
         MimirInfuser.infuse(userHome);
     }
 
-
+@Timeout(20)
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void dump3(ExecutorHelper.Mode mode) throws Exception {
@@ -65,7 +65,6 @@ public class ToolboxToolTest {
         Map<String, String> dump = new ToolboxTool(helper).dump(helper.executorRequest());
         assertEquals(System.getProperty("maven3version"), dump.get("maven.version"));
     }
-
 
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
@@ -80,7 +79,6 @@ public class ToolboxToolTest {
         assertEquals(System.getProperty("maven4version"), dump.get("maven.version"));
     }
 
-
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void version3(ExecutorHelper.Mode mode) {
@@ -93,7 +91,6 @@ public class ToolboxToolTest {
         assertEquals(System.getProperty("maven3version"), helper.mavenVersion());
     }
 
-
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void version4(ExecutorHelper.Mode mode) {
@@ -105,7 +102,6 @@ public class ToolboxToolTest {
                 MavenExecutorTestSupport.FORKED_MAVEN_EXECUTOR);
         assertEquals(System.getProperty("maven4version"), helper.mavenVersion());
     }
-
 
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
@@ -121,7 +117,6 @@ public class ToolboxToolTest {
         assertTrue(Files.isDirectory(local));
     }
 
-
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     @Disabled("disable temporarily so that we can get the debug statement")
@@ -136,7 +131,6 @@ public class ToolboxToolTest {
         Path local = Paths.get(localRepository);
         assertTrue(Files.isDirectory(local));
     }
-
 
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
@@ -155,7 +149,6 @@ public class ToolboxToolTest {
                         + "aopalliance-1.0.jar"),
                 "path=" + path);
     }
-
 
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
@@ -190,7 +183,6 @@ public class ToolboxToolTest {
         // split repository: assert "ends with" as split may introduce prefixes
         assertTrue(path.endsWith("aopalliance" + File.separator + "maven-metadata-someremote.xml"), "path=" + path);
     }
-
 
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
