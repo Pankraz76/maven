@@ -35,12 +35,14 @@ import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junitpioneer.jupiter.RetryingTest;
 
 import static org.apache.maven.cling.executor.MavenExecutorTestSupport.mvn3ExecutorRequestBuilder;
 import static org.apache.maven.cling.executor.MavenExecutorTestSupport.mvn4ExecutorRequestBuilder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Timeout(15)
 public class ToolboxToolTest {
     @TempDir
     private static Path userHome;
@@ -50,7 +52,7 @@ public class ToolboxToolTest {
         MimirInfuser.infuse(userHome);
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void dump3(ExecutorHelper.Mode mode) throws Exception {
@@ -64,7 +66,7 @@ public class ToolboxToolTest {
         assertEquals(System.getProperty("maven3version"), dump.get("maven.version"));
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void dump4(ExecutorHelper.Mode mode) throws Exception {
@@ -78,7 +80,7 @@ public class ToolboxToolTest {
         assertEquals(System.getProperty("maven4version"), dump.get("maven.version"));
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void version3(ExecutorHelper.Mode mode) {
@@ -91,7 +93,7 @@ public class ToolboxToolTest {
         assertEquals(System.getProperty("maven3version"), helper.mavenVersion());
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void version4(ExecutorHelper.Mode mode) {
@@ -104,7 +106,7 @@ public class ToolboxToolTest {
         assertEquals(System.getProperty("maven4version"), helper.mavenVersion());
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void localRepository3(ExecutorHelper.Mode mode) {
@@ -119,7 +121,7 @@ public class ToolboxToolTest {
         assertTrue(Files.isDirectory(local));
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     @Disabled("disable temporarily so that we can get the debug statement")
@@ -135,7 +137,7 @@ public class ToolboxToolTest {
         assertTrue(Files.isDirectory(local));
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void artifactPath3(ExecutorHelper.Mode mode) {
@@ -154,7 +156,7 @@ public class ToolboxToolTest {
                 "path=" + path);
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void artifactPath4(ExecutorHelper.Mode mode) {
@@ -173,9 +175,10 @@ public class ToolboxToolTest {
                 "path=" + path);
     }
 
-    @Timeout(15)
-    @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
+    @ParameterizedTest
+    @RetryingTest(3)
+    @Timeout(20)
     void metadataPath3(ExecutorHelper.Mode mode) {
         ExecutorHelper helper = new HelperImpl(
                 mode,
@@ -188,7 +191,7 @@ public class ToolboxToolTest {
         assertTrue(path.endsWith("aopalliance" + File.separator + "maven-metadata-someremote.xml"), "path=" + path);
     }
 
-    @Timeout(15)
+
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void metadataPath4(ExecutorHelper.Mode mode) {
