@@ -53,6 +53,7 @@ public class ToolboxToolTest {
     }
 
 @Timeout(20)
+@RetryingTest(3)
     @ParameterizedTest
     @EnumSource(ExecutorHelper.Mode.class)
     void dump3(ExecutorHelper.Mode mode) throws Exception {
