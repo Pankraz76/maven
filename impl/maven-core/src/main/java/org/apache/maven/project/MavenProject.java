@@ -1361,7 +1361,8 @@ private final List<Resource> getResources(final ProjectScope scope) {
         // This property is not handled like others as we don't use public API.
         // The whole implementation of this `deepCopy` method may need revision,
         // but it would be the topic for a separated commit.
-        sources = new LinkedHashSet<>(project.sources);
+        sources.clear();
+        sources.addAll(new LinkedHashSet<>(project.sources));
 
         if (project.getModel() != null) {
             setModel(project.getModel().clone());
