@@ -171,7 +171,7 @@ private final Map<String, Artifact> artifactMap = ArtifactUtils.artifactMapByVer
 
     private Model originalModel;
 
-private final Map<String, Artifact> pluginArtifactMap;
+private final Map<String, Artifact> pluginArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getPluginArtifacts());
 
     @Deprecated
 private final Set<Artifact> reportArtifacts;
@@ -903,10 +903,6 @@ private final List<Resource> getResources(final ProjectScope scope) {
     }
 
     public Map<String, Artifact> getPluginArtifactMap() {
-        if (pluginArtifactMap == null) {
-            pluginArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getPluginArtifacts());
-        }
-
         return pluginArtifactMap;
     }
 
