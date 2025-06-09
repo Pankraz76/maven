@@ -167,7 +167,7 @@ private final Set<Artifact> dependencyArtifacts;
     private Artifact artifact;
 
     // calculated.
-private final Map<String, Artifact> artifactMap;
+private final Map<String, Artifact> artifactMap = ArtifactUtils.artifactMapByVersionlessId(getArtifacts());
 
     private Model originalModel;
 
