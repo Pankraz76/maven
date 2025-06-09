@@ -1266,7 +1266,8 @@ private final List<Resource> getResources(final ProjectScope scope) {
     }
 
     protected void setAttachedArtifacts(List<Artifact> attachedArtifacts) {
-        this.attachedArtifacts = attachedArtifacts;
+        this.attachedArtifacts.clear();
+        this.attachedArtifacts .addAll(attachedArtifacts);
     }
 
     /**
