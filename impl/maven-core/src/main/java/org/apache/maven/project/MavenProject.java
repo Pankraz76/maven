@@ -976,10 +976,6 @@ private final List<Resource> getResources(final ProjectScope scope) {
 
     @Deprecated
     public List<ArtifactRepository> getRemoteArtifactRepositories() {
-        if (remoteArtifactRepositories == null) {
-            remoteArtifactRepositories = new ArrayList<>();
-        }
-
         return remoteArtifactRepositories;
     }
 
@@ -997,10 +993,6 @@ private final List<Resource> getResources(final ProjectScope scope) {
      */
     @Deprecated
     public List<ArtifactRepository> getPluginArtifactRepositories() {
-        if (pluginArtifactRepositories == null) {
-            pluginArtifactRepositories = new ArrayList<>();
-        }
-
         return pluginArtifactRepositories;
     }
 
@@ -1016,21 +1008,16 @@ private final List<Resource> getResources(final ProjectScope scope) {
     }
 
     public List<RemoteRepository> getRemoteProjectRepositories() {
-        if (remoteProjectRepositories == null) {
-            remoteProjectRepositories = new ArrayList<>();
-        }
         return remoteProjectRepositories;
     }
 
     public List<RemoteRepository> getRemotePluginRepositories() {
-        if (remotePluginRepositories == null) {
-            remotePluginRepositories = new ArrayList<>();
-        }
         return remotePluginRepositories;
     }
 
     public void setActiveProfiles(List<Profile> activeProfiles) {
-        this.activeProfiles = activeProfiles;
+        this.activeProfiles.clear();
+        this.activeProfiles.addAll(activeProfiles);
     }
 
     public List<Profile> getActiveProfiles() {
