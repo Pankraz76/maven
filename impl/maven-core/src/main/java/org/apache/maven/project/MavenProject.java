@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Properties;
 import java.util.Set;
 import java.util.function.Predicate;
@@ -1543,33 +1544,34 @@ private final Map<String, String> moduleAdjustments = new HashMap<>();
         }
 
         if (moduleAdjustments.isEmpty()) {
-            List<String> modules = getModules();
-            if (modules != null) {
-                for (String modulePath : modules) {
-                    String moduleName = modulePath;
+            Optional.ofNullable(getModules())
+                    .orElseGet(Collections::emptyList)
+                    .stream()
+                    .filter(Objects::nonNull)
+                    .forEach(modulePath -> {
+                        String moduleName = modulePath;
 
-                    if (moduleName.endsWith("/") || moduleName.endsWith("\\")) {
-                        moduleName = moduleName.substring(0, moduleName.length() - 1);
-                    }
+                        // Remove trailing slashes
+                        if (moduleName.endsWith("/") || moduleName.endsWith("\\")) {
+                            moduleName = moduleName.substring(0, moduleName.length() - 1);
+                        }
 
-                    int lastSlash = moduleName.lastIndexOf('/');
+                        // Find last slash (either forward or backward)
+                        int lastSlash = Math.max(
+                                moduleName.lastIndexOf('/'),
+                                moduleName.lastIndexOf('\\')
+                        );
 
-                    if (lastSlash < 0) {
-                        lastSlash = moduleName.lastIndexOf('\\');
-                    }
+                        // Split into moduleName and adjustment
+                        String adjustment = null;
+                        if (lastSlash > -1) {
+                            adjustment = modulePath.substring(0, lastSlash);
+                            moduleName = moduleName.substring(lastSlash + 1);
+                        }
 
-                    String adjustment = null;
-
-                    if (lastSlash > -1) {
-                        moduleName = moduleName.substring(lastSlash + 1);
-                        adjustment = modulePath.substring(0, lastSlash);
-                    }
-
-                    moduleAdjustments.put(moduleName, adjustment);
-                }
-            }
+                        moduleAdjustments.put(moduleName, adjustment);
+                    });
         }
-
         return moduleAdjustments.get(module);
     }
 
