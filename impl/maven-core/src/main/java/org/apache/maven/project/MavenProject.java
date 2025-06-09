@@ -1559,7 +1559,6 @@ private final Map<String, String> moduleAdjustments = new HashMap<>();
                     .map(entry -> {
                         String modulePath = entry.getKey();
                         int lastSlash = entry.getValue();
-
                         if (lastSlash > -1) {
                             return Map.entry(
                                     modulePath.substring(lastSlash + 1),
@@ -1797,7 +1796,8 @@ private final Map<String, String> moduleAdjustments = new HashMap<>();
 
     @Deprecated
     public void setReportArtifacts(Set<Artifact> reportArtifacts) {
-        this.reportArtifacts = reportArtifacts;
+        this.reportArtifacts.clear();
+        this.reportArtifacts.addAll(reportArtifacts);
 
         reportArtifactMap.clear();
     }
