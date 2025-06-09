@@ -18,6 +18,8 @@
  */
 package org.apache.maven.plugin;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 import org.apache.maven.plugin.logging.Log;
@@ -174,6 +176,17 @@ public abstract class AbstractMojo implements Mojo, ContextEnabled {
         }
 
         return log;
+    }
+
+    void create(File file) throws MojoExecutionException {
+        getLog().info("[MAVEN-CORE-IT-LOG] Creating output file: " + file);
+        if(file.getParentFile().mkdirs()){
+    try {
+            file.createNewFile();
+        } catch (IOException e) {
+            throw new MojoExecutionException("Output file could not be created: " + file, e);
+        }
+        }
     }
 
     @Override

@@ -66,13 +66,6 @@ public class TouchMojo extends AbstractMojo {
      * @throws MojoExecutionException If the output file could not be created.
      */
     public void execute() throws MojoExecutionException {
-        getLog().info("[MAVEN-CORE-IT-LOG] Creating output file: " + file);
-
-        try {
-            file.getParentFile().mkdirs();
-            file.createNewFile();
-        } catch (IOException e) {
-            throw new MojoExecutionException("Output file could not be created: " + file, e);
-        }
+        create(file);
     }
 }

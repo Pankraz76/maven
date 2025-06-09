@@ -81,14 +81,6 @@ public class LoadMojo extends AbstractMojo {
         if (url == null) {
             throw new MojoExecutionException("Resource was not found, incomplete plugin class realm");
         }
-
-        getLog().info("[MAVEN-CORE-IT-LOG] Creating output file: " + file);
-
-        try {
-            file.getParentFile().mkdirs();
-            file.createNewFile();
-        } catch (IOException e) {
-            throw new MojoExecutionException("Output file could not be created: " + file, e);
-        }
+        create(file);
     }
 }
