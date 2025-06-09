@@ -193,7 +193,7 @@ private final Map<String, MavenProject> projectReferences = new HashMap<>();
 
     private File parentFile;
 
-private final Map<String, Object> context;
+private final Map<String, Object> context = new HashMap<>();
 
     private ClassRealm classRealm;
 
@@ -1397,9 +1397,6 @@ private final List<Resource> getResources(final ProjectScope scope) {
      * extensions to associate derived state with project instances.
      */
     public void setContextValue(String key, Object value) {
-        if (context == null) {
-            context = new HashMap<>();
-        }
         if (value != null) {
             context.put(key, value);
         } else {
@@ -1472,7 +1469,8 @@ private final List<Resource> getResources(final ProjectScope scope) {
      * @param artifacts The set of artifacts, may be {@code null}.
      */
     public void setResolvedArtifacts(Set<Artifact> artifacts) {
-        this.resolvedArtifacts = (artifacts != null) ? artifacts : Collections.emptySet();
+        this.resolvedArtifacts.clear();
+        this.resolvedArtifacts.addAll(artifacts != null ? artifacts : Set.of());
         this.artifacts.clear();
         this.artifactMap.clear();
     }
