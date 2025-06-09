@@ -176,18 +176,18 @@ private final Map<String, Artifact> artifactMap = ArtifactUtils.artifactMapByVer
 private final Map<String, Artifact> pluginArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getPluginArtifacts());
 
     @Deprecated
-private final Set<Artifact> reportArtifacts;
+private final Set<Artifact> reportArtifacts=new LinkedHashSet<>();
 
     @Deprecated
 private final Map<String, Artifact> reportArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getReportArtifacts());
 
     @Deprecated
-private final Set<Artifact> extensionArtifacts;
+private final Set<Artifact> extensionArtifacts=new LinkedHashSet<>();
 
     @Deprecated
 private final Map<String, Artifact> extensionArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getExtensionArtifacts());
 
-private final Map<String, Artifact> managedVersionMap;
+private final Map<String, Artifact> managedVersionMap= new HashMap<>();
 
 private final Map<String, MavenProject> projectReferences = new HashMap<>();
 
