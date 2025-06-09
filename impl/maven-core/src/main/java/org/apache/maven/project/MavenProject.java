@@ -1526,7 +1526,7 @@ private final List<Resource> getResources(final ProjectScope scope) {
 
     private ProjectBuildingRequest projectBuilderConfiguration;
 
-private final Map<String, String> moduleAdjustments;
+private final Map<String, String> moduleAdjustments = new HashMap<>();
 
     @Deprecated // This appears only to be used in test code
     public String getModulePathAdjustment(MavenProject moduleProject) throws IOException {
@@ -1542,9 +1542,7 @@ private final Map<String, String> moduleAdjustments;
             module = moduleDir.getName();
         }
 
-        if (moduleAdjustments == null) {
-            moduleAdjustments = new HashMap<>();
-
+        if (moduleAdjustments.isEmpty()) {
             List<String> modules = getModules();
             if (modules != null) {
                 for (String modulePath : modules) {
