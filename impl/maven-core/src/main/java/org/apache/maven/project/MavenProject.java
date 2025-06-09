@@ -985,8 +985,10 @@ private final List<Resource> getResources(final ProjectScope scope) {
 
     @Deprecated
     public void setPluginArtifactRepositories(List<ArtifactRepository> pluginArtifactRepositories) {
-        this.pluginArtifactRepositories = pluginArtifactRepositories;
-        this.remotePluginRepositories = RepositoryUtils.toRepos(getPluginArtifactRepositories());
+        this.pluginArtifactRepositories.clear();
+        this.pluginArtifactRepositories.addAll(pluginArtifactRepositories);
+        this.remotePluginRepositories.clear();
+        this.remotePluginRepositories.addAll(RepositoryUtils.toRepos(getPluginArtifactRepositories()));
     }
 
     /**
