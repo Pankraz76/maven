@@ -120,36 +120,36 @@ public class MavenProject implements Cloneable {
 
     private Path rootDirectory;
 
-    private Set<Artifact> resolvedArtifacts;
+private final Set<Artifact> resolvedArtifacts;
 
     private ArtifactFilter artifactFilter;
 
-    private final Set<Artifact> artifacts = new LinkedHashSet<>();
+private final Set<Artifact> artifacts = new LinkedHashSet<>();
 
     private Artifact parentArtifact;
 
-    private Set<Artifact> pluginArtifacts;
+private final Set<Artifact> pluginArtifacts;
 
     @Deprecated
-    private List<ArtifactRepository> remoteArtifactRepositories;
+private final List<ArtifactRepository> remoteArtifactRepositories;
 
     @Deprecated
-    private List<ArtifactRepository> pluginArtifactRepositories;
+private final List<ArtifactRepository> pluginArtifactRepositories;
 
-    private List<RemoteRepository> remoteProjectRepositories;
+private final List<RemoteRepository> remoteProjectRepositories;
 
-    private List<RemoteRepository> remotePluginRepositories;
+private final List<RemoteRepository> remotePluginRepositories;
 
-    private List<Artifact> attachedArtifacts = new ArrayList<>();
+private final List<Artifact> attachedArtifacts = new ArrayList<>();
 
     private MavenProject executionProject;
 
-    private List<MavenProject> collectedProjects;
+private final List<MavenProject> collectedProjects;
 
     /**
      * All sources of this project, in the order they were added.
      */
-    private Set<SourceRoot> sources = new LinkedHashSet<>();
+private final Set<SourceRoot> sources = new LinkedHashSet<>();
 
     @Deprecated
     private ArtifactRepository releaseArtifactRepository;
@@ -157,43 +157,43 @@ public class MavenProject implements Cloneable {
     @Deprecated
     private ArtifactRepository snapshotArtifactRepository;
 
-    private List<Profile> activeProfiles = new ArrayList<>();
+private final List<Profile> activeProfiles = new ArrayList<>();
 
-    private Map<String, List<String>> injectedProfileIds = new LinkedHashMap<>();
+private final Map<String, List<String>> injectedProfileIds = new LinkedHashMap<>();
 
     @Deprecated
-    private Set<Artifact> dependencyArtifacts;
+private final Set<Artifact> dependencyArtifacts;
 
     private Artifact artifact;
 
     // calculated.
-    private Map<String, Artifact> artifactMap;
+private final Map<String, Artifact> artifactMap;
 
     private Model originalModel;
 
-    private Map<String, Artifact> pluginArtifactMap;
+private final Map<String, Artifact> pluginArtifactMap;
 
     @Deprecated
-    private Set<Artifact> reportArtifacts;
+private final Set<Artifact> reportArtifacts;
 
     @Deprecated
-    private Map<String, Artifact> reportArtifactMap;
+private final Map<String, Artifact> reportArtifactMap;
 
     @Deprecated
-    private Set<Artifact> extensionArtifacts;
+private final Set<Artifact> extensionArtifacts;
 
     @Deprecated
-    private Map<String, Artifact> extensionArtifactMap;
+private final Map<String, Artifact> extensionArtifactMap;
 
-    private Map<String, Artifact> managedVersionMap;
+private final Map<String, Artifact> managedVersionMap;
 
-    private Map<String, MavenProject> projectReferences = new HashMap<>();
+private final Map<String, MavenProject> projectReferences = new HashMap<>();
 
     private boolean executionRoot;
 
     private File parentFile;
 
-    private Map<String, Object> context;
+private final Map<String, Object> context;
 
     private ClassRealm classRealm;
 
@@ -474,7 +474,7 @@ public class MavenProject implements Cloneable {
      * @deprecated Used only for the implementation of deprecated methods.
      */
     @Deprecated
-    private List<String> getSourceRootDirs(ProjectScope scope, Language language) {
+private final List<String> getSourceRootDirs(ProjectScope scope, Language language) {
         return getEnabledSourceRoots(scope, language)
                 .map((source) -> source.directory().toString())
                 .toList();
@@ -522,7 +522,7 @@ public class MavenProject implements Cloneable {
      * @return paths of all artifacts placed on the classpath
      * @throws DependencyResolutionRequiredException if an artifact file is used, but has not been resolved
      */
-    private List<String> getClasspathElements(final Predicate<String> scopeFilter, final boolean includeTestDir)
+private final List<String> getClasspathElements(final Predicate<String> scopeFilter, final boolean includeTestDir)
             throws DependencyResolutionRequiredException {
         final List<String> list = new ArrayList<>(getArtifacts().size() + 2);
         if (includeTestDir) {
@@ -790,7 +790,7 @@ public class MavenProject implements Cloneable {
         return getResources(ProjectScope.TEST);
     }
 
-    private List<Resource> getResources(final ProjectScope scope) {
+private final List<Resource> getResources(final ProjectScope scope) {
         return new AbstractSequentialList<>() {
             private Stream<SourceRoot> sources() {
                 return getEnabledSourceRoots(scope, Language.RESOURCES);
@@ -1542,7 +1542,7 @@ public class MavenProject implements Cloneable {
 
     private ProjectBuildingRequest projectBuilderConfiguration;
 
-    private Map<String, String> moduleAdjustments;
+private final Map<String, String> moduleAdjustments;
 
     @Deprecated // This appears only to be used in test code
     public String getModulePathAdjustment(MavenProject moduleProject) throws IOException {
