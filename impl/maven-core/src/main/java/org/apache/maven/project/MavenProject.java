@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.nio.file.Path;
+import java.util.AbstractMap;
 import java.util.AbstractSequentialList;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -1548,29 +1549,24 @@ private final Map<String, String> moduleAdjustments = new HashMap<>();
                     .orElseGet(Collections::emptyList)
                     .stream()
                     .filter(Objects::nonNull)
-                    .forEach(modulePath -> {
-                        String moduleName = modulePath;
-
-                        // Remove trailing slashes
-                        if (moduleName.endsWith("/") || moduleName.endsWith("\\")) {
-                            moduleName = moduleName.substring(0, moduleName.length() - 1);
-                        }
-
-                        // Find last slash (either forward or backward)
+                    .map(modulePath -> modulePath.endsWith("/") || modulePath.endsWith("\\")
+                            ? modulePath.substring(0, modulePath.length() - 1)
+                            : modulePath)
+                    .map(modulePath -> {
                         int lastSlash = Math.max(
-                                moduleName.lastIndexOf('/'),
-                                moduleName.lastIndexOf('\\')
+                                modulePath.lastIndexOf('/'),
+                                modulePath.lastIndexOf('\\')
                         );
 
-                        // Split into moduleName and adjustment
-                        String adjustment = null;
                         if (lastSlash > -1) {
-                            adjustment = modulePath.substring(0, lastSlash);
-                            moduleName = moduleName.substring(lastSlash + 1);
+                            return new AbstractMap.SimpleEntry<>(
+                                    modulePath.substring(lastSlash + 1),
+                                    modulePath.substring(0, lastSlash)
+                            );
                         }
-
-                        moduleAdjustments.put(moduleName, adjustment);
-                    });
+                        return new AbstractMap.SimpleEntry<>(modulePath, null);
+                    })
+                    .forEach(entry -> moduleAdjustments.put(entry.getKey(), entry.getValue().toString()));
         }
         return moduleAdjustments.get(module);
     }
