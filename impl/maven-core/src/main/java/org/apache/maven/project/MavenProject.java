@@ -865,7 +865,7 @@ private final List<Resource> getResources(final ProjectScope scope) {
         this.artifacts.addAll(artifacts);
 
         // flush the calculated artifactMap
-        artifactMap = null;
+        artifactMap.clear();
     }
 
     /**
@@ -889,16 +889,13 @@ private final List<Resource> getResources(final ProjectScope scope) {
     }
 
     public Map<String, Artifact> getArtifactMap() {
-        if (artifactMap == null) {
-            artifactMap = ArtifactUtils.artifactMapByVersionlessId(getArtifacts());
-        }
         return artifactMap;
     }
 
     public void setPluginArtifacts(Set<Artifact> pluginArtifacts) {
         this.pluginArtifacts = pluginArtifacts;
 
-        this.pluginArtifactMap = null;
+        this.pluginArtifactMap.clear();
     }
 
     public Set<Artifact> getPluginArtifacts() {
@@ -1479,7 +1476,7 @@ private final List<Resource> getResources(final ProjectScope scope) {
     public void setResolvedArtifacts(Set<Artifact> artifacts) {
         this.resolvedArtifacts = (artifacts != null) ? artifacts : Collections.emptySet();
         this.artifacts.clear();
-        this.artifactMap = null;
+        this.artifactMap.clear();
     }
 
     /**
@@ -1493,7 +1490,7 @@ private final List<Resource> getResources(final ProjectScope scope) {
     public void setArtifactFilter(ArtifactFilter artifactFilter) {
         this.artifactFilter = artifactFilter;
         this.artifacts.clear();
-        this.artifactMap = null;
+        this.artifactMap.clear();
     }
 
     /**
@@ -1808,7 +1805,7 @@ private final Map<String, String> moduleAdjustments;
     public void setReportArtifacts(Set<Artifact> reportArtifacts) {
         this.reportArtifacts = reportArtifacts;
 
-        reportArtifactMap = null;
+        reportArtifactMap.clear();
     }
 
     @Deprecated
@@ -1828,7 +1825,7 @@ private final Map<String, String> moduleAdjustments;
     @Deprecated
     public void setExtensionArtifacts(Set<Artifact> extensionArtifacts) {
         this.extensionArtifacts = extensionArtifacts;
-        extensionArtifactMap = null;
+        extensionArtifactMap.clear();
     }
 
     @Deprecated
