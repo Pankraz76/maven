@@ -893,8 +893,8 @@ private final List<Resource> getResources(final ProjectScope scope) {
     }
 
     public void setPluginArtifacts(Set<Artifact> pluginArtifacts) {
-        this.pluginArtifacts = pluginArtifacts;
-
+        this.pluginArtifacts.clear();
+        this.pluginArtifacts.addAll(pluginArtifacts);
         this.pluginArtifactMap.clear();
     }
 
