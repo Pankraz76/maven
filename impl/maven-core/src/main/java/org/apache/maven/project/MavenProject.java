@@ -1552,19 +1552,21 @@ private final Map<String, String> moduleAdjustments = new HashMap<>();
                     .map(modulePath -> modulePath.endsWith("/") || modulePath.endsWith("\\")
                             ? modulePath.substring(0, modulePath.length() - 1)
                             : modulePath)
-                    .map(modulePath -> {
-                        int lastSlash = Math.max(
-                                modulePath.lastIndexOf('/'),
-                                modulePath.lastIndexOf('\\')
-                        );
+                    .map(modulePath -> Map.entry(
+                            modulePath,
+                            Math.max(modulePath.lastIndexOf('/'), modulePath.lastIndexOf('\\'))
+                    ))
+                    .map(entry -> {
+                        String modulePath = entry.getKey();
+                        int lastSlash = entry.getValue();
 
                         if (lastSlash > -1) {
-                            return new AbstractMap.SimpleEntry<>(
+                            return Map.entry(
                                     modulePath.substring(lastSlash + 1),
                                     modulePath.substring(0, lastSlash)
                             );
                         }
-                        return new AbstractMap.SimpleEntry<>(modulePath, null);
+                        return Map.entry(modulePath, null);
                     })
                     .forEach(entry -> moduleAdjustments.put(entry.getKey(), entry.getValue().toString()));
         }
