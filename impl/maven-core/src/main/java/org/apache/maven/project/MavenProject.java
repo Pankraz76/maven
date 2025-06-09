@@ -144,7 +144,7 @@ private final List<Artifact> attachedArtifacts = new ArrayList<>();
 
     private MavenProject executionProject;
 
-private final List<MavenProject> collectedProjects;
+private final List<MavenProject> collectedProjects = new ArrayList<>();
 
     /**
      * All sources of this project, in the order they were added.
@@ -162,7 +162,7 @@ private final List<Profile> activeProfiles = new ArrayList<>();
 private final Map<String, List<String>> injectedProfileIds = new LinkedHashMap<>();
 
     @Deprecated
-private final Set<Artifact> dependencyArtifacts;
+private final Set<Artifact> dependencyArtifacts = new LinkedHashSet<>();
 
     private Artifact artifact;
 
@@ -1067,9 +1067,6 @@ private final List<Resource> getResources(final ProjectScope scope) {
      * @return the attached artifacts of this project
      */
     public List<Artifact> getAttachedArtifacts() {
-        if (attachedArtifacts == null) {
-            attachedArtifacts = new ArrayList<>();
-        }
         return Collections.unmodifiableList(attachedArtifacts);
     }
 
