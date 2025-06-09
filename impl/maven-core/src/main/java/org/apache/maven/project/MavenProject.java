@@ -1114,7 +1114,8 @@ private final List<Resource> getResources(final ProjectScope scope) {
     }
 
     public void setCollectedProjects(List<MavenProject> collectedProjects) {
-        this.collectedProjects = collectedProjects;
+        this.collectedProjects.clear();
+        this.collectedProjects.addAll(collectedProjects);
     }
 
     /**
