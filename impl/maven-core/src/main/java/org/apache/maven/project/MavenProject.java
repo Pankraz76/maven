@@ -1131,7 +1131,8 @@ private final List<Resource> getResources(final ProjectScope scope) {
 
     @Deprecated
     public void setDependencyArtifacts(Set<Artifact> dependencyArtifacts) {
-        this.dependencyArtifacts = dependencyArtifacts;
+        this.dependencyArtifacts.clear();
+        this.dependencyArtifacts.addAll(dependencyArtifacts);
     }
 
     @Deprecated
@@ -1153,7 +1154,8 @@ private final List<Resource> getResources(final ProjectScope scope) {
     }
 
     public void setManagedVersionMap(Map<String, Artifact> map) {
-        managedVersionMap = map;
+        managedVersionMap.clear();
+        managedVersionMap.putAll(map);
     }
 
     public Map<String, Artifact> getManagedVersionMap() {
