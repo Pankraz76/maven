@@ -185,7 +185,7 @@ private final Map<String, Artifact> reportArtifactMap = ArtifactUtils.artifactMa
 private final Set<Artifact> extensionArtifacts;
 
     @Deprecated
-private final Map<String, Artifact> extensionArtifactMap;
+private final Map<String, Artifact> extensionArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getExtensionArtifacts());
 
 private final Map<String, Artifact> managedVersionMap;
 
@@ -1826,10 +1826,6 @@ private final Map<String, String> moduleAdjustments = new HashMap<>();
 
     @Deprecated
     public Map<String, Artifact> getExtensionArtifactMap() {
-        if (extensionArtifactMap == null) {
-            extensionArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getExtensionArtifacts());
-        }
-
         return extensionArtifactMap;
     }
 
