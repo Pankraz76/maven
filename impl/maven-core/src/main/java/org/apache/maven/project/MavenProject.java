@@ -122,7 +122,7 @@ public class MavenProject implements Cloneable {
 
     private Path rootDirectory;
 
-private final Set<Artifact> resolvedArtifacts;
+private final Set<Artifact> resolvedArtifacts = new LinkedHashSet<>();
 
     private ArtifactFilter artifactFilter;
 
