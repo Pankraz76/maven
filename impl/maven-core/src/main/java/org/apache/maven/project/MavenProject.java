@@ -179,7 +179,7 @@ private final Map<String, Artifact> pluginArtifactMap = ArtifactUtils.artifactMa
 private final Set<Artifact> reportArtifacts;
 
     @Deprecated
-private final Map<String, Artifact> reportArtifactMap;
+private final Map<String, Artifact> reportArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getReportArtifacts());
 
     @Deprecated
 private final Set<Artifact> extensionArtifacts;
@@ -1809,16 +1809,13 @@ private final Map<String, String> moduleAdjustments = new HashMap<>();
 
     @Deprecated
     public Map<String, Artifact> getReportArtifactMap() {
-        if (reportArtifactMap == null) {
-            reportArtifactMap = ArtifactUtils.artifactMapByVersionlessId(getReportArtifacts());
-        }
-
         return reportArtifactMap;
     }
 
     @Deprecated
     public void setExtensionArtifacts(Set<Artifact> extensionArtifacts) {
-        this.extensionArtifacts = extensionArtifacts;
+        this.extensionArtifacts.clear();
+        this.extensionArtifacts.addAll(extensionArtifacts);
         extensionArtifactMap.clear();
     }
 
