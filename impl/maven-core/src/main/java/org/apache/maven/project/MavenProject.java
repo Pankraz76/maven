@@ -128,17 +128,17 @@ private final Set<Artifact> artifacts = new LinkedHashSet<>();
 
     private Artifact parentArtifact;
 
-private final Set<Artifact> pluginArtifacts;
+private final Set<Artifact> pluginArtifacts = new LinkedHashSet<>();
 
     @Deprecated
-private final List<ArtifactRepository> remoteArtifactRepositories;
+private final List<ArtifactRepository> remoteArtifactRepositories= new ArrayList<>();
 
     @Deprecated
-private final List<ArtifactRepository> pluginArtifactRepositories;
+private final List<ArtifactRepository> pluginArtifactRepositories= new ArrayList<>();
 
-private final List<RemoteRepository> remoteProjectRepositories;
+private final List<RemoteRepository> remoteProjectRepositories= new ArrayList<>();
 
-private final List<RemoteRepository> remotePluginRepositories;
+private final List<RemoteRepository> remotePluginRepositories= new ArrayList<>();
 
 private final List<Artifact> attachedArtifacts = new ArrayList<>();
 
@@ -968,8 +968,10 @@ private final List<Resource> getResources(final ProjectScope scope) {
 
     @Deprecated
     public void setRemoteArtifactRepositories(List<ArtifactRepository> remoteArtifactRepositories) {
-        this.remoteArtifactRepositories = remoteArtifactRepositories;
-        this.remoteProjectRepositories = RepositoryUtils.toRepos(getRemoteArtifactRepositories());
+        this.remoteArtifactRepositories.clear();
+        this.remoteArtifactRepositories.addAll(remoteArtifactRepositories);
+        this.remoteProjectRepositories.clear();
+        this.remoteProjectRepositories.addAll(RepositoryUtils.toRepos(getRemoteArtifactRepositories()));
     }
 
     @Deprecated
