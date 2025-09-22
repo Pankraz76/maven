@@ -21,7 +21,6 @@ package org.apache.maven.cling.executor.impl;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Map;
 
 import org.apache.maven.api.cli.ExecutorRequest;
@@ -126,7 +125,7 @@ public class ToolboxToolTest {
                 MavenExecutorTestSupport.EMBEDDED_MAVEN_EXECUTOR,
                 MavenExecutorTestSupport.FORKED_MAVEN_EXECUTOR);
         String localRepository = new ToolboxTool(helper, VERSION).localRepository(getExecutorRequest(helper));
-        Path local = Paths.get(localRepository);
+        Path local = Path.of(localRepository);
         assertTrue(Files.isDirectory(local));
     }
 
@@ -142,7 +141,7 @@ public class ToolboxToolTest {
                 MavenExecutorTestSupport.EMBEDDED_MAVEN_EXECUTOR,
                 MavenExecutorTestSupport.FORKED_MAVEN_EXECUTOR);
         String localRepository = new ToolboxTool(helper, VERSION).localRepository(getExecutorRequest(helper));
-        Path local = Paths.get(localRepository);
+        Path local = Path.of(localRepository);
         assertTrue(Files.isDirectory(local));
     }
 

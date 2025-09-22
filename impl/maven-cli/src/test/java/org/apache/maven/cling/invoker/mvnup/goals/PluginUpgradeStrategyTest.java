@@ -21,7 +21,6 @@ package org.apache.maven.cling.invoker.mvnup.goals;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -140,7 +139,7 @@ class PluginUpgradeStrategyTest {
                     .build();
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -184,7 +183,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -219,7 +218,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -265,7 +264,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -305,7 +304,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -345,7 +344,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -389,7 +388,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -422,7 +421,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -460,7 +459,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             strategy.apply(context, pomMap);
@@ -556,14 +555,14 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(malformedPomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
 
             // Strategy should handle malformed POMs gracefully
             assertNotNull(result, "Result should not be null");
-            assertTrue(result.processedPoms().contains(Paths.get("pom.xml")), "POM should be marked as processed");
+            assertTrue(result.processedPoms().contains(Path.of("pom.xml")), "POM should be marked as processed");
         }
     }
 
@@ -610,7 +609,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             strategy.apply(context, pomMap);
@@ -661,7 +660,7 @@ class PluginUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             strategy.apply(context, pomMap);

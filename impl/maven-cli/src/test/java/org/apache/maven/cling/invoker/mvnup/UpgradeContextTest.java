@@ -18,7 +18,8 @@
  */
 package org.apache.maven.cling.invoker.mvnup;
 
-import java.nio.file.Paths;
+import java.nio.file.Path;
+
 
 import org.apache.maven.cling.invoker.mvnup.goals.TestUtils;
 import org.junit.jupiter.api.DisplayName;
@@ -37,7 +38,7 @@ class UpgradeContextTest {
     @DisplayName("should create context successfully")
     void shouldCreateContextSuccessfully() {
         // Use existing test utilities to create a context
-        UpgradeContext context = TestUtils.createMockContext(Paths.get("/test"));
+        UpgradeContext context = TestUtils.createMockContext(Path.of("/test"));
 
         // Verify context is created and basic methods work
         assertNotNull(context, "Context should be created");
@@ -55,7 +56,7 @@ class UpgradeContextTest {
     @Test
     @DisplayName("should handle indentation correctly")
     void shouldHandleIndentationCorrectly() {
-        UpgradeContext context = TestUtils.createMockContext(Paths.get("/test"));
+        UpgradeContext context = TestUtils.createMockContext(Path.of("/test"));
 
         // Test indentation methods don't throw exceptions
         context.indent();
@@ -71,7 +72,7 @@ class UpgradeContextTest {
     @Test
     @DisplayName("should handle icon rendering based on terminal capabilities")
     void shouldHandleIconRenderingBasedOnTerminalCapabilities() {
-        UpgradeContext context = TestUtils.createMockContext(Paths.get("/test"));
+        UpgradeContext context = TestUtils.createMockContext(Path.of("/test"));
 
         // Test that icon rendering doesn't throw exceptions
         // The actual icons used depend on the terminal's charset capabilities

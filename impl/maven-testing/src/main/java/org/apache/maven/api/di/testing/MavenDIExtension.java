@@ -108,8 +108,7 @@ public class MavenDIExtension implements BeforeEachCallback, AfterEachCallback {
             injector.bindInstance(testClass.asSubclass(Object.class), (Object) testInstance); // Safe generics handling
         } catch (final Exception e) {
             throw new IllegalStateException(
-                    String.format(
-                            "Failed to set up DI injector for test class '%s': %s",
+                    "Failed to set up DI injector for test class '%s': %s".formatted(
                             testClass.getName(), e.getMessage()),
                     e);
         }

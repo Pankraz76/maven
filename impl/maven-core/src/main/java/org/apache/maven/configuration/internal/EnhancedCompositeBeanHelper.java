@@ -282,9 +282,9 @@ public final class EnhancedCompositeBeanHelper {
 
         ConfigurationConverter converter = lookup.lookupConverterForType(rawPropertyType);
 
-        if (!(genericPropertyType instanceof Class) && converter instanceof ParameterizedConfigurationConverter) {
+        if (!(genericPropertyType instanceof Class) && converter instanceof ParameterizedConfigurationConverter configurationConverter) {
             Type[] propertyTypeArgs = TypeArguments.get(genericPropertyType);
-            return ((ParameterizedConfigurationConverter) converter)
+            return configurationConverter
                     .fromConfiguration(
                             lookup,
                             configuration,

@@ -20,7 +20,6 @@ package org.apache.maven.cling.invoker.mvnup.goals;
 
 import java.io.StringReader;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -171,9 +170,9 @@ class InferenceStrategyTest {
             Document moduleBDoc = saxBuilder.build(new StringReader(moduleBPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "pom.xml"), parentDoc);
-            pomMap.put(Paths.get("project", "module-a", "pom.xml"), moduleADoc);
-            pomMap.put(Paths.get("project", "module-b", "pom.xml"), moduleBDoc);
+            pomMap.put(Path.of("project", "pom.xml"), parentDoc);
+            pomMap.put(Path.of("project", "module-a", "pom.xml"), moduleADoc);
+            pomMap.put(Path.of("project", "module-b", "pom.xml"), moduleBDoc);
 
             Element moduleBRoot = moduleBDoc.getRootElement();
             Element dependencies = moduleBRoot.getChild("dependencies", moduleBRoot.getNamespace());
@@ -217,7 +216,7 @@ class InferenceStrategyTest {
                 """;
 
             Document moduleDoc = saxBuilder.build(new StringReader(modulePomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("project", "pom.xml"), moduleDoc);
+            Map<Path, Document> pomMap = Map.of(Path.of("project", "pom.xml"), moduleDoc);
 
             Element moduleRoot = moduleDoc.getRootElement();
             Element dependencies = moduleRoot.getChild("dependencies", moduleRoot.getNamespace());
@@ -257,8 +256,8 @@ class InferenceStrategyTest {
             Document moduleBDoc = saxBuilder.build(new StringReader(moduleBPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "module-a", "pom.xml"), moduleADoc);
-            pomMap.put(Paths.get("project", "module-b", "pom.xml"), moduleBDoc);
+            pomMap.put(Path.of("project", "module-a", "pom.xml"), moduleADoc);
+            pomMap.put(Path.of("project", "module-b", "pom.xml"), moduleBDoc);
 
             Element moduleBRoot = moduleBDoc.getRootElement();
             Element dependencies = moduleBRoot.getChild("dependencies", moduleBRoot.getNamespace());
@@ -319,8 +318,8 @@ class InferenceStrategyTest {
             Document moduleBDoc = saxBuilder.build(new StringReader(moduleBPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "module-a", "pom.xml"), moduleADoc);
-            pomMap.put(Paths.get("project", "module-b", "pom.xml"), moduleBDoc);
+            pomMap.put(Path.of("project", "module-a", "pom.xml"), moduleADoc);
+            pomMap.put(Path.of("project", "module-b", "pom.xml"), moduleBDoc);
 
             Element moduleBRoot = moduleBDoc.getRootElement();
             Element build = moduleBRoot.getChild("build", moduleBRoot.getNamespace());
@@ -379,8 +378,8 @@ class InferenceStrategyTest {
             Document childDoc = saxBuilder.build(new StringReader(childPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "pom.xml"), parentDoc);
-            pomMap.put(Paths.get("project", "child", "pom.xml"), childDoc);
+            pomMap.put(Path.of("project", "pom.xml"), parentDoc);
+            pomMap.put(Path.of("project", "child", "pom.xml"), childDoc);
 
             Element childRoot = childDoc.getRootElement();
             Element parentElement = childRoot.getChild("parent", childRoot.getNamespace());
@@ -436,8 +435,8 @@ class InferenceStrategyTest {
             Document childDoc = saxBuilder.build(new StringReader(childPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "pom.xml"), parentDoc);
-            pomMap.put(Paths.get("project", "child", "pom.xml"), childDoc);
+            pomMap.put(Path.of("project", "pom.xml"), parentDoc);
+            pomMap.put(Path.of("project", "child", "pom.xml"), childDoc);
 
             Element childRoot = childDoc.getRootElement();
             Element parentElement = childRoot.getChild("parent", childRoot.getNamespace());
@@ -474,7 +473,7 @@ class InferenceStrategyTest {
 
             Document childDoc = saxBuilder.build(new StringReader(childPomXml));
 
-            Map<Path, Document> pomMap = Map.of(Paths.get("project", "pom.xml"), childDoc);
+            Map<Path, Document> pomMap = Map.of(Path.of("project", "pom.xml"), childDoc);
 
             Element childRoot = childDoc.getRootElement();
             Element parentElement = childRoot.getChild("parent", childRoot.getNamespace());
@@ -530,8 +529,8 @@ class InferenceStrategyTest {
 
             // Both POMs are in the reactor
             Map<Path, Document> pomMap = Map.of(
-                    Paths.get("pom.xml"), parentDoc,
-                    Paths.get("child", "pom.xml"), childDoc);
+                    Path.of("pom.xml"), parentDoc,
+                    Path.of("child", "pom.xml"), childDoc);
 
             Element childRoot = childDoc.getRootElement();
             Element parentElement = childRoot.getChild("parent", childRoot.getNamespace());
@@ -591,8 +590,8 @@ class InferenceStrategyTest {
             Document childDoc = saxBuilder.build(new StringReader(childPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "pom.xml"), parentDoc);
-            pomMap.put(Paths.get("project", "child", "pom.xml"), childDoc);
+            pomMap.put(Path.of("project", "pom.xml"), parentDoc);
+            pomMap.put(Path.of("project", "child", "pom.xml"), childDoc);
 
             Element childRoot = childDoc.getRootElement();
             Element parentElement = childRoot.getChild("parent", childRoot.getNamespace());
@@ -655,8 +654,8 @@ class InferenceStrategyTest {
             Document childDoc = saxBuilder.build(new StringReader(childPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "pom.xml"), parentDoc);
-            pomMap.put(Paths.get("project", "child", "pom.xml"), childDoc);
+            pomMap.put(Path.of("project", "pom.xml"), parentDoc);
+            pomMap.put(Path.of("project", "child", "pom.xml"), childDoc);
 
             Element childRoot = childDoc.getRootElement();
             Element parentElement = childRoot.getChild("parent", childRoot.getNamespace());
@@ -712,8 +711,8 @@ class InferenceStrategyTest {
             Document childDoc = saxBuilder.build(new StringReader(childPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "pom.xml"), parentDoc);
-            pomMap.put(Paths.get("project", "child", "pom.xml"), childDoc);
+            pomMap.put(Path.of("project", "pom.xml"), parentDoc);
+            pomMap.put(Path.of("project", "child", "pom.xml"), childDoc);
 
             Element childRoot = childDoc.getRootElement();
             Element parentElement = childRoot.getChild("parent", childRoot.getNamespace());
@@ -758,8 +757,8 @@ class InferenceStrategyTest {
             Document moduleBDoc = saxBuilder.build(new StringReader(moduleBPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("project", "module-a", "pom.xml"), moduleADoc);
-            pomMap.put(Paths.get("project", "module-b", "pom.xml"), moduleBDoc);
+            pomMap.put(Path.of("project", "module-a", "pom.xml"), moduleADoc);
+            pomMap.put(Path.of("project", "module-b", "pom.xml"), moduleBDoc);
 
             Element moduleBRoot = moduleBDoc.getRootElement();
             Element dependency = moduleBRoot

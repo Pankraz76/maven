@@ -20,7 +20,6 @@ package org.apache.maven.cling.invoker.mvnup.goals;
 
 import java.io.StringReader;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -147,7 +146,7 @@ class ModelUpgradeStrategyTest {
                     .build();
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext(TestUtils.createOptionsWithModelVersion(targetModelVersion));
 
@@ -222,7 +221,7 @@ class ModelUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             // Create context with --model-version=4.1.0 option to trigger namespace update
             UpgradeOptions options = mock(UpgradeOptions.class);
@@ -273,7 +272,7 @@ class ModelUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             // Create context with --model-version=4.1.0 option to trigger module conversion
             UpgradeOptions options = mock(UpgradeOptions.class);
@@ -343,7 +342,7 @@ class ModelUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = TestUtils.createMockContext(TestUtils.createOptionsWithModelVersion("4.0.0"));
 
@@ -370,7 +369,7 @@ class ModelUpgradeStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = TestUtils.createMockContext(TestUtils.createOptionsWithModelVersion("4.1.0"));
 

@@ -20,7 +20,6 @@ package org.apache.maven.cling.invoker.mvnup.goals;
 
 import java.io.StringReader;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -212,8 +211,8 @@ class GAVUtilsTest {
             Document childDoc = saxBuilder.build(new StringReader(childPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("/project/pom.xml"), parentDoc);
-            pomMap.put(Paths.get("/project/child/pom.xml"), childDoc);
+            pomMap.put(Path.of("/project/pom.xml"), parentDoc);
+            pomMap.put(Path.of("/project/child/pom.xml"), childDoc);
 
             UpgradeContext context = createMockContext();
 
@@ -254,8 +253,8 @@ class GAVUtilsTest {
             Document doc2 = saxBuilder.build(new StringReader(pomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("/project/pom1.xml"), doc1);
-            pomMap.put(Paths.get("/project/pom2.xml"), doc2);
+            pomMap.put(Path.of("/project/pom1.xml"), doc1);
+            pomMap.put(Path.of("/project/pom2.xml"), doc2);
 
             UpgradeContext context = createMockContext();
 
@@ -293,8 +292,8 @@ class GAVUtilsTest {
             Document invalidDoc = saxBuilder.build(new StringReader(invalidPomXml));
 
             Map<Path, Document> pomMap = new HashMap<>();
-            pomMap.put(Paths.get("/project/valid.xml"), validDoc);
-            pomMap.put(Paths.get("/project/invalid.xml"), invalidDoc);
+            pomMap.put(Path.of("/project/valid.xml"), validDoc);
+            pomMap.put(Path.of("/project/invalid.xml"), invalidDoc);
 
             UpgradeContext context = createMockContext();
 
@@ -405,7 +404,7 @@ class GAVUtilsTest {
             Map<Path, Document> largePomMap = new HashMap<>();
 
             for (int i = 0; i < 100; i++) {
-                Path pomPath = Paths.get("module" + i + "/pom.xml");
+                Path pomPath = Path.of("module" + i + "/pom.xml");
                 String pomContent = PomBuilder.create()
                         .groupId("com.example")
                         .artifactId("module" + i)

@@ -25,7 +25,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -589,7 +588,7 @@ class MavenCliTest {
 
     @Test
     public void findRootProjectWithAttribute() {
-        Path test = Paths.get("src/test/projects/root-attribute");
+        Path test = Path.of("src/test/projects/root-attribute");
         assertEquals(test, new DefaultRootLocator().findRoot(test.resolve("child")));
     }
 
@@ -609,7 +608,11 @@ class MavenCliTest {
         Files.createDirectories(mvn);
         Files.writeString(
                 mvn.resolve("maven-user.properties"),
-                "${includes} = env-${envName}.properties\nfro = ${bar}z\n" + "bar = chti${java.version}\n");
+                """
+                ${includes} = env-${envName}.properties
+                fro = ${bar}z
+                bar = chti${java.version}
+                """);
         Files.writeString(mvn.resolve("env-test.properties"), "\n");
 
         // Arrange

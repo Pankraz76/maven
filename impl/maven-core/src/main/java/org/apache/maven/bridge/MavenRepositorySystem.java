@@ -391,7 +391,7 @@ public class MavenRepositorySystem {
             throws InvalidRepositoryException {
         if (layout == null) {
             throw new InvalidRepositoryException(
-                    String.format("Cannot find ArtifactRepositoryLayout instance for: %s %s", layoutId, repositoryId),
+                    "Cannot find ArtifactRepositoryLayout instance for: %s %s".formatted(layoutId, repositoryId),
                     repositoryId);
         }
     }

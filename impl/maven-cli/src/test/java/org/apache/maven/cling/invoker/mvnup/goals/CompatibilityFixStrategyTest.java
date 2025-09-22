@@ -20,7 +20,6 @@ package org.apache.maven.cling.invoker.mvnup.goals;
 
 import java.io.StringReader;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Optional;
 
@@ -170,7 +169,7 @@ class CompatibilityFixStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -217,7 +216,7 @@ class CompatibilityFixStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);
@@ -270,7 +269,7 @@ class CompatibilityFixStrategyTest {
                 """;
 
             Document document = saxBuilder.build(new StringReader(pomXml));
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), document);
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), document);
 
             UpgradeContext context = createMockContext();
             UpgradeResult result = strategy.apply(context, pomMap);

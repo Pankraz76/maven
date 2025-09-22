@@ -24,7 +24,6 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -399,8 +398,7 @@ public class DefaultModelBuilder implements ModelBuilder {
             if (sources != null) {
                 return sources.stream()
                         .reduce((a, b) -> {
-                            throw new IllegalStateException(String.format(
-                                    "No unique Source for %s:%s: %s and %s",
+                            throw new IllegalStateException("No unique Source for %s:%s: %s and %s".formatted(
                                     groupId, artifactId, a.getLocation(), b.getLocation()));
                         })
                         .orElse(null);
@@ -1015,8 +1013,8 @@ public class DefaultModelBuilder implements ModelBuilder {
             String groupId = parent.getGroupId();
             String artifactId = parent.getArtifactId();
             String version = parent.getVersion();
-            String classifier = parent instanceof Mixin ? ((Mixin) parent).getClassifier() : null;
-            String extension = parent instanceof Mixin ? ((Mixin) parent).getExtension() : null;
+            String classifier = parent instanceof Mixin m ? m.getClassifier() : null;
+            String extension = parent instanceof Mixin m ? m.getExtension() : null;
 
             // add repositories specified by the current model so that we can resolve the parent
             if (!childModel.getRepositories().isEmpty()) {
@@ -1362,7 +1360,7 @@ public class DefaultModelBuilder implements ModelBuilder {
                     if ((groupId == null || artifactId == null || version == null)
                             && (path == null || !path.isEmpty())) {
                         Path pomFile = model.getPomFile();
-                        Path relativePath = Paths.get(path != null ? path : "..");
+                        Path relativePath = Path.of(path != null ? path : "..");
                         Path pomPath = pomFile.resolveSibling(relativePath).normalize();
                         if (Files.isDirectory(pomPath)) {
                             pomPath = modelProcessor.locateExistingPom(pomPath);

@@ -22,7 +22,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.List;
 
@@ -329,11 +328,11 @@ public abstract class MavenExecutorTestSupport {
     }
 
     public static ExecutorRequest.Builder mvn3ExecutorRequestBuilder() {
-        return addTailRepo(ExecutorRequest.mavenBuilder(Paths.get(System.getProperty("maven3home"))));
+        return addTailRepo(ExecutorRequest.mavenBuilder(Path.of(System.getProperty("maven3home"))));
     }
 
     public static ExecutorRequest.Builder mvn4ExecutorRequestBuilder() {
-        return addTailRepo(ExecutorRequest.mavenBuilder(Paths.get(System.getProperty("maven4home"))));
+        return addTailRepo(ExecutorRequest.mavenBuilder(Path.of(System.getProperty("maven4home"))));
     }
 
     private static ExecutorRequest.Builder addTailRepo(ExecutorRequest.Builder builder) {

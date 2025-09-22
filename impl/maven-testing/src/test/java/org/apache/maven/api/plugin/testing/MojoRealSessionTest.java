@@ -19,7 +19,6 @@
 package org.apache.maven.api.plugin.testing;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import org.apache.maven.api.Session;
 import org.apache.maven.api.di.Inject;
@@ -95,7 +94,7 @@ class MojoRealSessionTest {
         @Provides
         @Singleton
         static Session createSession() {
-            Path basedir = Paths.get(System.getProperty("basedir", ""));
+            Path basedir = Path.of(System.getProperty("basedir", ""));
             Path localRepoPath = basedir.resolve("target/local-repo");
             // Rely on DI discovery for SecDispatcherProvider to avoid duplicate bindings
             return ApiRunner.createSession(null, localRepoPath);

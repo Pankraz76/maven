@@ -72,34 +72,37 @@ public class MavenPropertiesTest {
 
     @Test
     public void testSpaces() throws Exception {
-        String config = "\n" + "\n"
-                + "    \n"
-                + "                \n"
-                + "   \\ \\r \\n \\t \\f\n"
-                + "   \n"
-                + "                                                \n"
-                + "! dshfjklahfjkldashgjl;as\n"
-                + "     #jdfagdfjagkdjfghksdajfd\n"
-                + "     \n"
-                + "!!properties\n"
-                + "\n"
-                + "a=a\n"
-                + "b bb as,dn   \n"
-                + "c\\r\\ \\t\\nu =:: cu\n"
-                + "bu= b\\\n"
-                + "                u\n"
-                + "d=d\\r\\ne=e\n"
-                + "f   :f\\\n"
-                + "f\\\n"
-                + "                        f\n"
-                + "g               g\n"
-                + "h\\u0020h\n"
-                + "\\   i=i\n"
-                + "j=\\   j\n"
-                + "space=\\   c\n"
-                + "\n"
-                + "dblbackslash=\\\\\n"
-                + "                        \n";
+        String config = """
+                
+                
+                   \s
+                               \s
+                   \\ \\r \\n \\t \\f
+                  \s
+                                                               \s
+                ! dshfjklahfjkldashgjl;as
+                     #jdfagdfjagkdjfghksdajfd
+                    \s
+                !!properties
+                
+                a=a
+                b bb as,dn  \s
+                c\\r\\ \\t\\nu =:: cu
+                bu= b\\
+                                u
+                d=d\\r\\ne=e
+                f   :f\\
+                f\\
+                                        f
+                g               g
+                h\\u0020h
+                \\   i=i
+                j=\\   j
+                space=\\   c
+                
+                dblbackslash=\\\\
+                                       \s
+                """;
 
         java.util.Properties props1 = new java.util.Properties();
         props1.load(new StringReader(config));

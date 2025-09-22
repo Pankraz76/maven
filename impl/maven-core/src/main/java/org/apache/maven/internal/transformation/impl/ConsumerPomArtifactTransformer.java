@@ -26,7 +26,6 @@ import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -75,7 +74,7 @@ class ConsumerPomArtifactTransformer extends TransformerSupport {
         }
         if (Features.consumerPom(session.getConfigProperties())) {
             Path buildDir =
-                    project.getBuild() != null ? Paths.get(project.getBuild().getDirectory()) : null;
+                    project.getBuild() != null ? Path.of(project.getBuild().getDirectory()) : null;
             if (buildDir != null) {
                 Files.createDirectories(buildDir);
             }

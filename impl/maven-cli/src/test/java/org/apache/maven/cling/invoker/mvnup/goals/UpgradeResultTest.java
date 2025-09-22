@@ -19,7 +19,6 @@
 package org.apache.maven.cling.invoker.mvnup.goals;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Set;
 
 import org.junit.jupiter.api.DisplayName;
@@ -56,8 +55,8 @@ class UpgradeResultTest {
         @Test
         @DisplayName("should create success result")
         void shouldCreateSuccessResult() {
-            Path pom1 = Paths.get("pom.xml");
-            Path pom2 = Paths.get("module/pom.xml");
+            Path pom1 = Path.of("pom.xml");
+            Path pom2 = Path.of("module/pom.xml");
 
             UpgradeResult result = new UpgradeResult(
                     Set.of(pom1, pom2), // processed
@@ -75,8 +74,8 @@ class UpgradeResultTest {
         @Test
         @DisplayName("should create failure result")
         void shouldCreateFailureResult() {
-            Path pom1 = Paths.get("pom.xml");
-            Path pom2 = Paths.get("module/pom.xml");
+            Path pom1 = Path.of("pom.xml");
+            Path pom2 = Path.of("module/pom.xml");
 
             UpgradeResult result = new UpgradeResult(
                     Set.of(pom1, pom2), // processed
@@ -113,8 +112,8 @@ class UpgradeResultTest {
         @Test
         @DisplayName("should handle merging results with overlapping POMs")
         void shouldHandleMergingResultsWithOverlappingPOMs() {
-            Path pom1 = Paths.get("pom.xml");
-            Path pom2 = Paths.get("module/pom.xml");
+            Path pom1 = Path.of("pom.xml");
+            Path pom2 = Path.of("module/pom.xml");
 
             UpgradeResult result1 = new UpgradeResult(
                     Set.of(pom1, pom2), // processed
@@ -140,8 +139,8 @@ class UpgradeResultTest {
         @Test
         @DisplayName("should handle merging success and failure results")
         void shouldHandleMergingSuccessAndFailureResults() {
-            Path pom1 = Paths.get("pom.xml");
-            Path pom2 = Paths.get("module/pom.xml");
+            Path pom1 = Path.of("pom.xml");
+            Path pom2 = Path.of("module/pom.xml");
 
             UpgradeResult successResult = new UpgradeResult(
                     Set.of(pom1), // processed
@@ -167,9 +166,9 @@ class UpgradeResultTest {
         @Test
         @DisplayName("should handle merging with different POM sets")
         void shouldHandleMergingWithDifferentPOMSets() {
-            Path pom1 = Paths.get("pom.xml");
-            Path pom2 = Paths.get("module1/pom.xml");
-            Path pom3 = Paths.get("module2/pom.xml");
+            Path pom1 = Path.of("pom.xml");
+            Path pom2 = Path.of("module1/pom.xml");
+            Path pom3 = Path.of("module2/pom.xml");
 
             UpgradeResult result1 = new UpgradeResult(
                     Set.of(pom1, pom2), // processed
@@ -203,7 +202,7 @@ class UpgradeResultTest {
             // Create a large number of POM paths for performance testing
             Set<Path> largePomSet = Set.of();
             for (int i = 0; i < 1000; i++) {
-                Path pomPath = Paths.get("module" + i + "/pom.xml");
+                Path pomPath = Path.of("module" + i + "/pom.xml");
                 largePomSet = Set.of(pomPath); // Note: This creates a new set each time in the loop
             }
 

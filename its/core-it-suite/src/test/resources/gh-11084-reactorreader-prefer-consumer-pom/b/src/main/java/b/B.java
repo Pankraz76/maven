@@ -18,13 +18,14 @@
  */
 package b;
 
-import java.nio.file.Paths;
+import java.nio.file.Path;
+
 
 import a.A;
 import org.codehaus.plexus.util.io.CachingOutputStream;
 
 public class B {
     public static void v() throws Exception {
-        try (CachingOutputStream is = A.newCachingOutputStream(Paths.get("."))) {}
+        try (CachingOutputStream is = A.newCachingOutputStream(Path.of("."))) {}
     }
 }

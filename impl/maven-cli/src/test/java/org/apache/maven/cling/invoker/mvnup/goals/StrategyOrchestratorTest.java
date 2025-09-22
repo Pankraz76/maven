@@ -19,7 +19,6 @@
 package org.apache.maven.cling.invoker.mvnup.goals;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -77,7 +76,7 @@ class StrategyOrchestratorTest {
         @DisplayName("should execute all applicable strategies")
         void shouldExecuteAllApplicableStrategies() throws Exception {
             UpgradeContext context = createMockContext();
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), mock(Document.class));
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), mock(Document.class));
 
             // Mock all strategies as applicable
             for (UpgradeStrategy strategy : mockStrategies) {
@@ -100,7 +99,7 @@ class StrategyOrchestratorTest {
         @DisplayName("should skip non-applicable strategies")
         void shouldSkipNonApplicableStrategies() throws Exception {
             UpgradeContext context = createMockContext();
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), mock(Document.class));
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), mock(Document.class));
 
             // Mock first strategy as applicable, others as not applicable
             when(mockStrategies.get(0).isApplicable(context)).thenReturn(true);
@@ -125,19 +124,19 @@ class StrategyOrchestratorTest {
         void shouldAggregateResultsFromMultipleStrategies() throws Exception {
             UpgradeContext context = createMockContext();
             Map<Path, Document> pomMap = Map.of(
-                    Paths.get("pom.xml"), mock(Document.class),
-                    Paths.get("module/pom.xml"), mock(Document.class));
+                    Path.of("pom.xml"), mock(Document.class),
+                    Path.of("module/pom.xml"), mock(Document.class));
 
             // Mock strategies with different results
             when(mockStrategies.get(0).isApplicable(context)).thenReturn(true);
             when(mockStrategies.get(0).apply(Mockito.eq(context), Mockito.any()))
                     .thenReturn(
-                            new UpgradeResult(Set.of(Paths.get("pom.xml")), Set.of(Paths.get("pom.xml")), Set.of()));
+                            new UpgradeResult(Set.of(Path.of("pom.xml")), Set.of(Path.of("pom.xml")), Set.of()));
 
             when(mockStrategies.get(1).isApplicable(context)).thenReturn(true);
             when(mockStrategies.get(1).apply(Mockito.eq(context), Mockito.any()))
                     .thenReturn(new UpgradeResult(
-                            Set.of(Paths.get("module/pom.xml")), Set.of(Paths.get("module/pom.xml")), Set.of()));
+                            Set.of(Path.of("module/pom.xml")), Set.of(Path.of("module/pom.xml")), Set.of()));
 
             when(mockStrategies.get(2).isApplicable(context)).thenReturn(false);
 
@@ -153,13 +152,13 @@ class StrategyOrchestratorTest {
         @DisplayName("should handle strategy failures gracefully")
         void shouldHandleStrategyFailuresGracefully() throws Exception {
             UpgradeContext context = createMockContext();
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), mock(Document.class));
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), mock(Document.class));
 
             // Mock first strategy to fail, second to succeed
             when(mockStrategies.get(0).isApplicable(context)).thenReturn(true);
             when(mockStrategies.get(0).apply(Mockito.eq(context), Mockito.any()))
                     .thenReturn(
-                            new UpgradeResult(Set.of(Paths.get("pom.xml")), Set.of(), Set.of(Paths.get("pom.xml"))));
+                            new UpgradeResult(Set.of(Path.of("pom.xml")), Set.of(), Set.of(Path.of("pom.xml"))));
 
             when(mockStrategies.get(1).isApplicable(context)).thenReturn(true);
             when(mockStrategies.get(1).apply(Mockito.eq(context), Mockito.any()))
@@ -171,14 +170,14 @@ class StrategyOrchestratorTest {
 
             assertFalse(result.success(), "Orchestrator should fail when any strategy fails");
             assertEquals(1, result.errorPoms().size(), "Should have one error POM");
-            assertTrue(result.errorPoms().contains(Paths.get("pom.xml")), "Should contain the failed POM");
+            assertTrue(result.errorPoms().contains(Path.of("pom.xml")), "Should contain the failed POM");
         }
 
         @Test
         @DisplayName("should handle strategy exceptions gracefully")
         void shouldHandleStrategyExceptionsGracefully() throws Exception {
             UpgradeContext context = createMockContext();
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), mock(Document.class));
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), mock(Document.class));
 
             // Mock first strategy to throw exception
             when(mockStrategies.get(0).isApplicable(context)).thenReturn(true);
@@ -206,7 +205,7 @@ class StrategyOrchestratorTest {
             // This test verifies that strategies are executed in the order they are provided
             // The actual priority ordering is handled by dependency injection
             UpgradeContext context = createMockContext();
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), mock(Document.class));
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), mock(Document.class));
 
             // Mock all strategies as applicable
             for (UpgradeStrategy strategy : mockStrategies) {
@@ -231,7 +230,7 @@ class StrategyOrchestratorTest {
         @DisplayName("should return empty result when no strategies are applicable")
         void shouldReturnEmptyResultWhenNoStrategiesApplicable() throws Exception {
             UpgradeContext context = createMockContext();
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), mock(Document.class));
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), mock(Document.class));
 
             // Mock all strategies as not applicable
             for (UpgradeStrategy strategy : mockStrategies) {
@@ -250,18 +249,18 @@ class StrategyOrchestratorTest {
         @DisplayName("should handle overlapping POM modifications")
         void shouldHandleOverlappingPOMModifications() throws Exception {
             UpgradeContext context = createMockContext();
-            Map<Path, Document> pomMap = Map.of(Paths.get("pom.xml"), mock(Document.class));
+            Map<Path, Document> pomMap = Map.of(Path.of("pom.xml"), mock(Document.class));
 
             // Mock strategies that both modify the same POM
             when(mockStrategies.get(0).isApplicable(context)).thenReturn(true);
             when(mockStrategies.get(0).apply(Mockito.eq(context), Mockito.any()))
                     .thenReturn(
-                            new UpgradeResult(Set.of(Paths.get("pom.xml")), Set.of(Paths.get("pom.xml")), Set.of()));
+                            new UpgradeResult(Set.of(Path.of("pom.xml")), Set.of(Path.of("pom.xml")), Set.of()));
 
             when(mockStrategies.get(1).isApplicable(context)).thenReturn(true);
             when(mockStrategies.get(1).apply(Mockito.eq(context), Mockito.any()))
                     .thenReturn(
-                            new UpgradeResult(Set.of(Paths.get("pom.xml")), Set.of(Paths.get("pom.xml")), Set.of()));
+                            new UpgradeResult(Set.of(Path.of("pom.xml")), Set.of(Path.of("pom.xml")), Set.of()));
 
             when(mockStrategies.get(2).isApplicable(context)).thenReturn(false);
 
@@ -270,7 +269,7 @@ class StrategyOrchestratorTest {
             assertTrue(result.success(), "Should succeed with overlapping modifications");
             assertEquals(1, result.processedPoms().size(), "Should deduplicate processed POMs");
             assertEquals(1, result.modifiedPoms().size(), "Should deduplicate modified POMs");
-            assertTrue(result.modifiedPoms().contains(Paths.get("pom.xml")), "Should contain the modified POM");
+            assertTrue(result.modifiedPoms().contains(Path.of("pom.xml")), "Should contain the modified POM");
         }
     }
 }

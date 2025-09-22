@@ -832,7 +832,7 @@ public class Ansi implements Appendable {
 
     public Ansi format(String pattern, Object... args) {
         flushAttributes();
-        builder.append(String.format(pattern, args));
+        builder.append(pattern.formatted(args));
         return this;
     }
 
@@ -871,7 +871,7 @@ public class Ansi implements Appendable {
      * @since 2.2
      */
     public Ansi render(final String text, Object... args) {
-        a(String.format(new org.jline.jansi.Ansi().render(text).toString(), args));
+        a(new org.jline.jansi.Ansi().render(text).toString().formatted(args));
         return this;
     }
 

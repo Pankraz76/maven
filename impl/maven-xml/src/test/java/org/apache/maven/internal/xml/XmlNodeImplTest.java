@@ -45,102 +45,105 @@ class XmlNodeImplTest {
 
     @Test
     void testCombineChildrenAppend() throws Exception {
-        String lhs = "<configuration>\n"
-                + "    <plugins>\n"
-                + "        <plugin>\n"
-                + "            <groupId>foo.bar</groupId>\n"
-                + "            <artifactId>foo-bar-plugin</artifactId>\n"
-                + "            <configuration>\n"
-                + "                <plugins>\n"
-                + "                    <plugin>\n"
-                + "                        <groupId>org.apache.maven.plugins</groupId>\n"
-                + "                        <artifactId>maven-compiler-plugin</artifactId>\n"
-                + "                    </plugin>\n"
-                + "                    <plugin>\n"
-                + "                        <groupId>org.apache.maven.plugins</groupId>\n"
-                + "                        <artifactId>maven-surefire-plugin</artifactId>\n"
-                + "                        <foo>\n"
-                + "                            <properties combine.children=\"append\">\n"
-                + "                                <property>\n"
-                + "                                    <name>prop2</name>\n"
-                + "                                    <value>value2</value>\n"
-                + "                                </property>\n"
-                + "                            </properties>\n"
-                + "                        </foo>\n"
-                + "                    </plugin>\n"
-                + "                </plugins>\n"
-                + "            </configuration>\n"
-                + "        </plugin>\n"
-                + "    </plugins>\n"
-                + "</configuration>";
+        String lhs = """
+                <configuration>
+                    <plugins>
+                        <plugin>
+                            <groupId>foo.bar</groupId>
+                            <artifactId>foo-bar-plugin</artifactId>
+                            <configuration>
+                                <plugins>
+                                    <plugin>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-compiler-plugin</artifactId>
+                                    </plugin>
+                                    <plugin>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-surefire-plugin</artifactId>
+                                        <foo>
+                                            <properties combine.children="append">
+                                                <property>
+                                                    <name>prop2</name>
+                                                    <value>value2</value>
+                                                </property>
+                                            </properties>
+                                        </foo>
+                                    </plugin>
+                                </plugins>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </configuration>""";
 
-        String rhs = "<configuration>\n"
-                + "    <plugins>\n"
-                + "        <plugin>\n"
-                + "            <groupId>foo.bar</groupId>\n"
-                + "            <artifactId>foo-bar-plugin</artifactId>\n"
-                + "            <configuration>\n"
-                + "                <plugins>\n"
-                + "                    <plugin>\n"
-                + "                        <groupId>org.apache.maven.plugins</groupId>\n"
-                + "                        <artifactId>maven-compiler-plugin</artifactId>\n"
-                + "                        <bar>\n"
-                + "                            <value>foo</value>\n"
-                + "                        </bar>\n"
-                + "                    </plugin>\n"
-                + "                    <plugin>\n"
-                + "                        <groupId>org.apache.maven.plugins</groupId>\n"
-                + "                        <artifactId>maven-surefire-plugin</artifactId>\n"
-                + "                        <foo>\n"
-                + "                            <properties>\n"
-                + "                                <property>\n"
-                + "                                    <name>prop1</name>\n"
-                + "                                    <value>value1</value>\n"
-                + "                                </property>\n"
-                + "                            </properties>\n"
-                + "                        </foo>\n"
-                + "                    </plugin>\n"
-                + "                </plugins>\n"
-                + "            </configuration>\n"
-                + "        </plugin>\n"
-                + "    </plugins>\n"
-                + "</configuration>";
+        String rhs = """
+                <configuration>
+                    <plugins>
+                        <plugin>
+                            <groupId>foo.bar</groupId>
+                            <artifactId>foo-bar-plugin</artifactId>
+                            <configuration>
+                                <plugins>
+                                    <plugin>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-compiler-plugin</artifactId>
+                                        <bar>
+                                            <value>foo</value>
+                                        </bar>
+                                    </plugin>
+                                    <plugin>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-surefire-plugin</artifactId>
+                                        <foo>
+                                            <properties>
+                                                <property>
+                                                    <name>prop1</name>
+                                                    <value>value1</value>
+                                                </property>
+                                            </properties>
+                                        </foo>
+                                    </plugin>
+                                </plugins>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </configuration>""";
 
-        String result = "<configuration>\n"
-                + "    <plugins>\n"
-                + "        <plugin>\n"
-                + "            <groupId>foo.bar</groupId>\n"
-                + "            <artifactId>foo-bar-plugin</artifactId>\n"
-                + "            <configuration>\n"
-                + "                <plugins>\n"
-                + "                    <plugin>\n"
-                + "                        <groupId>org.apache.maven.plugins</groupId>\n"
-                + "                        <artifactId>maven-compiler-plugin</artifactId>\n"
-                + "                        <bar>\n"
-                + "                            <value>foo</value>\n"
-                + "                        </bar>\n"
-                + "                    </plugin>\n"
-                + "                    <plugin>\n"
-                + "                        <groupId>org.apache.maven.plugins</groupId>\n"
-                + "                        <artifactId>maven-surefire-plugin</artifactId>\n"
-                + "                        <foo>\n"
-                + "                            <properties combine.children=\"append\">\n"
-                + "                                <property>\n"
-                + "                                    <name>prop1</name>\n"
-                + "                                    <value>value1</value>\n"
-                + "                                </property>\n"
-                + "                                <property>\n"
-                + "                                    <name>prop2</name>\n"
-                + "                                    <value>value2</value>\n"
-                + "                                </property>\n"
-                + "                            </properties>\n"
-                + "                        </foo>\n"
-                + "                    </plugin>\n"
-                + "                </plugins>\n"
-                + "            </configuration>\n"
-                + "        </plugin>\n"
-                + "    </plugins>\n"
-                + "</configuration>";
+        String result = """
+                <configuration>
+                    <plugins>
+                        <plugin>
+                            <groupId>foo.bar</groupId>
+                            <artifactId>foo-bar-plugin</artifactId>
+                            <configuration>
+                                <plugins>
+                                    <plugin>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-compiler-plugin</artifactId>
+                                        <bar>
+                                            <value>foo</value>
+                                        </bar>
+                                    </plugin>
+                                    <plugin>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-surefire-plugin</artifactId>
+                                        <foo>
+                                            <properties combine.children="append">
+                                                <property>
+                                                    <name>prop1</name>
+                                                    <value>value1</value>
+                                                </property>
+                                                <property>
+                                                    <name>prop2</name>
+                                                    <value>value2</value>
+                                                </property>
+                                            </properties>
+                                        </foo>
+                                    </plugin>
+                                </plugins>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </configuration>""";
 
         XmlNode leftDom = toXmlNode(lhs);
         XmlNode rightDom = toXmlNode(rhs);
@@ -648,27 +651,31 @@ class XmlNodeImplTest {
 
     @Test
     void testMergeCombineChildrenAppendOnRecessive() throws XMLStreamException, IOException {
-        String dominant = "<relocations>\n" + "  <relocation>\n"
-                + "    <pattern>org.apache.shiro.crypto.CipherService</pattern>\n"
-                + "    <shadedPattern>org.apache.shiro.crypto.cipher.CipherService</shadedPattern>\n"
-                + "  </relocation>\n"
-                + "</relocations>";
-        String recessive = "<relocations combine.children=\"append\">\n"
-                + "  <relocation>\n"
-                + "    <pattern>javax.faces</pattern>\n"
-                + "    <shadedPattern>jakarta.faces</shadedPattern>\n"
-                + "  </relocation>\n"
-                + "</relocations>";
-        String expected = "<relocations combine.children=\"append\">\n"
-                + "  <relocation>\n"
-                + "    <pattern>javax.faces</pattern>\n"
-                + "    <shadedPattern>jakarta.faces</shadedPattern>\n"
-                + "  </relocation>\n"
-                + "  <relocation>\n"
-                + "    <pattern>org.apache.shiro.crypto.CipherService</pattern>\n"
-                + "    <shadedPattern>org.apache.shiro.crypto.cipher.CipherService</shadedPattern>\n"
-                + "  </relocation>\n"
-                + "</relocations>";
+        String dominant = """
+                <relocations>
+                  <relocation>
+                    <pattern>org.apache.shiro.crypto.CipherService</pattern>
+                    <shadedPattern>org.apache.shiro.crypto.cipher.CipherService</shadedPattern>
+                  </relocation>
+                </relocations>""";
+        String recessive = """
+                <relocations combine.children="append">
+                  <relocation>
+                    <pattern>javax.faces</pattern>
+                    <shadedPattern>jakarta.faces</shadedPattern>
+                  </relocation>
+                </relocations>""";
+        String expected = """
+                <relocations combine.children="append">
+                  <relocation>
+                    <pattern>javax.faces</pattern>
+                    <shadedPattern>jakarta.faces</shadedPattern>
+                  </relocation>
+                  <relocation>
+                    <pattern>org.apache.shiro.crypto.CipherService</pattern>
+                    <shadedPattern>org.apache.shiro.crypto.cipher.CipherService</shadedPattern>
+                  </relocation>
+                </relocations>""";
 
         XmlNode d = toXmlNode(dominant);
         XmlNode r = toXmlNode(recessive);

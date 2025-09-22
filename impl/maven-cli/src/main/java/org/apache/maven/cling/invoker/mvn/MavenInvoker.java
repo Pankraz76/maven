@@ -202,8 +202,7 @@ public class MavenInvoker extends LookupInvoker<MavenContext> {
         if (toolchainsResult.getProblems().hasWarningProblems()) {
             int totalProblems = toolchainsResult.getProblems().totalProblemsReported();
             context.logger.info("");
-            context.logger.info(String.format(
-                    "%s %s encountered while building the effective toolchains (use -e to see details)",
+            context.logger.info("%s %s encountered while building the effective toolchains (use -e to see details)".formatted(
                     totalProblems, (totalProblems == 1) ? "problem was" : "problems were"));
 
             if (context.options().showErrors().orElse(false)) {

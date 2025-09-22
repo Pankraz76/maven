@@ -64,7 +64,7 @@ class DefaultArtifactCoordinatesTest {
 
         @Override
         public boolean equals(final Object o) {
-            return o instanceof StubVC && raw.equals(((StubVC) o).raw);
+            return o instanceof StubVC svc && raw.equals(svc.raw);
         }
 
         @Override

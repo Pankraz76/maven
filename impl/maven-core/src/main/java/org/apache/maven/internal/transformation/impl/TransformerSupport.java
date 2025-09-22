@@ -78,8 +78,8 @@ abstract class TransformerSupport implements PomArtifactTransformer {
         Files.createDirectories(dest.getParent());
         try (Writer w = Files.newBufferedWriter(dest)) {
             MavenStaxWriter writer = new MavenStaxWriter();
-            writer.setNamespace(String.format(NAMESPACE_FORMAT, version));
-            writer.setSchemaLocation(String.format(SCHEMA_LOCATION_FORMAT, version));
+            writer.setNamespace(NAMESPACE_FORMAT.formatted(version));
+            writer.setSchemaLocation(SCHEMA_LOCATION_FORMAT.formatted(version));
             writer.setAddLocationInformation(false);
             writer.write(w, model);
         }

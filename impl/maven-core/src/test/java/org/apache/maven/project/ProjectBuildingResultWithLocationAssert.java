@@ -46,8 +46,7 @@ class ProjectBuildingResultWithLocationAssert {
             String actualLocations = actual.getProblems().stream()
                     .map(p -> formatLocation(p.getColumnNumber(), p.getLineNumber()))
                     .collect(joining(", "));
-            String message = String.format(
-                    "Expected ProjectBuildingResult to have location <%s> but had locations <%s>",
+            String message = "Expected ProjectBuildingResult to have location <%s> but had locations <%s>".formatted(
                     formatLocation(columnNumber, lineNumber), actualLocations);
             assertTrue(false, message);
         }
@@ -56,7 +55,7 @@ class ProjectBuildingResultWithLocationAssert {
     }
 
     private String formatLocation(int columnNumber, int lineNumber) {
-        return String.format("line %d, column %d", lineNumber, columnNumber);
+        return "line %d, column %d".formatted(lineNumber, columnNumber);
     }
 
     // Helper method for backward compatibility

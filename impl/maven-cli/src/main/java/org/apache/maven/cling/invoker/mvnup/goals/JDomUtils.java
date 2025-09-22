@@ -257,8 +257,8 @@ public class JDomUtils {
         String prependingElementName = "";
         if (index > 0) {
             Content prevContent = root.getContent(index - 1);
-            if (prevContent instanceof Element) {
-                prependingElementName = ((Element) prevContent).getName();
+            if (prevContent instanceof Element element) {
+                prependingElementName = element.getName();
             }
         }
 
@@ -297,8 +297,8 @@ public class JDomUtils {
 
         // Check if the last content is a Text node with proper indentation
         Content lastContent = contents.get(contents.size() - 1);
-        if (lastContent instanceof Text) {
-            String text = ((Text) lastContent).getText();
+        if (lastContent instanceof Text text1) {
+            String text = text1.getText();
             // If the last text doesn't end with proper indentation for the closing tag
             if (!text.endsWith("\n" + parentIndent)) {
                 // If it's only whitespace, replace it; otherwise append
@@ -321,8 +321,8 @@ public class JDomUtils {
      */
     private static String detectParentIndentation(Element element) {
         Parent parent = element.getParent();
-        if (parent instanceof Element) {
-            return detectIndentation((Element) parent);
+        if (parent instanceof Element element1) {
+            return detectIndentation(element1);
         }
         return "";
     }
@@ -368,9 +368,9 @@ public class JDomUtils {
         }
 
         Parent parent = element.getParent();
-        if (parent instanceof Element) {
+        if (parent instanceof Element element1) {
             String baseIndent = detectBaseIndentationUnit(element);
-            return detectIndentation((Element) parent) + baseIndent;
+            return detectIndentation(element1) + baseIndent;
         }
 
         return "";
@@ -436,8 +436,8 @@ public class JDomUtils {
         int childIndex = parent.indexOf(child);
         if (childIndex > 0) {
             Content prevContent = parent.getContent(childIndex - 1);
-            if (prevContent instanceof Text) {
-                String text = ((Text) prevContent).getText();
+            if (prevContent instanceof Text text1) {
+                String text = text1.getText();
                 int lastLsIndex = StringUtils.lastIndexOfAny(text, new String[] {"\n", "\r"});
                 if (lastLsIndex > -1) {
                     return text.substring(lastLsIndex + 1);

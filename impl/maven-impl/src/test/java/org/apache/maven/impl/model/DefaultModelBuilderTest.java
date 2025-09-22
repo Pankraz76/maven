@@ -20,7 +20,6 @@ package org.apache.maven.impl.model;
 
 import java.lang.reflect.Field;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -123,6 +122,6 @@ class DefaultModelBuilderTest {
     }
 
     private Path getPom(String name) {
-        return Paths.get("src/test/resources/poms/factory/" + name + ".xml").toAbsolutePath();
+        return Path.of("src/test/resources/poms/factory/" + name + ".xml").toAbsolutePath();
     }
 }

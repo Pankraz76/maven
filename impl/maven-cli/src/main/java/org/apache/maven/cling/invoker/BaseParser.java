@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -116,7 +115,7 @@ public abstract class BaseParser implements Parser {
             context.cwd = getCwd(context);
         } catch (Exception e) {
             context.parsingFailed = true;
-            context.cwd = getCanonicalPath(Paths.get("."));
+            context.cwd = getCanonicalPath(Path.of("."));
             parserRequest.logger().error("Error determining working directory", e);
         }
         try {
@@ -274,7 +273,7 @@ public abstract class BaseParser implements Parser {
             context.systemPropertiesOverrides.put("user.dir", result.toString());
             return result;
         } else {
-            Path result = getCanonicalPath(Paths.get(System.getProperty("user.dir")));
+            Path result = getCanonicalPath(Path.of(System.getProperty("user.dir")));
             mayOverrideDirectorySystemProperty(context, "user.dir", result);
             return result;
         }
@@ -291,7 +290,7 @@ public abstract class BaseParser implements Parser {
                 throw new IllegalStateException(
                         "local mode requires " + Constants.MAVEN_HOME + " Java System Property set");
             }
-            Path result = getCanonicalPath(Paths.get(mavenHome));
+            Path result = getCanonicalPath(Path.of(mavenHome));
             mayOverrideDirectorySystemProperty(context, Constants.MAVEN_HOME, result);
             return result;
         }
@@ -303,7 +302,7 @@ public abstract class BaseParser implements Parser {
             context.systemPropertiesOverrides.put("user.home", result.toString());
             return result;
         } else {
-            Path result = getCanonicalPath(Paths.get(System.getProperty("user.home")));
+            Path result = getCanonicalPath(Path.of(System.getProperty("user.home")));
             mayOverrideDirectorySystemProperty(context, "user.home", result);
             return result;
         }

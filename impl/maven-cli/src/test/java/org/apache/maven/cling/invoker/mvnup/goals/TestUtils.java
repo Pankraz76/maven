@@ -19,7 +19,6 @@
 package org.apache.maven.cling.invoker.mvnup.goals;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Optional;
 
@@ -47,7 +46,7 @@ public final class TestUtils {
      * @return a mock UpgradeContext
      */
     public static UpgradeContext createMockContext() {
-        return createMockContext(Paths.get("/project"));
+        return createMockContext(Path.of("/project"));
     }
 
     /**
@@ -67,7 +66,7 @@ public final class TestUtils {
      * @return a mock UpgradeContext
      */
     public static UpgradeContext createMockContext(UpgradeOptions options) {
-        return createMockContext(Paths.get("/project"), options);
+        return createMockContext(Path.of("/project"), options);
     }
 
     /**
@@ -82,8 +81,8 @@ public final class TestUtils {
 
         // Mock all required properties for LookupContext constructor
         when(request.cwd()).thenReturn(workingDirectory);
-        when(request.installationDirectory()).thenReturn(Paths.get("/maven"));
-        when(request.userHomeDirectory()).thenReturn(Paths.get("/home/user"));
+        when(request.installationDirectory()).thenReturn(Path.of("/maven"));
+        when(request.userHomeDirectory()).thenReturn(Path.of("/home/user"));
         when(request.topDirectory()).thenReturn(workingDirectory);
         when(request.rootDirectory()).thenReturn(Optional.empty());
         when(request.userProperties()).thenReturn(Map.of());
@@ -194,8 +193,7 @@ public final class TestUtils {
      * @return POM XML string
      */
     public static String createSimplePom(String groupId, String artifactId, String version) {
-        return String.format(
-                """
+        return """
             <?xml version="1.0" encoding="UTF-8"?>
             <project xmlns="http://maven.apache.org/POM/4.0.0">
                 <modelVersion>4.0.0</modelVersion>
@@ -203,7 +201,7 @@ public final class TestUtils {
                 <artifactId>%s</artifactId>
                 <version>%s</version>
             </project>
-            """,
+            """.formatted(
                 groupId, artifactId, version);
     }
 
@@ -218,8 +216,7 @@ public final class TestUtils {
      */
     public static String createPomWithParent(
             String parentGroupId, String parentArtifactId, String parentVersion, String artifactId) {
-        return String.format(
-                """
+        return """
             <?xml version="1.0" encoding="UTF-8"?>
             <project xmlns="http://maven.apache.org/POM/4.0.0">
                 <modelVersion>4.0.0</modelVersion>
@@ -230,7 +227,7 @@ public final class TestUtils {
                 </parent>
                 <artifactId>%s</artifactId>
             </project>
-            """,
+            """.formatted(
                 parentGroupId, parentArtifactId, parentVersion, artifactId);
     }
 }

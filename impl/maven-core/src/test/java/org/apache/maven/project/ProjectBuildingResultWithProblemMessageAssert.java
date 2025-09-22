@@ -49,8 +49,7 @@ class ProjectBuildingResultWithProblemMessageAssert {
                     .map(ModelProblem::getMessage)
                     .map(m -> "\"" + m + "\"")
                     .collect(joining(", "));
-            String message = String.format(
-                    "Expected ProjectBuildingResult to have problem message containing <%s> but had messages <%s>",
+            String message = "Expected ProjectBuildingResult to have problem message containing <%s> but had messages <%s>".formatted(
                     problemMessage, actualMessages);
             assertTrue(false, message);
         }

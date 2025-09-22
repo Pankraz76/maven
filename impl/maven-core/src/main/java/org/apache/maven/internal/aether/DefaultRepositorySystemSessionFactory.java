@@ -19,7 +19,6 @@
 package org.apache.maven.internal.aether;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -371,7 +370,7 @@ public class DefaultRepositorySystemSessionFactory implements RepositorySystemSe
                     .map(this::resolve)
                     .forEach(paths::add);
         }
-        paths.add(Paths.get(request.getLocalRepository().getBasedir()));
+        paths.add(Path.of(request.getLocalRepository().getBasedir()));
         String localRepoTail = mergedProps.get(Constants.MAVEN_REPO_LOCAL_TAIL);
         if (localRepoTail != null) {
             Arrays.stream(localRepoTail.split(","))
@@ -407,13 +406,13 @@ public class DefaultRepositorySystemSessionFactory implements RepositorySystemSe
     private Path resolve(String string) {
         if (string.startsWith("~/") || string.startsWith("~\\")) {
             // resolve based on $HOME
-            return Paths.get(System.getProperty("user.home"))
+            return Path.of(System.getProperty("user.home"))
                     .resolve(string.substring(2))
                     .normalize()
                     .toAbsolutePath();
         } else {
             // resolve based on $CWD
-            return Paths.get(string).normalize().toAbsolutePath();
+            return Path.of(string).normalize().toAbsolutePath();
         }
     }
 

@@ -23,7 +23,6 @@ import javax.inject.Inject;
 import java.io.File;
 import java.net.URI;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -415,14 +414,14 @@ class PluginParameterExpressionEvaluatorTest extends AbstractCoreMavenComponentT
 
     @Test
     void testRootDirectory() throws Exception {
-        this.rootDirectory = Paths.get("myRootDirectory");
+        this.rootDirectory = Path.of("myRootDirectory");
         ExpressionEvaluator ee = createExpressionEvaluator(createDefaultProject(), null, new Properties());
         assertInstanceOf(Path.class, ee.evaluate("${session.rootDirectory}"));
     }
 
     @Test
     public void testUri() throws Exception {
-        Path path = Paths.get("").toAbsolutePath();
+        Path path = Path.of("").toAbsolutePath();
 
         MavenSession mavenSession = createMavenSession(null);
         mavenSession.getRequest().setTopDirectory(path);
@@ -435,7 +434,7 @@ class PluginParameterExpressionEvaluatorTest extends AbstractCoreMavenComponentT
 
     @Test
     public void testPath() throws Exception {
-        Path path = Paths.get("").toAbsolutePath();
+        Path path = Path.of("").toAbsolutePath();
 
         MavenSession mavenSession = createMavenSession(null);
         mavenSession.getRequest().setTopDirectory(path);
@@ -448,7 +447,7 @@ class PluginParameterExpressionEvaluatorTest extends AbstractCoreMavenComponentT
 
     @Test
     public void testPluginInjection() throws Exception {
-        Path path = Paths.get("rép➜α").toAbsolutePath();
+        Path path = Path.of("rép➜α").toAbsolutePath();
 
         MavenSession mavenSession = createMavenSession(null);
         mavenSession.getRequest().setTopDirectory(path);

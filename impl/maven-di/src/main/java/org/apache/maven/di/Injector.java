@@ -184,8 +184,8 @@ public interface Injector {
      */
     default void dispose() {
         // delegate to the implementation
-        if (this instanceof InjectorImpl) {
-            ((InjectorImpl) this).dispose();
+        if (this instanceof InjectorImpl impl) {
+            impl.dispose();
         }
     }
 }

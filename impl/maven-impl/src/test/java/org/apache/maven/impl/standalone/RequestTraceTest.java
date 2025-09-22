@@ -20,7 +20,6 @@ package org.apache.maven.impl.standalone;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -69,7 +68,7 @@ class RequestTraceTest {
         ModelBuilderResult result = builder.newSession()
                 .build(ModelBuilderRequest.builder()
                         .session(session)
-                        .source(Sources.buildSource(Paths.get("pom.xml").toAbsolutePath()))
+                        .source(Sources.buildSource(Path.of("pom.xml").toAbsolutePath()))
                         .requestType(ModelBuilderRequest.RequestType.BUILD_PROJECT)
                         .recursive(true)
                         .build());
