@@ -164,9 +164,12 @@ public abstract class XmlService {
 
     /**
      * Writes an XML node to a writer.
+     *
+     * @return writer instance.
      */
-    public static void write(XmlNode node, Writer writer) throws IOException {
+    public static Writer write(XmlNode node, Writer writer) throws IOException {
         getService().doWrite(node, writer);
+        return writer;
     }
 
     /**

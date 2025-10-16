@@ -140,15 +140,12 @@ public class DefaultToolchainsBuilder implements ToolchainsBuilder {
             return PersistedToolchains.newInstance();
         }
 
-        toolchains = interpolate(toolchains, request, problems);
+        toolchains = interpolate(toolchains, request);
 
         return toolchains;
     }
 
-    private PersistedToolchains interpolate(
-            PersistedToolchains toolchains,
-            ToolchainsBuilderRequest request,
-            ProblemCollector<BuilderProblem> problems) {
+    private PersistedToolchains interpolate(PersistedToolchains toolchains, ToolchainsBuilderRequest request) {
         Map<String, String> userProperties = request.getSession().getUserProperties();
         Map<String, String> systemProperties = request.getSession().getSystemProperties();
         UnaryOperator<String> src = Interpolator.chain(userProperties::get, systemProperties::get);

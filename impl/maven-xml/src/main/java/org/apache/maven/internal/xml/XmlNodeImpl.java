@@ -21,15 +21,13 @@ package org.apache.maven.internal.xml;
 import java.io.IOException;
 import java.io.Serializable;
 import java.io.StringWriter;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Objects;
-import java.util.function.Function;
+import java.util.*;
 
 import org.apache.maven.api.annotations.Nonnull;
 import org.apache.maven.api.xml.XmlNode;
 import org.apache.maven.api.xml.XmlService;
+
+import static org.apache.maven.api.xml.XmlNode.Builder.Impl.addToStringField;
 
 /**
  *  NOTE: remove all the util code in here when separated, this class should be pure data.
@@ -292,38 +290,18 @@ public class XmlNodeImpl implements Serializable, XmlNode {
     @Override
     public String toString() {
         try {
-            StringWriter writer = new StringWriter();
-            XmlService.write(this, writer);
-            return writer.toString();
-        } catch (IOException e) {
-            return toStringObject();
+            return XmlService.write(this, new StringWriter()).toString();
+        } catch (IOException ignored) {
+            return addToStringField(
+                            new StringJoiner(", ", "XmlNode[", "]"),
+                            prefix,
+                            namespaceUri,
+                            name,
+                            value,
+                            attributes,
+                            children,
+                            location)
+                    .toString();
         }
-    }
-
-    public String toStringObject() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("XmlNode[");
-        boolean w = false;
-        w = addToStringField(sb, prefix, o -> !o.isEmpty(), "prefix", w);
-        w = addToStringField(sb, namespaceUri, o -> !o.isEmpty(), "namespaceUri", w);
-        w = addToStringField(sb, name, o -> !o.isEmpty(), "name", w);
-        w = addToStringField(sb, value, o -> !o.isEmpty(), "value", w);
-        w = addToStringField(sb, attributes, o -> !o.isEmpty(), "attributes", w);
-        w = addToStringField(sb, children, o -> !o.isEmpty(), "children", w);
-        w = addToStringField(sb, location, Objects::nonNull, "location", w);
-        sb.append("]");
-        return sb.toString();
-    }
-
-    private static <T> boolean addToStringField(StringBuilder sb, T o, Function<T, Boolean> p, String n, boolean w) {
-        if (!p.apply(o)) {
-            if (w) {
-                sb.append(", ");
-            } else {
-                w = true;
-            }
-            sb.append(n).append("='").append(o).append('\'');
-        }
-        return w;
     }
 }

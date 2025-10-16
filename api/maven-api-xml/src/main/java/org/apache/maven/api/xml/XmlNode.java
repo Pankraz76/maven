@@ -21,10 +21,7 @@ package org.apache.maven.api.xml;
 import java.io.IOException;
 import java.io.Serializable;
 import java.io.StringWriter;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 
 import org.apache.maven.api.annotations.Experimental;
@@ -509,40 +506,45 @@ public interface XmlNode {
             @Override
             public String toString() {
                 try {
-                    StringWriter writer = new StringWriter();
-                    XmlService.write(this, writer);
-                    return writer.toString();
-                } catch (IOException e) {
-                    return toStringObject();
+                    return XmlService.write(this, new StringWriter()).toString();
+                } catch (IOException ignored) {
+                    return addToStringField(
+                                    new StringJoiner(", ", "XmlNode[", "]"),
+                                    prefix,
+                                    namespaceUri,
+                                    name,
+                                    value,
+                                    attributes,
+                                    children,
+                                    inputLocation)
+                            .toString();
                 }
             }
 
-            private String toStringObject() {
-                StringBuilder sb = new StringBuilder();
-                sb.append("XmlNode[");
-                boolean w = false;
-                w = addToStringField(sb, prefix, o -> !o.isEmpty(), "prefix", w);
-                w = addToStringField(sb, namespaceUri, o -> !o.isEmpty(), "namespaceUri", w);
-                w = addToStringField(sb, name, o -> !o.isEmpty(), "name", w);
-                w = addToStringField(sb, value, o -> !o.isEmpty(), "value", w);
-                w = addToStringField(sb, attributes, o -> !o.isEmpty(), "attributes", w);
-                w = addToStringField(sb, children, o -> !o.isEmpty(), "children", w);
-                w = addToStringField(sb, inputLocation, Objects::nonNull, "inputLocation", w);
-                sb.append("]");
-                return sb.toString();
+            public static StringJoiner addToStringField(
+                    final StringJoiner stringJoiner,
+                    final String prefix,
+                    final String namespaceUri,
+                    final String name,
+                    final String value,
+                    final Map<String, String> attributes,
+                    final List<XmlNode> children,
+                    final Object location) {
+                addToStringField(stringJoiner, prefix, o -> !o.isEmpty(), "prefix");
+                addToStringField(stringJoiner, namespaceUri, o -> !o.isEmpty(), "namespaceUri");
+                addToStringField(stringJoiner, name, o -> !o.isEmpty(), "name");
+                addToStringField(stringJoiner, value, o -> !o.isEmpty(), "value");
+                addToStringField(stringJoiner, attributes, o -> !o.isEmpty(), "attributes");
+                addToStringField(stringJoiner, children, o -> !o.isEmpty(), "children");
+                addToStringField(stringJoiner, location, Objects::nonNull, "location");
+                return stringJoiner;
             }
 
-            private static <T> boolean addToStringField(
-                    StringBuilder sb, T o, Function<T, Boolean> p, String n, boolean w) {
-                if (!p.apply(o)) {
-                    if (w) {
-                        sb.append(", ");
-                    } else {
-                        w = true;
-                    }
-                    sb.append(n).append("='").append(o).append('\'');
+            private static <T> void addToStringField(
+                    StringJoiner sj, T o, Function<T, Boolean> predicate, String fieldName) {
+                if (predicate.apply(o)) {
+                    sj.add(fieldName + "='" + o + "'");
                 }
-                return w;
             }
         }
     }
