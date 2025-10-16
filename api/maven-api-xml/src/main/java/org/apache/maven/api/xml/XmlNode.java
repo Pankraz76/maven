@@ -446,11 +446,11 @@ public interface XmlNode {
          * @return a new immutable XmlNode instance
          * @throws NullPointerException if name has not been set
          */
-        public XmlNode build() {
+        XmlNode build() {
             return new Impl(prefix, namespaceUri, name, value, attributes, children, inputLocation);
         }
 
-        private record Impl(
+        record Impl(
                 String prefix,
                 String namespaceUri,
                 @Nonnull String name,
@@ -460,7 +460,7 @@ public interface XmlNode {
                 Object inputLocation)
                 implements XmlNode, Serializable {
 
-            private Impl {
+            Impl {
                 // Validation and normalization from the original constructor
                 prefix = prefix == null ? "" : prefix;
                 namespaceUri = namespaceUri == null ? "" : namespaceUri;
